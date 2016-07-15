@@ -142,9 +142,29 @@
 			footer a{
 				color:#337ab7;
 			}
+			.toup{
+				position:fixed;
+				right:20px;
+				bottom:30px;
+				border:none;
+				display:block;
+				background:#999 !important;
+				display:none;
+				z-index:99;
+				cursor:pointer;
+			}
+			.toup span{
+				display:block;
+				padding:8px 8px;
+				font-size:20px;
+				color:#fff;
+			}
 		</style>
 	</head>
 	<body>
+    	<button class="toup">
+        	<span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
 		<!-- 导航条部分 -->
 		<nav class="navbar navbar-inverse navbar-fixed-top ahig">
 			<div class="container">
@@ -319,4 +339,37 @@
         	</div>
         </footer>
 	</body>
+    <script>
+    	var toup=document.getElementsByClassName('toup')[0];
+        window.onscroll=function(){
+        	uplist();
+        }
+        uplist();
+        //为toup按钮自动显示的封装函数
+        function uplist(){
+        	var top=window.pageYOffset;
+            if(top>400){
+            	toup.style.display='block';
+            }else{
+            	toup.style.display='none';
+            }
+        }
+        //点击按钮自动滑倒顶部
+        var onoff=false;
+        toup.onclick=function(){
+        	if(onoff) return;
+       		onoff=true
+        	var top=window.pageYOffset;
+           	var timer=null;
+            timer=setInterval(function(){
+            	top-=36;
+                if(top<=0){
+                onoff=false;
+                	top=0;
+                    clearInterval(timer)
+                }
+                window.scrollTo(0,top)
+            },16)
+        }
+    </script>
 </html>
