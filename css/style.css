@@ -1325,7 +1325,6 @@ a.hvr-sweep-to-right:hover:before,a.hvr-sweep-to-right:focus:before,a.hvr-sweep-
 .what-one p {
   margin: 1.9% auto 0;
   overflow: hidden;
-  height: 45px;
 }
 .work-one:nth-child(3){
 	display:none;
