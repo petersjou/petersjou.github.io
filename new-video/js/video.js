@@ -235,8 +235,8 @@ window.onload=function(){
 				};
 			};
 		}
-		function acs(tiao3){
-			var tiao3=getByClass(tiao3);
+		function acs(){
+			var tiao3=getByClass('tiao3');
 			for(var j=0;j<tiao3.length;j++){
 				tiao3[j].index=j;
 				tiao3[j].onclick=function(){
