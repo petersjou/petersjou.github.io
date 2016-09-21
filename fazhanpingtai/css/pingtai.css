@@ -1,0 +1,377 @@
+*{
+	font-family: "微软雅黑";
+}
+#wrap{
+	width:100%;
+	height:100%;
+}
+.header{
+	wwidth:100%;
+	height:188px;
+	position:relative;
+}
+.header-bg{
+	width:100%;
+	height:188px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:url(../img/header-bg.png);
+}
+.header-logo{
+	width:1000px;
+	height:130px;
+	position:absolute;
+	left:50%;
+	top:56px;
+	margin-left:-500px;
+	background:url(../img/nav-bg.png);
+}
+.logins{
+	position:absolute;
+	right:146px;
+	top:36px;
+	color:#fff;
+	font-size:22px;
+	color:#9cb8dc;
+	cursor: pointer;
+}
+.logins:hover{
+	color:#fff;
+}
+.content{
+	width:100%;
+	margin:0 auto;
+}
+.content .banner{
+	width:1000px;
+	background:url(../img/banner-bg.png);
+	height:450px;
+	margin:0 auto;
+}
+.content .anli{
+	width:1000px;
+	background:url(../img/anli.png);
+	height:340px;
+	margin:0 auto;
+}
+.footer{
+	width:100%;
+	height:218px;
+	background:#1e232b;
+}
+.footer-list{
+	width:1000px;
+	margin:0 auto;
+	height:218px;
+	background:url(../img/footer.png);
+}
+/* 登陆 */
+/* login  */
+.login-box{
+	width:400px;
+	height:260px;
+	border:1px solid #ccc;
+	border-radius:12px;
+	display:none;
+	position:fixed;
+	left:50%;
+	top:25%;
+	margin-left:-200px;
+	background:#fff;
+	z-index:99;
+}
+.login-header{
+	border-bottom:1px solid #ccc;
+	height:40px;
+}
+.login-header h3{
+	
+	font-size:18px;
+	padding-left:14px;
+	line-height:44px;
+	float:left;
+}
+.login-header span{
+	font-size:18px;
+	float: right;
+	margin-right:14px;
+	line-height:44px;
+	cursor:pointer;
+}
+.same{
+	height:34px;
+	width:80%;
+	margin:20px auto;
+	border:1px solid #ccc;
+	border-radius:5px;
+	overflow:hidden;
+	position:relative;
+}
+.user-bg{
+	height:34px;
+	width:34px;
+	padding-right:4px;
+	border-right:1px solid #ccc;
+	position:absolute;
+	left:0;
+	top:0;
+	background:url(../img/login.png)  -5px -8px no-repeat;
+}
+.pas-bg{
+	height:34px;
+	width:34px;
+	padding-right:4px;
+	border-right:1px solid #ccc;
+	position:absolute;
+	left:0;
+	top:0;
+	background:url(../img/login.png) -53px -8px no-repeat ;
+}
+.same input{
+	border:none;
+	outline: none;
+	height:32px;
+	position:absolute;
+	left:39px;
+	top:0;
+	width:200px;
+	line-height:32px;
+	padding-left:10px;
+	font-size:14px;
+}
+.login-box .input-box{
+	margin-top:30px;
+}
+.login-btns input{
+	display:block;
+	outline: none;
+	width:100px;
+	height:30px;
+	border:1px solid #ccc;
+	background:#e9e9e9;
+	margin:10px auto;
+	border-radius:5px;
+	cursor:pointer;
+}
+.login-btns input:hover{
+	background:#3495e0;
+	color:#fff;
+	border:none;
+}
+.cuowu{
+	margin-top:0px;
+	color:red;
+	text-align:center;
+}
+.mark{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:#666;
+	z-index:80;
+	display:none;
+	opacity:0.5;
+	filter:alpha(opacity=50);       /* IE */
+    -moz-opacity:0.5;              /* 老版Mozilla */
+    -khtml-opacity:0.5;              /* 老版Safari */
+	
+}
+
+
+
+
+/* 主要部分 */
+.chanpin{
+	width:100%;
+	height:640px;
+	background:#f2f2f2;
+}
+.chanpin-cont{
+	width:1000px;
+	height:620px;
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+}
+.chanpin-show{
+	background:url(../img/fuwu.png);
+	width:530px;
+	height:30px;
+	margin:24px auto 0;
+}
+.bian-left1{
+	position:absolute;
+	left:28px;
+	top:110px;
+	width:10px;
+	height:340px;
+	background:url(../img/xuan1.png);
+}
+.bian-left2{
+	position:absolute;
+	left:38px;
+	top:115px;
+	width:118px;
+	height:2px ;
+	background:url(../img/xuan3.png) repeat-x;
+	transition:0.2s;
+}
+.bian-right{
+	position:absolute;
+	bottom:6px;
+	right: 26px;
+	width:140px;
+	height:140px;
+	background:url(../img/xuan4.png);
+}
+.chanpin-nav{
+	width:100%;
+}
+.chanpin-nav ul{
+	width:100%;
+	text-align:center;
+	margin-top:13px;
+}
+.chanpin-nav ul li{
+	display:inline-block;
+	padding:0px;
+	font-weight: bold;
+	cursor: pointer;
+	text-align:center;
+	padding:0px 20px;
+	position:relative;
+	height:56px;
+	transition:0.6s;
+}
+
+.chanpin-nav ul li:hover{
+	color:#ff9000;
+}
+.chanpin-nav ul li:hover p{
+	opacity:1;
+}
+.chanpin-nav ul li span{
+	
+}
+.chanpin-nav ul li p{
+	width:100%;
+	height:36px;
+	background:url(../img/xuan2.png)no-repeat;
+	position:absolute;
+	left:10px;
+	bottom:0px;
+	opacity:0;
+	transition:0.6s;
+}
+
+.chanpin-nav  .chan-five p{
+	background:url(../img/xuan2-l.png)no-repeat;
+}
+.chanpin-nav  .chan-six p{
+	background:url(../img/xuan2-xl.png)no-repeat;
+}
+.chanpin-nav ul .actk{
+	color:#ff9000;
+}
+.chanpin-nav ul .actk p{
+	opacity:1;
+}
+.chanpin-val{
+	width:100%;
+}
+.chanpins{
+	width:100%;
+	display:none;
+}
+.chanp{
+	display:block;
+}
+.chanpins ol{
+	width:100%;
+}
+.chanpins ol li{
+	width:374px;
+	height:168px;
+	border:6px solid #7f7f7f;
+	border-radius:8px;
+	margin:20px 0px 20px 64px;
+	display:inline-block;
+	position:relative;
+	
+	padding:10px;
+	color:#7f7f7f;
+	cursor:pointer;
+	float:left;
+	transition:0.6s;
+}
+.chanpins ol .chanpins-bg{
+	position:absolute;
+	width:150px;
+	height:150px;
+	top:16px;
+	left:8px;
+	background:url(../img/chanpin-3.png) 0 0 no-repeat;
+}
+.chanpinjs{
+	margin-left:170px;     
+	padding-top:30px;
+}
+.chanpinjs h4{
+	font-size:22px;
+	font-weight: bold;
+	padding-bottom:6px;
+}
+.chanpinjs .hongxian{
+	width:200px;
+	height:10px;
+	background:url(../img/hongxian.png) no-repeat;
+	padding:4px 0;
+}
+.chanpinjs p{
+	font-size:16px;
+	
+}
+.chanp-ls{
+	position:absolute;
+	bottom:14px;
+	right:14px;
+	width:200px;
+	font-size:14px;
+	font-weight: bold;
+	display:none;
+}
+.chanp-ls .liaojie{
+	float:left;
+	border-bottom:1px solid #fff;
+	color:#fff;
+	cursor: pointer;
+}
+.chanp-ls .shenqing{
+	float:right;
+	color:#ff9000;
+	cursor: pointer;
+}
+.chanp-ls .p-shenqing{
+	color:#e9e9e9;
+	float:right;
+	cursor:not-allowed;
+}
+.chanpins ol li:hover{
+	border-color:#2964b8;
+	background-color:#2964b8;
+	color:#fff;
+	box-shadow: 5px 5px 10px 5px #ccc;
+	transform: translate(-4px,-4px);
+}
+.chanpins ol li:hover .chanpins-bg{
+	background:url(../img/chanpin-3b.png) no-repeat;
+}
+.chanpins ol li:hover .hongxian{
+	background:url(../img/hongxian-b.png) no-repeat;
+}
+.chanpins ol li:hover .chanp-ls{
+	display:block;
+}
