@@ -1,58 +1,447 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<base target="blank"/>
-<title>国育世纪</title>
-<base>
-<style>
-	*{
-		margin:0;
-		padding:0;	
-	}
-	li{
-		list-style:none;		
-	}
-	.wrap{width:1000px;margin:30px auto 0;}
-	.img{width:180px;height:50px;}
-	.tiao{background:#5bbaf0;padding:0 10px;border-radius:6px;overflow:hidden;height:50px;display:inline-block;margin-right:20px;}
-	.left{position:fixed;right:50px;top:100px;border:1px solid #ccc;border-radius:6px;padding:10px;}
-	.left a{line-height:30px;}
-</style>
-</head>
-
-<body>
-	<div class="wrap">
-    	<h3>主要网站(跳转链接)：</h3>
-        <br/>
-            <a href="http://www.csdp.moe.edu.cn/" class="tiao"><img src="imgs/zhongxin.jpg" class="img"></a>
-            <a href="http://csdpcjrh.isitestar.bj.cn/" class="tiao"><img src="imgs/chanjiao.png" class="img"> </a>
-            <a href="http://121.42.14.236/Policy/" class="tiao"><img src="imgs/zhiku.png" class="img"></a>
-            <a href="http://111.204.62.1:8098/front/product/get_product_by_type.htm?productTypeId=1" class="tiao"><img src="imgs/jinrong.png" class="img"></a>
-        
-        <br/><br/>
-        
-    	<h3>项目测试中(跳转链接)：</h3>
-        <br/>
-        	<a href="http://172.16.1.20/">video内网链接地址</a>&nbsp;&nbsp;&nbsp;
-            <a href="http://42.247.18.140/">video外网链接地址</a>
-            <br/><br/><br/>
-      	  <a href="new-video/video.html" class="tiao"><img src="imgs/dajiangtang.png" class="img"></a>
-        
-        <br/><br/>
-        <h3>展示(跳转链接)：</h3>
-        <br/>
-        	<a href="fazhanpingtai/index.html">先进技术校企合作发展平台</a>
-            <a href="bg/bg1.html">bg1</a>
-            <a href="bg/bg2.html">bg2</a>
-            <a href="bg/bg3.html">bg3</a>
-    </div>
-    <div class="left">
-    	<a class="fix" href="https://www.baidu.com/">百度搜索</a><br/>
-        <a class="fix" href="https://mail.qq.com/cgi-bin/loginpage">qq邮箱</a><br/>
-        <a class="fix" href="http://mail.163.com/">163邮箱</a><br/>
-        <a class="fix" href="http://www.moe.gov.cn/">教育部官网</a><br/>
-        <a class="fix" href="http://www.miit.gov.cn/">工信部官网</a><br/>
-    </div>
-</body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>先进技术校企合作发展平台</title>
+		<base target="_blank">
+		<link href="css/reset.css" rel="stylesheet" />
+		<link href="css/pingtai.css" rel="stylesheet"  />
+		<script src="js/html5shiv.js"></script>
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script src="js/peter.js"></script>
+		<script src="js/pingtai.js"></script>
+	<body>
+		<!--
+        	作者：594161154@qq.com
+        	时间：2016-09-09
+        	描述：关于登陆窗口
+        -->
+		<div class="mark"></div>
+		<div class="login-box">	
+			<div class="login-header clear">
+				<h3><a href="user.html">登陆</a></h3>
+				<span class="close">X</span>
+			</div>
+			<div class="input-box">
+				<div class="username same">
+					<div class="user-bg user"></div>
+					<input type="text" name="username" class="usname vip" placeholder="请输入用户名"/>
+				</div>
+				<div class="password same">
+					<div class="pas-bg user"></div>
+					<input type="password" name="password" class="psword vip" placeholder="请输入密码" />
+				</div>
+				<div class="cuowu"></div>
+				<div class="login-btns">
+					<a href="user.html" class="list-btn">
+						<input type="button" name="button" class="btns vip" value="登&nbsp;&nbsp;&nbsp;陆"/>
+					</a>
+					
+				</div>
+			</div>
+		</div>
+		<!--
+        	作者：594161154@qq.com
+        	时间：2016-09-21
+        	描述：下部为内容去
+        -->
+		<div id="wrap">
+			<div class="header">
+				<div class="header-bg"></div>
+				<div class="header-logo">
+					<div class="logins">会员登录</div>
+					<div class="nav">
+						<ul class="clear">
+							<li class="hov">
+								<span></span>
+								<a href="index.html">首页</a>
+							</li>
+							<li ><a>新闻动态</a></li>
+							<li class="hos"><a href="list.html">前沿科技</a></li>
+							<li class="hos"><a href="list.html">应用文科</a></li>
+							<li class="hos"><a href="list.html">医疗健康</a></li>
+							<li class="hos"><a href="list.html">文旅传媒</a></li>
+							<li class="hos"><a href="list.html">实用技术</a></li>
+							<li class="hos"><a href="list.html">国际合作工程</a></li>
+							<li class="hos"><a href="list.html">互联网+智慧校园</a></li>
+							<li><a>关于平台</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="nav-list">
+				<div class="nav-lis nav-lis1">
+					<ul class="clear">
+						<li>
+							<dl>
+								<dt>大数据</dt>
+								<dd>中兴ICT</dd>
+								<dd>中科曙光大数据</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>人工智能</dt>
+								<dd>智能制造</dd>
+								<dd>机器人</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>VR/AR</dt>
+								<dd>网龙VR/AR</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-lis nav-lis2">
+					<ul class="clear">
+						<li>
+							<dl>
+								<dt>科学工作标准</dt>
+								<dd>科学工作标准</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>燕园智库</dt>
+								<dd>燕园智库</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-lis nav-lis3">
+					<ul class="clear">
+						<li>
+							<dl>
+								<dt>医学检验检测中心</dt>
+								<dd>医学检验检测中心</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-lis nav-lis4">
+					<ul class="clear">
+						<li>
+							<dl>
+								<dt>文旅传媒</dt>
+								<dd>文旅传媒</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-lis nav-lis5">
+					<ul class="clear">
+						<li>
+							<dl>
+								<dt>美容美发</dt>
+								<dd>美容美发</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-lis nav-lis6">
+					<ul class="clear">
+						<li>
+							<dl>
+								<dt>中美</dt>
+								<dd>中美</dd>
+							</dl>
+							
+						</li>
+						<li>
+							<dl>
+								<dt>中英</dt>
+								<dd>中英</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>一带一路</dt>
+								<dd>一带一路</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-lis nav-lis7">
+					<ul class="clear">
+						<li>
+							<dl>
+								<dt>互联网+智慧校园</dt>
+								<dd>互联网+智慧校园</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div class="banner"></div>
+				<!--
+                	作者：594161154@qq.com
+                	时间：2016-09-21
+                	描述：产品主要部分
+                -->
+				<div class="chanpin">
+					<div class="chanpin-cont">
+						<div class="chanpin-show"></div>
+						<div class="chanpin-nav">
+							<ul>
+								<li class="actk">
+									<span>前沿科技</span>
+									<p></p>
+								</li>
+								<li>
+									<span>应用文科</span>
+									<p></p>
+								</li>
+								<li>
+									<span>医疗健康</span>
+									<p></p>
+								</li>
+								<li>
+									<span>文旅传媒</span>
+									<p></p>
+								</li>
+								<li>
+									<span>实用技术</span>
+									<p></p>
+								</li>
+								<li class="chan-five">
+									<span>国际合作工程</span>
+									<p></p>
+								</li>
+								<li class="chan-six">
+									<span>互联网+智慧校园</span>
+									<p></p>
+								</li>
+							</ul>
+						</div>
+						<div class="chanpin-val">
+							<div class="chanpins chanpin1 chanp">
+								<ol class="clear">
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>中兴ICT</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>中科曙光大数据</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="p-shenqing">暂时关闭&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>网龙VR&AR</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>智能制造</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="chanpins chanpin2">
+								<ol class="clear">
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>中科曙光大数据</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+								</ol>
+								
+							</div>
+							<div class="chanpins chanpin3">
+								<ol class="clear">
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>网龙VR&AR</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="chanpins chanpin4">
+								<ol class="clear">
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>智能制造</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="chanpins chanpin5">
+								<ol class="clear">
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>中兴ICT</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="chanpins chanpin6">
+								<ol class="clear">
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>中兴ICT</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="chanpins chanpin7">
+								<ol class="clear">
+									<li>
+										<div class="chanpins-bg"></div>
+										<div class="chanpinjs">
+											<h4>中兴ICT</h4>
+											<div class="hongxian"></div>
+											<p>关于内容的详情，以及你想看到的一些内容。。。</p>
+											<div class="chanp-ls">
+												<div class="liaojie">了解详情</div>
+												<div class="shenqing">快速申请&gt;&gt;</div>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						
+						<div class="bian-left1"></div>
+						<div class="bian-left2"></div>
+						
+						<div class="bian-right"></div>
+					</div>
+					
+				</div>
+				<div class="anli">
+					<div class="anli-header clear">
+						<h3><i></i><span>案例</span>展示</h3>
+						<p>更多&gt;</p>
+					</div>
+					<div class="ali-content">
+						<span class="prev btnk">&lt;</span>
+						<span class="next btnk">&gt;</span>
+						<ul class="clear ali1 alis">
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+						</ul>
+						<ul class="clear ali2 alis">
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+							<li>
+								<img src="img/anli-1.png">
+								<h4 class="anli-head">智慧校园后勤信息化建设</h4>
+								<p class="anli-val">陕西师范大学是全国最早实行后勤社会化改革的高校之一，探索出了新...<span>[详情]</span></p>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footer-list"></div>
+			</div>
+		</div>
+	</body>
 </html>
