@@ -40,12 +40,12 @@ $(function(){
 			});
         });
 		//下一页
-		$(".Div1_next img").click(function(){
+		$(".Div1_next").click(function(){
 			 index++ ;
 			 NextPage();
 		});
 		//上一页
-		$(".Div1_prev img").click(function(){
+		$(".Div1_prev").click(function(){
 			 index-- ;
 			 PrevPage();
 		});
