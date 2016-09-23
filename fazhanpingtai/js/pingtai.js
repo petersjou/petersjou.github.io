@@ -51,6 +51,22 @@ $(function(){
 			onoff=false;
 			 auto();
 		});
+		//move-top
+		var timer9=null;
+		$('.fix-li3').on('click',function(){
+			clearInterval(timer9);
+			var offtop=parseInt($(document).scrollTop());
+			timer9=setInterval(function(){
+				offtop-=30;
+				if(offtop<0){
+					offtop=0;
+					console.log(offtop)
+					clearInterval(timer9);
+				}
+				window.scrollTo(0,offtop);
+			},16)
+		})
+		
 		var timer1=null;
 		var navLis=document.getElementsByClassName('nav-lis');
 		var navList=document.getElementsByClassName('nav-list')[0];
