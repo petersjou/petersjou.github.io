@@ -847,7 +847,7 @@
 	background:url(../images/nav-6.png) no-repeat;
 }
 .nav-lis7{
-	background:blue;
+	background:url(../images/nav-7.png) no-repeat;
 }
 .nav-lis8{
 	background:url(../images/nav-8.png) no-repeat;
@@ -874,10 +874,10 @@
 	display:block;
 }
 .ju-lis1{
-	background:url(../images/lis-lis1.png) no-repeat;
+	background:url(../images/lis-lis2.png) no-repeat;
 }
 .ju-lis2{
-	background:url(../images/lis-lis2.png) no-repeat;
+	background:url(../images/lis-lis1.png) no-repeat;
 }
 .news-title{
 	background:url(../images/news-icon3.png) no-repeat 2px 2px;
