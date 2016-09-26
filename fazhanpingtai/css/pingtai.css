@@ -558,7 +558,7 @@
 .fixed-fr{
 	position:fixed;
 	top:230px;
-	right:60px;
+	right:20px;
 	width: 52px;
     z-index: 70;
     background:#fff;

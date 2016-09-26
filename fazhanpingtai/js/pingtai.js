@@ -81,7 +81,7 @@ $(function(){
 				o++;
 				if(o==4){}
 				if(o>5){
-					$('.nav-lis').eq(k).slideDown(500).siblings().slideUp(500);
+					$('.nav-lis').eq(k).slideDown(400).siblings().slideUp(400);
 					o=0;
 					clearInterval(timer2);
 				}
