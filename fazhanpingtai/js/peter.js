@@ -61,6 +61,65 @@ function removeCookie(key) {
 	setCookie(key, '', -1);
 }
 
+
+////////////////////////////////////////////
+//判断用户名和密码是否存在或正确
+function panduan(dataList,name,password) {
+		var oks=false;
+		for(var i=0;i<dataList.length;i++){
+			if (dataList[i].username == name&&dataList[i].password==password) {
+				oks=true;
+			};
+		}
+		return oks;
+};
+//获取class，类似于getClassName
+function getByClass(sClass){
+	var aResult=[];
+	var aEle=document.getElementsByTagName('*');
+	/*正则模式*/
+	var re=new RegExp("\\b" + sClass + "\\b","g");
+	for(var i=0;i<aEle.length;i++){
+		/*字符串search方法判断是否存在匹配*/
+		if(aEle[i].className.search(re) != -1){
+			aResult.push(aEle[i]);
+		};
+	};
+	return aResult;
+};
+
+//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+//获取浏览器的宽高
+function winWH() //函数：获取尺寸 
+{ 
+	var s={};
+	var winWidth='';
+	var winHeight='';
+	//获取窗口宽度 
+	if (window.innerWidth){
+		winWidth = window.innerWidth; 
+	}else if ((document.body) && (document.body.clientWidth)){
+		winWidth = document.body.clientWidth;
+	} 
+	//获取窗口高度 
+	if (window.innerHeight){
+		winHeight = window.innerHeight;
+	}else if ((document.body) && (document.body.clientHeight)){
+		winHeight = document.body.clientHeight;
+	}
+	//通过深入Document内部对body进行检测，获取窗口大小 
+	if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth){ 
+		winHeight = document.documentElement.clientHeight; 
+		winWidth = document.documentElement.clientWidth; 
+	} 
+	s={
+		h:winHeight,
+		w:winWidth
+	}
+	return s;
+} 
+
 ///////////////////////////////////////////////////////////////////////
 //获取样式
 //obj：为要获取的对象
