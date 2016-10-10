@@ -1,0 +1,117 @@
+/* 关于注册的样式 */
+.j-wrap{
+	width:100%;
+	margin:40px 0;
+}
+.regt{
+	width:1000px;
+	margin:0 auto;
+}
+.regt h3{
+	width:100%;
+	background:url(../img/index/otrs.png) 0 0 no-repeat;
+	margin:0 auto;
+	text-align:center;
+	line-height:30px;
+	font-size:20px;
+	color:#004370;
+	padding-top:4px;
+	font-weight: bold;
+}
+form{
+	width:800px;
+	margin:28px auto 0;
+}
+.mesg-box{
+	margin:12px 0;
+}
+.mesg-l{
+	width:100%;
+}
+.mesg-s{
+	width:50%;
+}
+.mesg-box span{
+	width:140px;
+	text-align: right;
+	color:#1d1d1d;
+	line-height:28px;
+}
+.mesg-box input{
+	height:26px;
+	padding-left:10px;
+	border:none;
+	background:none;
+	margin-top:2px;
+	font-size:14px;
+	outline: none;
+}
+.mesg-box  div{
+	height:32px;
+	position:relative;
+	margin-left:8px;
+}
+.mesg-box i{
+	width:20px;
+	height:20px;
+	
+	position:absolute;
+	top:6px;
+	right:10px;
+}
+.mesg-box .true{
+	background:url(../img/user/duihao.png) 0 0 no-repeat;
+}
+.mesg-box .false{
+	background:url(../img/user/xiaoX.png) 0 0 no-repeat;
+}
+.mesg-box .input-l{
+	width:602px;
+	background:url(../img/user/chengkuang.png) 0 0 no-repeat;
+}
+.mesg-box .input-l input{
+	width:554px;
+}
+.mesg-box .input-s input{
+	width:156px;
+}
+.mesg-box .input-s{
+	width:204px;
+	background:url(../img/user/duankuang.png) 0 0 no-repeat;
+}
+.mesg-box em{
+	font-style: normal;
+	line-height:36px;
+	color:#ff0101;
+	font-size:24px;
+	font-weight: bold;
+	margin-left:6px;
+}
+.hongxian{
+	width:100%;
+	height:4px;
+	background:url(../img/user/fenggexian.png) 0 0 no-repeat;
+	margin:6px 0;
+}
+.sure-btn{
+	display:block;
+	height:60px;
+	width:100%;
+	text-align:center;
+	margin-top:20px;
+}
+.sure-btn input{
+	width:200px;
+	height:40px;
+	border-radius:4px;
+	border:none;
+	color:#feffff;
+	background:#e1e1e1;
+	font-size:18px;
+	cursor:pointer;
+}
+.sure-btn .submit{
+	margin-right:80px;
+	background:#254a81;
+	
+}

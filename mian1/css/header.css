@@ -1,0 +1,127 @@
+/* header的css样式，包含nav以及nav下拉css样式 */
+body{
+	width:100%;
+}
+#header{
+	width:100%;
+}
+.head{
+	width:100%;
+	height:186px;
+	background:url(../img/header-bg.png) 0 0 repeat;
+	overflow:hidden;
+}
+.head-content{
+	width:1000px;
+	margin:0 auto;
+}
+.head-top{
+	width:100%;
+	height:86px;
+	padding-top:50px;
+	border-bottom:1px solid #fff;
+}
+.head-right{
+	padding-top:36px;
+	color:#9bb7dc;
+	font-size:22px;
+	line-height:30px;
+	font-weight: 500;
+	filter:alpha(opacity=90);       /* IE */
+   -moz-opacity:0.9;              /* 老版Mozilla */
+   -khtml-opacity:0.9;              /* 老版Safari */
+   opacity: 0.9;
+   width:260px;
+   overflow:hidden;
+}
+.vip-login{
+	padding-right:0px;
+}
+.vip-login span,.vip-regist span{
+	width:30px;
+	height:30px;
+	display:inline-block;
+	vertical-align: middle;
+}
+.vip-login span{
+	background:url(../img/vip-bg.png) 0 0 no-repeat;
+}
+.vip-regist span{
+	background:url(../img/user-bg.png) 0 0 no-repeat;
+}
+.vip-login p,.vip-regist p{
+	margin-left:2px;
+	display:inline-block;
+	vertical-align: middle;
+	cursor:pointer;
+	margin-top:-10px;
+	+margin-top:-4px;
+}
+.vip-login p:hover{
+	color:#fff;
+}
+.vip-regist p:hover{
+	color:#fff;
+}
+.nav{
+	width:100%;
+}
+.nav ul{
+	width:100%;
+	overflow:hidden;
+}
+.nav ul li{
+	float:left;
+	line-height:44px;
+	font-size:16px;
+	padding-left:40px;
+}
+.nav ul li a{
+	color:#fff;
+	font-weight:500;
+}
+.nav ul li:hover a{
+	color:#d38439;
+}
+.nav-list{
+	width:100%;
+	overflow:hidden;
+}
+.nav-lis{
+	width:1000px;
+	margin:0 auto;
+	display:none;
+}
+.nav-lis ul{
+	
+}
+.nav-lis ul li{
+	float:left;
+	padding:0px 30px 0 10px;
+}
+.nav-lis ul li dl{
+	padding:0 10px;
+}
+.nav-lis ul li dt{
+	border-bottom:2px solid #666;
+	font-size:16px ;
+	font-weight: bold;
+	line-height:40px;
+	padding:2px 10px;
+	
+}
+.nav-lis ul li dt a{
+	color:#244a81;
+}
+.nav-lis ul li dd{
+	border-bottom:1px solid #ccc;
+	font-size:14px;
+	
+	line-height:30px;
+	cursor:pointer;
+	padding:2px 10px;
+}
+.nav-lis ul li dd a{
+	color:#666;
+}
+

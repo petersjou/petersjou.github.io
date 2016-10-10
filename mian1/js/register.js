@@ -1,0 +1,132 @@
+//书写关于注册的js效果
+~function(){
+	$('.sur').attr({'id-data':true});
+	//申请单位名称
+	$('.school-name').on('input',function(){
+		jiance($(this))
+	})
+	$('.school-name').on('blur',function(){
+		nonull($(this));
+	})
+	//联系人姓名
+	$('.lianxi-name').on('input',function(){
+		jiance($(this))
+	}) 
+	$('.lianxi-name').on('blur',function(){
+		nonull($(this));
+	})
+	//联系人所在部门
+	$('.bumen').on('input',function(){
+		jiance($(this))
+	})
+	$('.bumen').on('blur',function(){
+		nonull($(this));
+	})
+	//联系人职务
+	$('.zhiwu').on('input',function(){
+		jiance($(this))
+	})
+	$('.zhiwu').on('blur',function(){
+		nonull($(this));
+	})
+	//联系人手机
+	$('.tel').on('input',function(){
+		jiance($(this))
+	})
+	$('.tel').on('blur',function(){
+		nonull($(this));
+	})
+	//联系人座机号
+	$('.tel-n').on('input',function(){
+		jiance($(this))
+	})
+	$('.tel-n').on('blur',function(){
+		nonull($(this));
+	})
+	//电子邮箱
+	$('.email').on('input',function(){
+		jiance($(this));
+	})
+	$('.email').on('blur',function(){
+		nonull($(this));
+		var rel=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/ ;
+		var str=$.trim($(this).val())
+		if(!rel.test(str)){
+			$(this).attr({'id-data':false});
+			$(this).siblings().addClass('false');
+		}else{
+			$(this).attr({'id-data':true});
+			$(this).siblings().addClass('true');
+		}
+	})
+	//用户登录名
+	$('.login-name').on('input',function(){
+		jiance($(this))
+	})
+	$('.login-name').on('blur',function(){
+		nonull($(this));
+	})
+	//密码
+	$('.password').on('input',function(){
+		jiance($(this))
+		
+	})
+	$('.password').on('blur',function(){
+		nonull($(this));
+		var rel=/\w{5,17}$/;
+		var val=$.trim($(this).val());
+		if(val.length>18||!rel.test(val)||val.length<6){
+			$(this).attr({'id-data':false});
+			$(this).siblings().addClass('false');
+		}else{
+			$(this).attr({'id-data':true});
+			$(this).siblings().removeClass('false').addClass('true');
+		}
+	})
+	//确认密码
+	$('.r-password').on('input',function(){
+		jiance($(this));
+	})
+	$('.r-password').on('blur',function(){
+		nonull($(this));
+		if($(this).val()!=$('.password').val()){
+			$('.password').siblings().addClass('false');
+			$('.r-password').siblings().addClass('false');
+			$('.r-password').attr({'id-data':false});
+			$('.password').attr({'id-data':false});
+		}else{
+			$('.password').siblings().addClass('true');
+			$('.r-password').siblings().addClass('true');
+			$('.r-password').attr({'id-data':true});
+			$('.password').attr({'id-data':true});
+		}
+	})
+	//验证码
+	$('.yanzheng').on('input',function(){
+		jiance($(this))
+	})
+	$('.yanzheng').on('blur',function(){
+		nonull($(this));
+	})
+	$('.submit').on('click',function(){
+		
+		for(var i=0;i<$('.sur').length;i++){
+			if($.trim($('.sur').eq(i).val())==''){
+				$('.sur').eq(i).siblings().addClass('false');
+				$('.sur').eq(i).focus()
+				return false
+			}else if($('.sur').eq(i).attr('id-data')=='false'){
+				$('.sur').eq(i).siblings().addClass('false');
+				$('.sur').eq(i).focus()
+				return false
+			}
+		}
+		if($('.password').val()!=$('r-password')){
+			$('.password').siblings().addClass('false');
+			$('.r-password').siblings().addClass('false');
+			$('.password').eq(i).focus()
+			return false
+		}
+	})
+	
+}()

@@ -1,0 +1,186 @@
+/* 关于用户中心的样式 */
+#header{
+	width:100%;
+	height:110px;
+	background:url(../img/user/head-bg.png) 0 0 repeat-x;
+	
+}
+.head{
+	width:1000px;
+	margin:0 auto;
+	border-bottom:4px solid #0641a3;
+}
+.head-name p{
+	font-size:14px;
+	color:#868686;
+	line-height:30px;
+}
+.head-name p span{
+	color:#0350a5;
+	font-weight: 500;
+}
+.head-center{
+	margin-top:32px;
+}
+.head-logo img{
+	vertical-align: middle;
+}
+.head-logo p{
+	vertical-align: middle;
+	font-size:26px;
+	font-weight: bold;
+	color:#7f7f7f;
+	border-left:2px solid #7f7f7f;
+	padding-left:10px;
+	margin-left:10px;
+	margin-top:6px;
+}
+.back{
+	width:100px;
+	margin-top:24px;
+}
+.back .back-logo{
+	width:20px;
+	height:20px;
+	background:url(../img/user/go-back.png) 0 0 no-repeat;
+	margin-left:4px;
+}
+.back a{
+	color:#7f7f7f;
+	font-size:14px;
+}
+.back:hover a{
+	color:#0641A3;
+}
+/* 底部的样式 */
+#footer{
+	width:100%;
+	height:40px;
+}
+.foot{
+	width:1000px;
+	margin:20px auto 0;
+	border-top:1px solid #d6d6d6;
+	font-size:12px;
+	 color:#d6d6d6;
+	 text-align:center;
+	 line-height:38px;
+}
+/* 关于中部的样式 */
+#content{
+	width:1000px;
+	margin:26px auto;
+}
+.cont-left div{
+	width:290px;
+	height:56px;
+	border:2px solid #d6d6d6;
+	text-align:center;
+	line-height:56px;
+	margin-bottom:10px;
+	font-size:20px;
+	color:#7f7f7f;
+	cursor:pointer;
+	border-radius:6px;
+} 
+.cont-left div:hover{
+	color:#ff9000;
+	border:2px solid #ff9000;
+}
+.cont-left .hov1{
+	color:#ff9000;
+	border:2px solid #ff9000;
+}
+.cont-right{
+	width:664px;
+}
+.cont-right .user-lis{
+	width:100%;
+}
+.fuwu {
+	color:#ffffff;
+}
+.fw-gl{
+	height:158px;
+	background:#004370;
+	padding:4px;
+	margin-bottom:20px;
+}
+.fw-bg{
+	width:164px;
+	height:100%;
+	border-right:2px solid #fff;
+}
+.fw-bg img{
+	margin:22px 0px 0 36px; 
+}
+.fw-bg p{
+	text-align:center;
+	color:#fff;
+	font-size:16px;
+	margin-top:4px;
+}
+.fw-mesg{
+	width:164px;
+	height:100%;
+	border-right:2px solid #fff;
+}
+.fw-mesg .mesg-tex{
+	width:100%;
+	line-height:44px;
+	border-bottom:2px solid #fff;
+	text-align:center;
+}
+.mesg-time{
+	margin:24px 0;
+}
+.mesg-time p{
+	text-align:center;
+	line-height:30px;
+}
+.fw-zt{
+	width:164px;
+	height:100%;
+	border-right:2px solid #fff;
+}
+.zt-tex{
+	line-height:44px;
+	border-bottom:2px solid #fff;
+	text-align:center;
+}
+.zt-mesg{
+	line-height:110px;
+	text-align:center;
+	font-size:22px;
+	color:#fff000;
+	font-weight: bold;
+}
+.ziliao{
+	font-size:16px;
+	color:#ff8b11;
+	font-weight: bold;
+	height:50px;
+	line-height:50px;
+	width:130px;
+	text-align:center;
+	background:#ededed;
+	border-radius:6px;
+	margin:56px 0 0 16px;
+}
+.fw-gl2 {
+	background:#0063a7;
+}
+.fw-gl2 .zt-mesg{
+	color:#d539dd;
+}
+.fw-gl2 .ziliao,
+.fw-gl3 .ziliao{
+	color:#848484;
+	cursor:not-allowed;
+}
+.fw-gl3 {
+	background:#007cd2;
+}
+.fw-gl3 .zt-mesg{
+	color:#e60303;
+}
