@@ -119,6 +119,9 @@
 					ali[i].ju=0;
 					ali[i].onclick=function(){
 						console.log(this.index)
+						for(var j=0;j<len;j++){
+							ali[j].ju=0;
+						}
 						this.ju++;
 						if(this.ju==1){
 							var nk=0;
