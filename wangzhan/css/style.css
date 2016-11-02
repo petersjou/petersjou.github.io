@@ -93,7 +93,8 @@ a, area {blr:expression(this.onFocus=this.blur())}
 .hmc1r_u1 ul li { height: 105px; background: url(../images/line.jpg) repeat-x left bottom; }
 .hmc1r_u1 ul li strong { line-height: 32px; display: block; height: 32px; font-size: 18px; font-weight: normal; overflow: hidden; margin-bottom: 10px; }
 .hmc1r_u1 ul li p { color: #999; line-height: 22px; display: block; }
-.hmc1r_u2 ul li { font-size: 14px; line-height: 32px; height: 32px; overflow: hidden; background: url(../images/line.jpg) repeat-x left bottom; padding-top: 6px; }
+.hmc1r_u2 ul li { font-size: 14px; line-height: 32px; height: 32px;position:relative; background: url(../images/line.jpg) repeat-x left bottom; padding-top: 6px; }
+.hmc1r_u2 ul li p{border:1px solid #666;padding:0px 4px;border-radius:4px;color:#666;font-size:12px;position:absolute;top:32px;background:#fff;z-index:2;line-height:20px;display:none;}
 .hmc1r_u2 { padding-right: 32px; margin-top:-8px; }
 .hmCon2Bg { background: #f3f3f3; padding: 28px 0px 50px; }
 .hmCon2 { margin: 0px auto; width: 1000px; }

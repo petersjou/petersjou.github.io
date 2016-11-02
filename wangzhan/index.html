@@ -934,8 +934,16 @@
 </div>
 <div class="hmc1r_u2">
 <ul>
- <li><a class="fl" href="#">2017年研考政策发考试招生...</a><span class="fr">2016-07-28</span></li>
- <li><a class="fl" href="#">高校招生录取批次得积极成效</a><span class="fr">2016-07-28</span></li>
+ <li>
+ 	<a class="fl" href="#">2017年研考政策发考试招生...</a>
+    
+    <span class="fr">2016-07-28</span>
+ </li>
+ <li>
+ 	<a class="fl" href="#">高校招生录取批次得积极成效</a>
+    
+    <span class="fr">2016-07-28</span>
+  </li>
  <li><a class="fl" href="#">国务院教育督开6年秋季开学...</a><span class="fr">2016-07-28</span></li>
  <li><a class="fl" href="#">2017年研做好考试招生服务</a><span class="fr">2016-07-28</span></li>
  <li><a class="fl" href="#">高校招生录革取得积极成效</a><span class="fr">2016-07-28</span></li>
@@ -943,6 +951,7 @@
  <li><a class="fl" href="#">2017年研考部要试招生服务...</a><span class="fr">2016-07-28</span></li>
  <li><a class="fl" href="#">国务院教育督导6年秋季开学...</a><span class="fr">2016-07-28</span></li>
 </ul>
+<p >高校招生录取批次得积极成效</p>
 </div>
 </div>
 </div>
@@ -1253,6 +1262,14 @@
 <a href="javascript:;" class="backTop"></a> 
 <script>
 	~function(){
+		$('.hmc1r_u2 ul li').on('mouseenter',function(ev){
+			var ev=ev||window.event;
+			$(this).children('p').css({'display':'block','left':ev.pageX-$('.hmc1R').offset().left})
+		})
+		$('.hmc1r_u2 ul li').on('mouseleave',function(ev){
+			var ev=ev||window.event;
+			$(this).children('p').css({'display':'none','left':0})
+		})
 		$('.cks').on('mouseenter',function(){
 			
 			$(this).stop().animate({'top':-23})
