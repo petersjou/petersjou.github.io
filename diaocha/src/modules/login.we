@@ -1,0 +1,225 @@
+<template>
+    <div class="loginbox" style="background:#f3f3f3;">
+    	<scroller class="scroller">
+    		<image style="width:30px;height:30px;" class="closeimg" src="{{tubiao}}" onclick="onBackClick"></image>
+    		<image class="gerenimg" style="width:130px;height:130px;margin-left:{{(marginleft-130)/2}}px;" src="{{tubiao}}"></image>
+    		<div class="login-box">
+    			<label class="label1">
+    				<image style="margin-top:22px;width:40px;height:40px;" src="{{tubiao}}"></image>
+    				<input id="uput" onchange="onchange1" oninput="oninput1" class="inpuval" type="text" value="" style="width:{{marginleft-88}}px;" placeholder="请输入登陆名">
+    			</label>
+    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+    				<image style="margin-top:22px;width:40px;height:40px;" src="{{tubiao}}"></image>
+    				<input id="pput" class="inpuval" onchange="onchange2" oninput="oninput2" type="password" value="" style="width:{{marginleft-88}}px;" placeholder="请输入密码">
+    			</label>
+    		</div>
+    		<text class="baocuo" if="{{baocuo != ''}}">{{baocuo}}</text>
+    		<text class="resert">忘记密码？</text>
+    		<text class="login-btn" onclick="onlogin">登陆</text>
+    		<text class="register-btn">注册</text>
+    		<text class="huo" onclick="get">或</text>
+    		<div class="threelogin">
+    			<div class="otrlogin" style="margin-right:40px;">
+    				<image style="width:88px;height:88px;margin-left:12px;" src="{{tubiao}}"></image>
+    				<text class="otrtext">微信登陆</text>
+    			</div>
+    			<div class="otrlogin" style="margin-left:40px;">
+    				<image style="width:88px;height:88px;margin-left:8px;" src="{{tubiao}}"></image>
+    				<text class="otrtext">QQ登陆</text>
+    			</div>
+    		</div>
+    	</scroller>
+    </div>
+</template>
+<style>
+	.loginbox{
+		position:absolute;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+	}
+	.closeimg{
+		margin-top:70px;
+		margin-left:30px;
+		padding:10px;
+	}
+	.gerenimg{
+		margin-top:80px;
+	}
+	.login-box{
+		margin-top:40px;
+		border-top:1px solid #d6d7dc;
+		border-bottom:1px solid #d6d7dc;
+		background:#fff;
+		padding-left:24px;
+		
+	}
+	.label1{
+		padding-right:24px;
+		height:88px;
+		line-height:88px;
+		flex-direction: row;
+	}
+	.inpuval{
+		padding-left:20px;
+		outline: none;
+		border:none;
+		font-size:26px;
+		color:#323232;
+	}
+	.resert{
+		text-align:right;
+		padding-right:24px;
+		margin-top:22px;
+		color:#333333;
+		font-size:22px;
+		line-height:22px;
+	}
+	.login-btn{
+		width:100%;
+		height:88px;
+		border-radius:8px;
+		line-height:88px;
+		text-align:center;
+		color:#fff;
+		font-size:32px;
+		background:#1b9cf7;
+		margin-top:40px;
+		margin-left:24px;
+		margin-right:24px;
+	}
+	.register-btn{
+		text-align:center;
+		margin-top:40px;
+		font-size:32px;
+		line-height:32px;
+		color:#323232;
+	}
+	.huo{
+		text-align:center;
+		margin-top:48px;
+		font-size:32px;
+		line-height:32px;
+		color:#323232;
+	}
+	.threelogin{
+		flex-direction: row;
+		justify-content:center;
+		margin-top:40px;
+	}
+	.otrlogin{
+		text-align:center;
+		
+	}
+	.otrtext{
+		text-align:center;
+		margin-top:12px;
+		color:#323232;
+		line-height:28px;
+		font-size:28px;
+	}
+	.baocuo{
+		text-align:center;
+		font-size:28px;
+		line-height:28px;
+		margin-top:20px;
+		margin-bottom:10px;
+		color:red;
+	}
+</style>
+<script>
+    require('weex-components');
+    var storage = require('@weex-module/storage');
+    var modal = require('@weex-module/modal');
+    var stream = require('@weex-module/stream');
+    var navigator = require('@weex-module/navigator');
+    var apis = require('../common/api');
+    var md5 = require('../common/md5');
+    var locurl = apis.apiurl.resurl;
+    module.exports = {
+    	data: {
+            title: '', 
+            readingList: [], 
+            tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+            baseURL: '',
+            marginleft: 300,
+      		userChange: '',
+      		pasChange: '',
+      		baocuo: ''
+        },
+        created: function(){
+        	var self = this;
+        	var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+	        this.baseURL = base;
+        	this.$getConfig(function (config) {
+	            self.marginleft = config.env.deviceWidth;
+	        }.bind(this));
+        },
+        methods: {
+        	onBackClick: function (e) {
+                var self = this;
+                var params = {
+                	'url': this.baseURL.split('?')[0],
+                    'animated': 'true'
+                };
+                navigator.pop(params, function (e) {
+                    //callback
+                });
+           },
+           onlogin: function (e) {
+                var self = this;
+                var username = self.$el('uput').attr.value;
+                var password = md5(self.$el('pput').attr.value);
+                if(username == '' || self.$el('pput').attr.value == ''){
+                	this.baocuo = '用户名或者密码不能为空';
+                }else{
+                	this.getStarCount('user/login.json?userName='+ username +'&password='+ password , res => {
+		               var data = res.data;
+		               if(data.status == 1){
+		               	 	storage.setItem('userName', username, function (e) {});
+		               	 	storage.setItem('passWord', password, function (e) {});
+		               	 	storage.setItem('token',data.data.token,function(e){});
+		                	var urld = this.baseURL.split('?')[0];
+		                	var params = {
+			                	url: urld,
+			                    'animated': 'true'
+			                };
+			                navigator.push(params, function (e) {
+			                    //callback
+			                });
+		                }else{
+		                	self.baocuo = data.message;
+		                }
+		            });
+                }
+                
+                
+                
+           },
+           getStarCount: function(repo,callback) {
+	            return stream.fetch({
+	              method: 'GET',
+	              type: 'json',
+	              url: locurl + repo
+	            }, callback)
+	        },
+	        onchange1: function(event) {
+		        this.userChange = event.value;
+		    },
+		    onchange2: function(event) {
+		        this.pasChange = event.value;
+		    },
+		    oninput1: function(event){
+		    	this.baocuo = '';
+		    },
+		    oninput2: function(event){
+		    	this.baocuo = '';
+		    },
+		    get: function(){
+		    	storage.getItem('userName',function (e) {})
+		    	storage.getItem('passWord',function (e) {})
+		    }
+        }
+    }
+</script>

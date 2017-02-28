@@ -1,0 +1,177 @@
+<template>
+    <div class="boss">
+    	<header showback="{{showback}}"></header>
+    	<list class="listdetail">
+    		<cell class="listcell">
+    			<div class="ndetail">
+    				<image class="detailimg" onclick="onclik" style="width:{{widthvie}}px;height:310px;" src="{{moniimg}}"></image>
+    				<div class="detailval">
+    					<text class="detailtitle">{{dat.title}}</text>
+    					<div class="detail-star">
+    						<div class="star">
+    							<image style="height:22px;width:22px;" class="star-img" src="{{tubiao}}"></image>
+    							<text class="star-text">{{dat.readCount}}</text>
+    						</div>
+    						<div class="star">
+    							<image style="height:22px;width:22px;" class="star-img" src="{{tubiao}}"></image>
+    							<text class="star-text">{{dat.answerCount}}</text>
+    						</div>
+    					</div>
+    					<text class="detailtext">{{dat.summary}}</text>
+    					<div class="tibtn">
+    						<div class="tibtn1" style="width:{{(widthvie-48)/2-4}}px;background:#ecc333;">
+    							<text style="margin-top:10px;color:#8e7002;">{{dat.questionCount}}</text>
+    							<text style="color:#8e7002;font-size:32px;margin-top:6px;">题量</text>
+    						</div>
+    						<div class="tibtn1" style="width:{{(widthvie-48)/2-4}}px;">
+    							<text style="font-size:32px;margin-top:10px;color:#a31867;">{{arr[dat.status-1]}}</text>
+    							<text style="font-size:32px;margin-top:6px;color:#a31867;">状态</text>
+    						</div>
+    					</div>
+    					<text onclick="datibtn" style="width:{{widthvie-48}}px;" class="dati" daturl="{{dat.link}}">开始答题</text>
+    				</div>
+    			</div>
+    		</cell>
+    	</list>
+    </div>
+</template>
+<style>
+	.boss{
+		background:#f3f3f3;
+	}
+	.detailval{
+		margin-left:24px;
+		margin-right:24px;
+	}
+	.detailtitle{
+		font-size:30px;
+		line-height:30px;
+		color:#323232;
+		margin-top:40px;
+	}
+	.detail-star{
+		flex-direction: row;
+		height:88px;
+	}
+	.star{
+		flex-direction: row;
+		margin-top:38px;
+	}
+	.star-text{
+		font-size:22px;
+		line-height:22px;
+		color:#909090;
+	}
+	.detailtext{
+		margin-top:30px;
+		line-height:34px;
+		font-size:22px;
+		color:#656565;
+		text-indent:2em;
+	}
+	.tibtn{
+		flex-direction: row;
+		margin-top:20px;
+		justify-content:space-between;
+	}
+	.tibtn1{
+		height:88px;
+		background:#ef99ca;
+		text-align:center;
+		border-radius:8px;
+	}
+	.dati{
+		margin-top:60px;
+		line-height:88px;
+		height:88px;
+		font-size:32px;
+		background:#1b9cf7;
+		color:#fff;
+		text-align:center;
+		border-radius:8px;
+	}
+</style>
+<script>
+    require('weex-components');
+    var modal = require('@weex-module/modal');
+    var storage = require('@weex-module/storage');
+    var navigator = require('@weex-module/navigator');
+    var stream = require('@weex-module/stream');
+    var apis = require('../common/api');
+    var locurl = apis.apiurl.resurl;
+    module.exports = {
+    	data: {
+            title: '', 
+            readingList: [], 
+            moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg',
+            tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+            baseURL: '',
+            showback: true,
+            login: false,
+            widthvie: 750,
+            nu: 2,
+            dat: [],
+            arr: ['运行中','关闭']
+        },
+        created: function() {
+        	var self = this;
+        	var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+        	this.baseURL = base;
+        	this.nu = this.$getConfig().bundleUrl.split("=")[2];
+        	var nub= this.nu;
+        	this.$getConfig(function (config) {
+	            self.widthvie = config.env.deviceWidth;
+	        }.bind(this));
+	         this.getStarCount('question/info.json?questionId=' + nub , res => {
+                self.dat = res.data.data;
+            });
+            // panduan login
+            storage.getItem('token',function (e) {
+	        	self.getStarCount('user/isLogin.json?token='+ e.data,res => {
+	        		if(res.data.status == 1){
+	        			self.login = true;
+	        		}
+	        	})
+	        })
+        },
+        methods: {
+        	onBackClick: function (e) {
+                var self = this;
+                var params = {
+                	url : this.baseURL + 'modules/newslist.js',
+                    'animated': 'true'
+                };
+                navigator.pop(params, function (e) {
+                    //callback
+                });
+            },
+            datibtn: function(e){
+            	var daturl = e.target.attr.daturl;
+            	if(!this.login){
+            		var params = {
+		                'url': this.baseURL + 'modules/login.js',
+		                'animated': 'true'
+		            };
+		            navigator.push(params, function (e) {
+		                //callback
+		            });
+            	}else{
+            		var params = {
+		                'url': daturl,
+		                'animated': 'true'
+		            };
+		            navigator.push(params, function (e) {
+		                //callback
+		            });
+            	}
+            },
+            getStarCount: function(repo,callback) {
+	            return stream.fetch({
+	              method: 'GET',
+	              type: 'json',
+	              url: locurl + repo
+	            }, callback)
+	        }
+        }
+    }
+</script>

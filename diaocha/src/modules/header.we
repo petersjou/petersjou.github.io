@@ -1,0 +1,75 @@
+<template>
+    <div>
+        <div class="nav_bar">
+            <div  class="navleft" >
+                <image onclick="goback" if="{{showback}}" style="width:88px;height:88px;" 
+                       src="https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"></image>
+            </div>
+            <div class="navtitle">
+            	<text>{{title}}</text>
+            </div>
+            <div class="navright">
+            	<image style="width:44px;height:44px;" class="navrightimg"
+                src="http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"></image>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+   .nav_bar{
+   		flex-direction: row;
+        height: 88px;
+        background:#1b9df6;
+   }
+   .navleft{
+   		flex:1;
+   		margin-left:10px;
+   }
+   .navtitle{
+   		flex:1;
+   		color:#fff;
+   		justify-content: center;
+        align-items: center;
+        flex-direction: row;
+   }
+   .navright{
+   		flex:1;
+   		background-position:right center;
+   		margin-right:10px;
+   		position:relative;
+   }
+   .navrightimg{
+   		text-align:right;
+   		position:absolute;
+   		right:10px;
+   		top:22px;
+   }
+</style>
+
+<script>
+    require('weex-components');
+    var modal = require('@weex-module/modal');
+    var navigator = require('@weex-module/navigator');
+    module.exports = {
+        data: {
+            title: '调查星',
+            justifyContent: 'center',
+            showback: false
+        },
+        created: function () {
+            var self = this;
+        },
+        methods: {
+            goback: function (e) {
+				var self = this;
+                var params = {
+                    'animated': 'true'
+                };
+                navigator.pop(params, function (e) {
+                    //callback
+                });
+            }
+        }
+    }
+</script>

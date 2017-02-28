@@ -1,0 +1,159 @@
+ <template>
+    <div style="background:#f3f3f3;">
+       <header title="设置" showback="{{showback}}"></header>
+       <scroller class="scroller">
+	       <div class="user-box">
+	       		<div class="user-cont" style="margin-top:40px;">
+	       			<div class="user-val userinit">
+	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
+	       					<div class="muleft" style="flex-direction: row;">
+	       						<image class="use-img" src="{{tubiao}}"></image>
+	       						<text class="use-text">昵称</text>
+	       					</div>
+	       					<image class="use-img" src="{{tubiao}}"></image>
+	       				</div>
+	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
+	       					<div class="muleft" style="flex-direction: row;">
+	       						<image class="use-img" src="{{tubiao}}"></image>
+	       						<text class="use-text">性别</text>
+	       					</div>
+	       					<image class="use-img" src="{{tubiao}}"></image>
+	       				</div>
+	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
+	       					<div class="muleft" style="flex-direction: row;">
+	       						<image class="use-img" src="{{tubiao}}"></image>
+	       						<text class="use-text">地址</text>
+	       					</div>
+	       					<image class="use-img" src="{{tubiao}}"></image>
+	       				</div>
+	       				
+	       				<div class="myinit" style="flex-direction: row;margin-top:40px;justify-content: space-between;">
+	       					<div class="muleft" style="flex-direction: row;">
+	       						<image class="use-img" style="" src="{{tubiao}}"></image>
+	       						<text class="use-text">手机</text>
+	       					</div>
+	       					<image class="use-img" src="{{tubiao}}"></image>
+	       				</div>
+	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
+	       					<div class="muleft" style="flex-direction: row;">
+	       						<image class="use-img" src="{{tubiao}}"></image>
+	       						<text class="use-text">邮箱</text>
+	       					</div>
+	       					<image class="use-img" src="{{tubiao}}"></image>
+	       				</div>
+	       			</div>
+	       		</div>
+	       </div>
+       </scroller>
+    </div>
+</template> 
+
+<style>
+	.user-box{
+		background: #f3f3f3;
+	}
+    
+    .myinit{
+    	padding-left:24px;
+    	padding-right:24px;
+    	height:88px;
+    	line-height:88px;
+    	background:#fff;
+    	border-bottom:1px solid #e1e1e1;
+    }
+    .use-img{
+    	margin-top:25px;
+    	width:38px;
+    	height:38px;
+    }
+    .use-text{
+    	line-height:88px;
+    	color:#323232;
+    	font-size:30px;
+    	margin-left:10px;
+    }
+</style>
+
+<script>
+    require('weex-components');
+    var modal = require('@weex-module/modal');
+    var storage = require('@weex-module/storage');
+    var stream = require('@weex-module/stream');
+    var apis = require('../common/api.js');
+    var navigator = require('@weex-module/navigator');
+    var locurl = apis.apiurl.resurl;require('weex-components');
+    module.exports = {
+        data: {
+        	baseURL: '',
+        	moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg',
+        	userleft: 300,
+        	login: false,
+        	showback: true,
+        	userdename: 'asdas',
+        	username: '',
+        	tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png'
+        },
+        created: function() {
+        	var self = this;
+			var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+        	this.baseURL = base;
+        	this.$getConfig(function (config) {
+	            self.userleft = config.env.deviceWidth / 2 - 65;
+	        }.bind(this));
+	        storage.getItem('token',function (e) {
+	        	self.getStarCount('user/isLogin.json?token='+ e.data,res => {
+	        		if(res.data.status == 1){
+	        			self.login = true;
+	        		}
+	        	})
+	        })
+        },
+        methods: {
+        	tologin: function(e) {
+				var self = this;
+	            var vm = this;
+	            var params = {
+	                'url': this.baseURL + 'modules/login.js',
+	                'animated': 'true'
+	            };
+	            navigator.push(params, function (e) {
+	                //callback
+	            });
+			},
+			toregister: function(e) {
+				var self = this;
+	            var vm = this;
+	            var params = {
+	                'url': this.baseURL + 'modules/register.js',
+	                'animated': 'true'
+	            };
+	            navigator.push(params, function (e) {
+	                //callback
+	            });
+			},
+			lostlogin: function(){
+				storage.removeItem('userName', function (e) {});
+				storage.removeItem('passWord', function (e) {});
+				storage.removeItem('token', function (e) {});
+				var params = {
+	                'url': this.baseURL.split('?')[0],
+	                'animated': 'true'
+	            };
+	            navigator.push(params, function (e) {
+	                //callback
+	            });
+			},
+			get: function(){
+		    	storage.getItem('userName',function (e) {});
+		    	storage.getItem('passWord',function (e) {});
+		    },
+		    getStarCount: function(repo,callback) {
+	            return stream.fetch({
+	              method: 'GET',
+	              type: 'json',
+	              url: locurl + repo
+	            }, callback)
+	        }
+        }
+    }
+</script>

@@ -1,0 +1,126 @@
+<template>
+    <div class="loginbox" style="background:#f3f3f3;">
+    	<scroller class="scroller">
+    		<div>
+    			<div class="regheader" >
+    				<image class="backbtn" src="{{tubiao}}" onclick="onBackClick"></image>
+    				<text class="head-title">注册</text>
+    				<text class="head-next" onclick="registeragain">下一步</text>
+    			</div>
+    			<div class="login-box">
+	    			<label class="label1" style="">
+	    				<text style="line-height:88px;" >手机</text>
+	    				<input class="inpuval" type="text" style="width:{{marginleft-100}}px;" placeholder="请您输入常用手机号码">
+	    			</label>
+	    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+	    				<text style="line-height:88px;" >邮箱</text>
+	    				<input class="inpuval" type="text" style="width:{{marginleft-100}}px;" placeholder="请输入常用电子邮箱">
+	    			</label>
+	    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+	    				<text style="line-height:88px;" >密码</text>
+	    				<input class="inpuval" type="password" style="width:{{marginleft-100}}px;" placeholder="请输入2-9位的密码">
+	    			</label>
+	    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+	    				<text style="line-height:88px;" >确认密码</text>
+	    				<input class="inpuval" type="password" style="width:{{marginleft-100}}px;" placeholder="请再次输入密码">
+	    			</label>
+	    		</div>
+    		</div>
+    		
+    	</scroller>
+    </div>
+</template>
+<style>
+	.login-box{
+		margin-top:40px;
+		border-top:1px solid #d6d7dc;
+		border-bottom:1px solid #d6d7dc;
+		background:#fff;
+		padding-left:24px;
+		
+	}
+	.label1{
+		padding-right:24px;
+		height:88px;
+		line-height:88px;
+		flex-direction: row;
+	}
+	.inpuval{
+		padding-left:20px;
+		outline: none;
+		border:none;
+		font-size:26px;
+		color:#323232;
+	}
+	.regheader{
+		flex-direction: row;
+		justify-content:space-between;
+		height:88px;
+		background:#1b9cf7;
+		color:#fff;
+		line-height:88px;
+	}
+	.backbtn{
+		width:74px;
+		height:28px;
+		margin-left:24px;
+		margin-top:30px;
+	}
+	.head-title{
+		font-size:32px;
+	}
+	.head-next{
+		font-size:22px;
+		margin-right:24px;
+	}
+</style>
+<script>
+    require('weex-components');
+    var modal = require('@weex-module/modal');
+    var stream = require('@weex-module/stream');
+    var navigator = require('@weex-module/navigator');
+    var apis = require('../common/api');
+    module.exports = {
+    	data: {
+            title: '', 
+            readingList: [], 
+            tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+            baseURL: '',
+            marginleft: 300
+        },
+        created: function(){
+        	var self = this;
+			var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+	        this.baseURL = base;
+        	this.$getConfig(function (config) {
+	            self.marginleft = config.env.deviceWidth;
+	        }.bind(this));
+        },
+        methods: {
+        	onBackClick: function (e) {
+                var self = this;
+                var params = {
+                    'animated': 'true'
+                };
+                navigator.pop(params, function (e) {
+                    //callback
+                });
+           },
+           registeragain: function(e) {
+				var self = this;
+				if(e.target.attr.status === 2){
+				    return ;
+				};
+	            var itemid = e.target.attr.itemid;
+	            var vm = this;
+	            var params = {
+	                'url': this.baseURL + 'modules/registeragain.js',
+	                'animated': 'true'
+	            };
+	            navigator.push(params, function (e) {
+	                //callback
+	            });
+			}
+        }
+    }
+</script>

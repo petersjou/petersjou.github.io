@@ -1,0 +1,421 @@
+<template>
+    <div style="overflow:hidden;">
+		<header></header>
+		<list class="main-list">
+		    <refresh class="refresh-view" display="{{refresh_display}}" onrefresh="onrefresh">
+                <text class="refresh-arrow" if="{{(refresh_display==='hide')}}">刷新</text>
+                <loading-indicator></loading-indicator>
+            </refresh>
+		    <cell class="top-slider" >
+                <slider class="slider" interval="3000" auto-play="false">
+                  <div class="slider-pages" style="width:{{widthview}}px;" repeat="item in banner">
+                    <image style="height:370px;" class="img"  src="{{moniimg}}"></image>
+                    <div class="titlebox" style="position:absolute;left:0;bottom:0;height:60px;width:{{widthview}}px;background:rgba(0,0,0,0.5);">
+                        <text class="title" style="line-height:60px;padding-left:10px;color:#fff;width:{{widthview-100}}px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{item.title}}</text>
+                    </div>
+                  </div>
+                  <indicator class="indicator"></indicator>
+                </slider>
+            </cell>
+            <cell class="center-cell">
+                <div class="btnbar" style="flex-direction: row;" if="{{indeshow}}">
+                    <div class="ben-left btn-cen" onclick="changindeshow">
+                        <image style="height:40px;width:40px;margin-left:{{marginl}}px;" class="cent-img"  src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                        <text class="title-text" style="color:#ffcf5c;">最新问卷</text>
+                    </div>
+                    <div class="ben-right btn-cen" style="" onclick="changindehide">
+                        <image style="height:40px;width:40px;margin-left:{{marginl}}px;" class="cent-img"  src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>                                               
+                                                  
+                        <text class="title-text">热点新闻</text>
+                    </div>
+                </div>
+                <div class="btnbar" style="flex-direction: row;" if="{{!indeshow}}">
+                    <div class="ben-left btn-cen" onclick="changindeshow">
+                        <image style="height:40px;width:40px;margin-left:{{marginl}}px;" class="cent-img"  src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                        <text class="title-text" >最新问卷</text>
+                    </div>
+                    <div class="ben-right btn-cen" style="" onclick="changindehide">
+                        <image style="height:40px;width:40px;margin-left:{{marginl}}px;" class="cent-img"  src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>                                               
+                                                  
+                        <text class="title-text" style="color:#ffcf5c;">热点新闻</text>
+                    </div>
+                </div>
+            </cell>
+            <cell class="bootom-list">
+                <div class="list-box" if="{{indeshow}}">
+                    <div class="list-items" repeat="item in indesurvey" itemid="{{item.id}}" status="{{item.status}}" onclick="maindetail" style="margin-left:{{itemleft}}px;">
+                        <image class="item-img" style="width:662px;height:280px;" src="{{moniimg}}"></image>
+                        <div class="surveylist">
+                            <text class="surtitle">{{item.title}}</text>
+                            <div class="statusbox" style="flex-direction: row;width:120px;">
+                                <text class="statusnow" style="">状态：</text>
+                                <text class="statustext" style="color:{{item.color}}">{{statusarr[item.status-1]}}</text>
+                            </div>
+                            <text class="detail">{{item.summary}}</text>
+                            <div class="surveyotr" style="flex-direction: row;justify-content:space-between;">
+                                <div class="otr1">
+                                    <text class="surveytime">发表于：{{item.updateTime}}</text>
+                                </div>
+                                <div class="otr2" style="flex-direction: row;">
+                                    <div class="chakan otr3" style="flex-direction: row;">
+                                        <image style="width:22px;height:22px;" src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                                        <text class="otrtt">{{item.readCount}}</text>
+                                    </div>
+                                    <div class="shoucang otr3" style="flex-direction: row;">
+                                        <image style="width:22px;height:22px;" src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                                        <text class="otrtt">{{item.answerCount}}</text>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="listbox" if="{{!indeshow}}">
+                    <div class="newslist" repeat="item in indenews" itemid="{{item.id}}" onclick="mainnewsdetail" style="background:{{item.color}};padding-left:{{itemleft}}px;padding-right:{{itemleft}}px;">
+                        <div class="indenewsimg">
+                            <image style="height:106px;width:140px;" class="newsimg" src="{{moniimg}}"></image>
+                        </div>
+                        <div class="newstext" style="margin-left:14px;flex:1;">
+                            <text class="newstitle">{{item.title}}</text>
+                            <text class="newsjianjie">{{item.summary}}</text>
+                            <div class="newbottom" style="">
+                                <text class="newstime">{{item.updateTime}}</text>
+                                <div class="showtimes" >
+                                    <image style="width:22px;height:22px;" class="readimg" src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                                    <text class="readcount">{{item.readCount}}</text>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </cell>
+            <loading class="refresh-view" display="{{loading_display}}" onloading="onloading">
+                <text class="refresh-arrow">加载更多</text>
+                <loading-indicator></loading-indicator>
+            </loading>
+	    </list>
+    </div>
+</template>
+
+<style>
+    .main-list{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 88px;
+        bottom: 0px;
+        padding-bottom:30px;
+    }
+    /* banner */
+    .slider{
+        width: 100%;
+        height: 370px;
+    }
+    .slider-pages{
+        position: relative;
+    }
+    .slider .img{
+        width: 100%;
+    }
+    .indicator{
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        right: 100px;
+        bottom: 0px;
+        itemColor: #dddddd;
+        itemSelectedColor: #45b5f0;
+        item-size: 14;
+        margin:0;
+    }
+    .btnbar{
+        flex-direction: row;
+        width: 100%;
+        height: 98px;
+        background: #484b57;
+        flex-wrap: nowrap;
+    }
+    /* btn */
+    .btn-cen{
+        flex:1;
+        flex-direction: center;
+        justify-content: center;
+    }
+    .cent-img{
+        text-align: center;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+    .title-text{
+        text-align: center;
+        color: #fff;
+    }
+    /* list */
+    .surveylist{
+        position:relative; 
+    }
+    .list-box{
+        width:100%;
+        background:#f3f3f3;
+        padding-bottom:30px;
+    }
+    .list-items{
+        margin-top:20px;
+        width:700px;
+        height:428px;
+        padding:20px;
+        border-radius:8px;
+        background:#fff;
+    }
+    .item-img{
+        border-radius:8px;
+    }
+    .surtitle{
+        width:70%;
+        font-size:32px;
+        line-height:32px;
+        color:#323232;
+        height:32px;
+        margin-top:10px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .detail{
+        margin-top:10px;
+        font-size:24px;
+        line-height:24px;
+        color:#646464;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .statusbox{
+        position:absolute;
+        right:40px;
+        top:10px;
+    }
+    .statusnow{
+        font-size:26px;
+        line-height:26px;
+    }
+    .statustext{
+        font-size:26px;
+        line-height:26px;
+    }
+    .surveyotr{
+        margin-top:10px;
+    }
+    .surveytime{
+        font-size:22px;
+        color:#909090;
+    }
+    .otr3{
+        margin-right:10px;
+    }
+    .otrtt{
+        font-size:22px;
+        lien-height:22px;
+        margin-left:6px;
+    }
+    /* list2 */
+   .newslist{
+        padding-top:14px;
+        padding-bottom:14px;
+        height:146px;
+        flex-direction: row;
+   }
+   .newslist:nth-of-type(odd){
+        background:#f8f6f4;
+    }
+   .newslist:nth-of-type(even){
+        background:#f3f3f3;
+    }
+   .indenewsimg{
+       height:116px;
+       width: 150px;
+       border: 1px solid #e5e4e4;
+       border-radius:6px;
+       background:#fff;
+       padding:4px;
+   }
+   .newstitle{
+        font-size:32px;
+        line-height:32px;
+        margin-top:10px;
+        color:#323232;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+   }
+    .newsjianjie{
+        font-size:24px;
+        line-height:24px;
+        margin-top:10px;
+        color:#646464;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .newbottom{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top:10px;
+    }
+    .newstime{
+        font-size:22px;
+        line-height:22px;
+        color:#909090;
+    }
+    .showtimes{
+        flex-direction: row;
+    }
+    .readcount{
+        font-size:22px;
+        line-height:22px;
+        color:#909090;
+    }
+</style>
+
+<script>
+  require('weex-components');
+  var modal = require('@weex-module/modal');
+  var stream = require('@weex-module/stream');
+  var apis = require('../common/api.js');
+  var navigator = require('@weex-module/navigator');
+  var locurl = apis.apiurl.resurl;
+  module.exports = {
+  	data: {
+		baseURL: '',
+		banner: [],
+		indesurvey: [],
+		indenews: [],
+		widthview: 750,
+		heightview: 1000,
+		refresh_display: 'hide',
+		loading_display: 'hide',
+		indeshow: true,
+		marginl: 300,
+		statusarr: ['开放','关闭'],
+		itemleft: 24,
+		statuscolor: '#ffd05c',
+		moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg'
+	},
+	created: function() {
+		var self = this;
+		var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+        this.baseURL = base;
+        self.refresh();
+        this.$getConfig(function (config) {
+            self.widthview = config.env.deviceWidth;
+            self.marginl = config.env.deviceWidth / 4 - 20;
+            self.itemleft = (config.env.deviceWidth - 700) / 2;
+        }.bind(this));
+	},
+	methods: {
+	    onrefresh: function(e) {
+	        var self = this;
+            self.refresh_display = 'show';
+            self.refresh();
+            self.refresh_display = 'hide';
+	    },
+        onloading :function() {
+            var self = this;
+            self.loading_display = 'show';
+            self.loading_display = 'hide';
+        },
+	    changindeshow: function() {
+           this.indeshow = true;
+        },
+	    changindehide: function() {
+	       this.indeshow = false;
+	    },
+		maindetail: function(e) {
+			var self = this;
+			if(e.target.attr.status === 2){
+			    return ;
+			};
+            var itemid = e.target.attr.itemid;
+            var vm = this;
+            var params = {
+                'url': this.baseURL + 'modules/sdetail.js?id=' + itemid,
+                'animated': 'true'
+            };
+            navigator.push(params, function (e) {
+                //callback
+            });
+		},
+		mainnewsdetail: function(e) {
+		    var self = this;
+            var itemid = e.target.attr.itemid;
+            var vm = this;
+            var params = {
+                'url': this.baseURL + 'modules/ndetail.js?id=' + itemid,
+                'animated': 'true'
+            };
+            navigator.push(params, function (e) {
+                //callback
+            });
+		},
+		getStarCount: function(repo,callback) {
+            return stream.fetch({
+              method: 'GET',
+              type: 'json',
+              url: locurl + repo
+            }, callback)
+        },
+		refresh :function() {
+		      // banner
+            this.getStarCount('banner/list.json', res => {
+                this.banner = res.data.data;
+            });
+            // survey
+            this.getStarCount('question/list.json?page=1&pageSize=10', res => { 
+                this.indesurvey = res.data.data.list;
+                for(var i=0;i<this.indesurvey.length;i++) {
+                    if(this.indesurvey[i].status === 1){
+                        this.indesurvey[i].color = '#ffd05c';
+                    } else {
+                        this.indesurvey[i].color = '#666';
+                    }
+                    this.indesurvey[i].updateTime = this.times(this.indesurvey[i].updateTime);
+                }
+            });
+            // news
+            this.getStarCount('news/list.json?page=1&pageSize=10', res => {
+                this.indenews = res.data.data.list;
+                for (var i=0;i<this.indenews.length;i++) {
+                    if(i%2){
+                        this.indenews[i].color = '#f8f6f4';
+                    } else {
+                        this.indenews[i].color = '#f3f3f3';
+                    }
+                    this.indenews[i].updateTime = this.times(this.indenews[i].updateTime);
+                };
+            });
+        },
+        times: function (value) {
+            function add0(m) {
+                return m < 10 ? '0' + m : m
+            }
+            var time = new Date(parseInt(value));
+            var y = time.getFullYear();
+            var m = time.getMonth() + 1;
+            var d = time.getDate();
+            return y + '年' + add0(m) + '月' + add0(d) + '日';
+         }
+	},
+	filters: {
+        times: function (value) {
+            function add0(m) {
+                return m < 10 ? '0' + m : m
+            }
+            var time = new Date(parseInt(value));
+            var y = time.getFullYear();
+            var m = time.getMonth() + 1;
+            var d = time.getDate();
+            return y + '年' + add0(m) + '月' + add0(d) + '日';
+         }
+    }
+  };
+</script>

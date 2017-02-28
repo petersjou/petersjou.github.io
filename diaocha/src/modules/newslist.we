@@ -1,0 +1,196 @@
+<template>
+    <div style="overflow:hidden;">
+        <header title="新闻"></header>
+        <list class="newed-list">
+            <refresh class="refresh-view" display="{{refresh_display}}" onrefresh="onrefresh">
+                <text class="refresh-arrow" if="{{(refresh_display==='hide')}}">刷新</text>
+                <loading-indicator></loading-indicator>
+            </refresh>
+            <cell class="bootom-list">
+                <div class="listbox" >
+                    <div class="newslist" repeat="item in indenews" itemid="{{item.id}}" onclick="mainnewsdetail" style="background:{{item.color}};padding-left:{{itemleft}}px;padding-right:{{itemleft}}px;">
+                        <div class="indenewsimg">
+                            <image style="height:106px;width:140px;" class="newsimg" src="{{moniimg}}"></image>
+                        </div>
+                        <div class="newstext" style="margin-left:14px;flex:1;">
+                            <text class="newstitle">{{item.title}}</text>
+                            <text class="newsjianjie">{{item.summary}}</text>
+                            <div class="newbottom" style="">
+                                <text class="newstime">{{item.updateTime}}</text>
+                                <div class="showtimes" >
+                                    <image style="width:22px;height:22px;" class="readimg" src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                                    <text class="readcount">{{item.readCount}}</text>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </cell>
+            <loading class="refresh-view" display="{{loading_display}}" onloading="onloading">
+                <text class="refresh-arrow">加载更多</text>
+                <loading-indicator></loading-indicator>
+            </loading>
+        </list>
+    </div>
+</template>
+
+<style>
+    .newed-list{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 88px;
+        bottom: 0px;
+        padding-bottom:30px;
+    }
+    /* list2 */
+   .newslist{
+        padding-top:14px;
+        padding-bottom:14px;
+        height:146px;
+        flex-direction: row;
+   }
+   .newslist:nth-of-type(odd){
+        background:#f8f6f4;
+    }
+   .newslist:nth-of-type(even){
+        background:#f3f3f3;
+    }
+   .indenewsimg{
+       height:116px;
+       width: 150px;
+       border: 1px solid #e5e4e4;
+       border-radius:6px;
+       background:#fff;
+       padding:4px;
+   }
+   .newstitle{
+        font-size:32px;
+        line-height:32px;
+        margin-top:10px;
+        color:#323232;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+   }
+    .newsjianjie{
+        font-size:24px;
+        line-height:24px;
+        margin-top:10px;
+        color:#646464;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .newbottom{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top:10px;
+    }
+    .newstime{
+        font-size:22px;
+        line-height:22px;
+        color:#909090;
+    }
+    .showtimes{
+        flex-direction: row;
+    }
+    .readcount{
+        font-size:22px;
+        line-height:22px;
+        color:#909090;
+    }
+</style>
+
+<script>
+  require('weex-components');
+  var modal = require('@weex-module/modal');
+  var stream = require('@weex-module/stream');
+  var apis = require('../common/api.js');
+  var navigator = require('@weex-module/navigator');
+  var locurl = apis.apiurl.resurl;
+  module.exports = {
+    data: {
+        baseURL: '',
+        banner: [],
+        indesurvey: [],
+        indenews: [],
+        widthview: 750,
+        heightview: 1000,
+        refresh_display: 'hide',
+        loading_display: 'hide',
+        indeshow: true,
+        marginl: 300,
+        itemleft: 24,
+        statuscolor: '#ffd05c',
+        moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg'
+    },
+    created: function() {
+        var self = this;
+        var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+        this.baseURL = base;
+        self.refresh();
+        this.$getConfig(function (config) {
+            self.widthview = config.env.deviceWidth;
+            self.marginl = config.env.deviceWidth / 4 - 20;
+            self.itemleft = (config.env.deviceWidth - 700) / 2;
+        }.bind(this));
+    },
+    methods: {
+        onrefresh: function(e) {
+            var self = this;
+            self.refresh_display = 'show';
+            self.refresh();
+            self.refresh_display = 'hide';
+        },
+        onloading :function() {
+            var self = this;
+            self.loading_display = 'show';
+            self.loading_display = 'hide';
+        },
+        mainnewsdetail: function(e) {
+            var self = this;
+            var itemid = e.target.attr.itemid;
+            var vm = this;
+            var params = {
+                'url': this.baseURL + 'modules/ndetail.js?id=' + itemid,
+                'animated': 'true'
+            };
+            navigator.push(params, function (e) {
+                //callback
+            });
+        },
+        getStarCount: function(repo,callback) {
+            return stream.fetch({
+              method: 'GET',
+              type: 'json',
+              url: locurl + repo
+            }, callback)
+        },
+        refresh :function() {
+            // news
+            this.getStarCount('news/list.json?page=1&pageSize=10', res => {
+                this.indenews = res.data.data.list;
+                for (var i=0;i<this.indenews.length;i++) {
+                    if(i%2){
+                        this.indenews[i].color = '#f8f6f4';
+                    } else {
+                        this.indenews[i].color = '#f3f3f3';
+                    }
+                    this.indenews[i].updateTime = this.times(this.indenews[i].updateTime);
+                };
+            });
+        },
+        times: function (value) {
+            function add0(m) {
+                return m < 10 ? '0' + m : m
+            }
+            var time = new Date(parseInt(value));
+            var y = time.getFullYear();
+            var m = time.getMonth() + 1;
+            var d = time.getDate();
+            return y + '年' + add0(m) + '月' + add0(d) + '日';
+         }
+    }
+  };
+</script>
