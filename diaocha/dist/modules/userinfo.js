@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(121)
-	var __weex_style__ = __webpack_require__(122)
-	var __weex_script__ = __webpack_require__(123)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(130)
+	var __weex_style__ = __webpack_require__(131)
+	var __weex_script__ = __webpack_require__(132)
 
 	__weex_define__('@weex-component/7a4c933faeab4c4273afa88e95dca0c6', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,9 +2299,6 @@
 
 
 /***/ },
-/* 94 */,
-/* 95 */,
-/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
@@ -2322,7 +2323,16 @@
 /* 118 */,
 /* 119 */,
 /* 120 */,
-/* 121 */
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2334,290 +2344,178 @@
 	    {
 	      "type": "header",
 	      "attr": {
-	        "title": "设置",
+	        "title": "个人信息",
 	        "showback": function () {return this.showback}
 	      }
 	    },
 	    {
-	      "type": "scroller",
+	      "type": "div",
 	      "classList": [
-	        "scroller"
+	        "user-box"
 	      ],
 	      "children": [
 	        {
 	          "type": "div",
 	          "classList": [
-	            "user-box"
+	            "user-cont"
 	          ],
+	          "style": {
+	            "marginTop": 40
+	          },
 	          "children": [
 	            {
 	              "type": "div",
 	              "classList": [
-	                "user-cont"
+	                "user-val",
+	                "userinit"
 	              ],
-	              "style": {
-	                "marginTop": 40
-	              },
 	              "children": [
 	                {
 	                  "type": "div",
 	                  "classList": [
-	                    "user-val",
-	                    "userinit"
+	                    "myinit"
 	                  ],
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
 	                  "children": [
 	                    {
-	                      "type": "div",
+	                      "type": "text",
 	                      "classList": [
-	                        "myinit"
+	                        "use-text"
 	                      ],
-	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
-	                      },
-	                      "children": [
-	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "昵称"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
-	                          "type": "image",
-	                          "classList": [
-	                            "use-img"
-	                          ],
-	                          "attr": {
-	                            "src": function () {return this.tubiao}
-	                          }
-	                        }
-	                      ]
+	                      "attr": {
+	                        "value": "用户名"
+	                      }
 	                    },
 	                    {
-	                      "type": "div",
-	                      "classList": [
-	                        "myinit"
-	                      ],
-	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
-	                      },
-	                      "children": [
-	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "性别"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
-	                          "type": "image",
-	                          "classList": [
-	                            "use-img"
-	                          ],
-	                          "attr": {
-	                            "src": function () {return this.tubiao}
-	                          }
-	                        }
-	                      ]
-	                    },
-	                    {
-	                      "type": "div",
-	                      "classList": [
-	                        "myinit"
-	                      ],
-	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
-	                      },
-	                      "children": [
-	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "地址"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
-	                          "type": "image",
-	                          "classList": [
-	                            "use-img"
-	                          ],
-	                          "attr": {
-	                            "src": function () {return this.tubiao}
-	                          }
-	                        }
-	                      ]
-	                    },
-	                    {
-	                      "type": "div",
-	                      "classList": [
-	                        "myinit"
-	                      ],
-	                      "style": {
-	                        "flexDirection": "row",
-	                        "marginTop": 40,
-	                        "justifyContent": "space-between"
-	                      },
-	                      "children": [
-	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "手机"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
-	                          "type": "image",
-	                          "classList": [
-	                            "use-img"
-	                          ],
-	                          "attr": {
-	                            "src": function () {return this.tubiao}
-	                          }
-	                        }
-	                      ]
-	                    },
-	                    {
-	                      "type": "div",
-	                      "classList": [
-	                        "myinit"
-	                      ],
-	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
-	                      },
-	                      "children": [
-	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "邮箱"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
-	                          "type": "image",
-	                          "classList": [
-	                            "use-img"
-	                          ],
-	                          "attr": {
-	                            "src": function () {return this.tubiao}
-	                          }
-	                        }
-	                      ]
+	                      "type": "text",
+	                      "attr": {
+	                        "value": function () {return this.userval}
+	                      }
 	                    }
 	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
+	                      "type": "text",
+	                      "classList": [
+	                        "use-text"
+	                      ],
+	                      "attr": {
+	                        "value": "性别"
+	                      }
+	                    },
+	                    {
+	                      "type": "text",
+	                      "attr": {
+	                        "value": function () {return this.sexval}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
+	                      "type": "text",
+	                      "classList": [
+	                        "use-text"
+	                      ],
+	                      "attr": {
+	                        "value": "地区"
+	                      }
+	                    },
+	                    {
+	                      "type": "text",
+	                      "attr": {
+	                        "value": function () {return this.addressval}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
+	                      "type": "text",
+	                      "classList": [
+	                        "use-text"
+	                      ],
+	                      "attr": {
+	                        "value": "手机"
+	                      }
+	                    },
+	                    {
+	                      "type": "text",
+	                      "attr": {
+	                        "value": function () {return this.phoneval}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
+	                      "type": "text",
+	                      "classList": [
+	                        "use-text"
+	                      ],
+	                      "attr": {
+	                        "value": "邮箱"
+	                      }
+	                    },
+	                    {
+	                      "type": "text",
+	                      "attr": {
+	                        "value": function () {return this.emailval}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "text",
+	                  "classList": [
+	                    "bianji"
+	                  ],
+	                  "events": {
+	                    "click": "tochangeinfo"
+	                  },
+	                  "attr": {
+	                    "value": "编辑个人信息"
+	                  }
 	                }
 	              ]
 	            }
@@ -2629,7 +2527,7 @@
 	}
 
 /***/ },
-/* 122 */
+/* 131 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2654,11 +2552,23 @@
 	    "color": "#323232",
 	    "fontSize": 30,
 	    "marginLeft": 10
+	  },
+	  "bianji": {
+	    "marginTop": 40,
+	    "fontSize": 32,
+	    "lineHeight": 88,
+	    "height": 88,
+	    "color": "#ffffff",
+	    "background": "#1b9cf7",
+	    "textAlign": "center",
+	    "marginLeft": 24,
+	    "marginRight": 24,
+	    "borderRadius": 10
 	  }
 	}
 
 /***/ },
-/* 123 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2669,7 +2579,7 @@
 	var stream = __weex_require__('@weex-module/stream');
 	var apis = __webpack_require__(85);
 	var navigator = __weex_require__('@weex-module/navigator');
-	var locurl = apis.apiurl.resurl;__webpack_require__(3);
+	var locurl = apis.apiurl.resurl;
 	module.exports = {
 					data: function () {return {
 									baseURL: '',
@@ -2679,6 +2589,13 @@
 									showback: true,
 									userdename: 'asdas',
 									username: '',
+									userval: '...',
+									sexval: '...',
+									addressval: '...',
+									phoneval: '...',
+									emailval: '...',
+									userid: '',
+									token: '',
 									tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png'
 					}},
 					created: function created() {
@@ -2692,6 +2609,18 @@
 													self.getStarCount('user/isLogin.json?token=' + e.data, function (res) {
 																	if (res.data.status == 1) {
 																					self.login = true;
+																	}
+													});
+									});
+									self.getitem(function () {
+													self.getStarCount('user/info.json?token=' + self.token + '&userId=' + self.userid, function (res) {
+																	var data = res.data;
+																	if (data.status == 1) {
+																					self.userval = data.data.userName;
+																					self.sexval = data.data.nickname;
+																					self.addressval = data.data.email;
+																					self.phoneval = data.data.phone;
+																					self.emailval = data.data.email;
 																	}
 													});
 									});
@@ -2725,9 +2654,30 @@
 													};
 													navigator.push(params, function (e) {});
 									},
+									tochangeinfo: function tochangeinfo() {
+													var params = {
+																	'url': this.baseURL + 'modules/changeinfo.js',
+																	'animated': 'true'
+													};
+													navigator.push(params, function (e) {});
+									},
 									get: function get() {
 													storage.getItem('userName', function (e) {});
 													storage.getItem('passWord', function (e) {});
+									},
+									getitem: function getitem(callback) {
+													var self = this;
+													storage.getItem('userId', function (e) {
+																	if (e.result == 'success') {
+																					self.userid = e.data;
+																					storage.getItem('token', function (e) {
+																									if (e.result == 'success') {
+																													self.token = e.data;
+																													callback();
+																									}
+																					});
+																	}
+													});
 									},
 									getStarCount: function getStarCount(repo, callback) {
 													return stream.fetch({

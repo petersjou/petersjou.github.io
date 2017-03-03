@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(94)
-	var __weex_style__ = __webpack_require__(95)
-	var __weex_script__ = __webpack_require__(96)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(103)
+	var __weex_style__ = __webpack_require__(104)
+	var __weex_script__ = __webpack_require__(105)
 
 	__weex_define__('@weex-component/bc41d43e632885a8339fa471bce6235f', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,13 +2299,20 @@
 
 
 /***/ },
-/* 94 */
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */
 /***/ function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
 	  "style": {
-	    "overflow": "hidden"
+	    "overflow": "hidden",
+	    "background": "#f3f3f3"
 	  },
 	  "children": [
 	    {
@@ -2466,7 +2477,7 @@
 	                        "cent-img"
 	                      ],
 	                      "attr": {
-	                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                        "src": "src/common/img/btn_questionnairetab_pre.png"
 	                      }
 	                    },
 	                    {
@@ -2504,7 +2515,7 @@
 	                        "cent-img"
 	                      ],
 	                      "attr": {
-	                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                        "src": "src/common/img/btn_Journalismtab_nor.png"
 	                      }
 	                    },
 	                    {
@@ -2551,7 +2562,7 @@
 	                        "cent-img"
 	                      ],
 	                      "attr": {
-	                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                        "src": "src/common/img/btn_questionnairetab_nor.png"
 	                      }
 	                    },
 	                    {
@@ -2586,7 +2597,7 @@
 	                        "cent-img"
 	                      ],
 	                      "attr": {
-	                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                        "src": "src/common/img/btn_Journalismtab_pre.png"
 	                      }
 	                    },
 	                    {
@@ -2764,7 +2775,7 @@
 	                                        "height": 22
 	                                      },
 	                                      "attr": {
-	                                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                                        "src": "src/common/img/list_icon_browse.png"
 	                                      }
 	                                    },
 	                                    {
@@ -2795,7 +2806,7 @@
 	                                        "height": 22
 	                                      },
 	                                      "attr": {
-	                                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                                        "src": "src/common/img/list_icon_Collection.png"
 	                                      }
 	                                    },
 	                                    {
@@ -2857,7 +2868,8 @@
 	                          "type": "image",
 	                          "style": {
 	                            "height": 106,
-	                            "width": 140
+	                            "width": 140,
+	                            "borderRadius": 8
 	                          },
 	                          "classList": [
 	                            "newsimg"
@@ -2903,15 +2915,6 @@
 	                          ],
 	                          "children": [
 	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "newstime"
-	                              ],
-	                              "attr": {
-	                                "value": function () {return this.item.updateTime}
-	                              }
-	                            },
-	                            {
 	                              "type": "div",
 	                              "classList": [
 	                                "showtimes"
@@ -2927,7 +2930,7 @@
 	                                    "readimg"
 	                                  ],
 	                                  "attr": {
-	                                    "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                                    "src": "src/common/img/list_icon_browse.png"
 	                                  }
 	                                },
 	                                {
@@ -2940,6 +2943,15 @@
 	                                  }
 	                                }
 	                              ]
+	                            },
+	                            {
+	                              "type": "text",
+	                              "classList": [
+	                                "newstime"
+	                              ],
+	                              "attr": {
+	                                "value": function () {return this.item.updateTime}
+	                              }
 	                            }
 	                          ]
 	                        }
@@ -2956,6 +2968,7 @@
 	          "classList": [
 	            "refresh-view"
 	          ],
+	          "shown": function () {return this.delloding},
 	          "attr": {
 	            "display": function () {return this.loading_display}
 	          },
@@ -2969,7 +2982,7 @@
 	                "refresh-arrow"
 	              ],
 	              "attr": {
-	                "value": "加载更多"
+	                "value": function () {return this.more}
 	              }
 	            },
 	            {
@@ -2983,7 +2996,7 @@
 	}
 
 /***/ },
-/* 95 */
+/* 104 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -3028,7 +3041,9 @@
 	  },
 	  "title-text": {
 	    "textAlign": "center",
-	    "color": "#ffffff"
+	    "color": "#ffffff",
+	    "fontSize": 24,
+	    "lineHeight": 28
 	  },
 	  "surveylist": {
 	    "position": "relative"
@@ -3043,7 +3058,8 @@
 	    "height": 428,
 	    "padding": 20,
 	    "borderRadius": 8,
-	    "background": "#fff"
+	    "background": "#fff",
+	    "border": "1px solid #e1dfe0"
 	  },
 	  "item-img": {
 	    "borderRadius": 8
@@ -3104,10 +3120,10 @@
 	  "indenewsimg": {
 	    "height": 116,
 	    "width": 150,
-	    "border": "1px solid #e5e4e4",
-	    "borderRadius": 6,
+	    "border": "1px solid #e1e1df",
+	    "borderRadius": 8,
 	    "background": "#fff",
-	    "padding": 4
+	    "padding": 3
 	  },
 	  "newstitle": {
 	    "fontSize": 32,
@@ -3148,13 +3164,14 @@
 	}
 
 /***/ },
-/* 96 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(3);
 	var modal = __weex_require__('@weex-module/modal');
+	var storage = __weex_require__('@weex-module/storage');
 	var stream = __weex_require__('@weex-module/stream');
 	var apis = __webpack_require__(85);
 	var navigator = __weex_require__('@weex-module/navigator');
@@ -3170,39 +3187,87 @@
 	        refresh_display: 'hide',
 	        loading_display: 'hide',
 	        indeshow: true,
+	        delloding: true,
 	        marginl: 300,
 	        statusarr: ['开放', '关闭'],
 	        itemleft: 24,
 	        statuscolor: '#ffd05c',
-	        moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg'
+	        moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg',
+	        username: '',
+	        password: '',
+	        npage1: 1,
+	        pages: 1,
+	        npage2: 1,
+	        pages2: 1,
+	        more: '加载更多'
 	    }},
 	    created: function created() {
 	        var self = this;
 	        var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
 	        this.baseURL = base;
-	        self.refresh();
+	        self.refreshkaishi();
 	        this.$getConfig(function (config) {
 	            self.widthview = config.env.deviceWidth;
 	            self.marginl = config.env.deviceWidth / 4 - 20;
 	            self.itemleft = (config.env.deviceWidth - 700) / 2;
 	        }.bind(this));
+	        storage.getItem('token', function (e) {
+	            self.getStarCount('user/isLogin.json?token=' + e.data, function (res) {
+	                if (res.data.status != 1) {
+	                    self.get(function () {
+	                        if (self.username == '') {} else {
+	                            self.getStarCount('user/login.json?userName=' + self.username + '&password=' + self.password, function (res) {
+	                                storage.setItem('token', res.data.token, function (e) {});
+	                            });
+	                        }
+	                    });
+	                }
+	            });
+	        });
 	    },
 	    methods: {
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
-	            self.refresh();
+	            self.refreshkaishi();
 	            self.refresh_display = 'hide';
 	        },
 	        onloading: function onloading() {
 	            var self = this;
 	            self.loading_display = 'show';
+	            if (self.indeshow) {
+	                if (self.npage1 < self.pages1) {
+	                    self.npage1++;
+	                    self.delloding = true;
+	                    self.refresh(self.npage1, self.npage2);
+	                } else {
+	                    self.more = '没有更多了';
+	                    self.delloding = false;
+	                }
+	            } else {
+	                if (self.npage2 < self.pages2) {
+	                    self.npage2++;
+	                    self.delloding = true;
+	                    self.refresh(self.npage1, self.npage2);
+	                } else {
+	                    self.more = '没有更多了';
+	                    self.delloding = false;
+	                }
+	            }
 	            self.loading_display = 'hide';
 	        },
 	        changindeshow: function changindeshow() {
+	            self.delloding = true;
+	            if (self.npage1 == self.pages1) {
+	                self.delloding = false;
+	            }
 	            this.indeshow = true;
 	        },
 	        changindehide: function changindehide() {
+	            self.delloding = true;
+	            if (self.npage2 == self.pages2) {
+	                self.delloding = false;
+	            }
 	            this.indeshow = false;
 	        },
 	        maindetail: function maindetail(e) {
@@ -3213,7 +3278,7 @@
 	            var itemid = e.target.attr.itemid;
 	            var vm = this;
 	            var params = {
-	                'url': this.baseURL + 'modules/sdetail.js?id=' + itemid,
+	                'url': self.baseURL + 'modules/sdetail.js?id=' + itemid,
 	                'animated': 'true'
 	            };
 	            navigator.push(params, function (e) {});
@@ -3221,9 +3286,8 @@
 	        mainnewsdetail: function mainnewsdetail(e) {
 	            var self = this;
 	            var itemid = e.target.attr.itemid;
-	            var vm = this;
 	            var params = {
-	                'url': this.baseURL + 'modules/ndetail.js?id=' + itemid,
+	                'url': self.baseURL + 'modules/ndetail.js?id=' + itemid,
 	                'animated': 'true'
 	            };
 	            navigator.push(params, function (e) {});
@@ -3235,35 +3299,90 @@
 	                url: locurl + repo
 	            }, callback);
 	        },
-	        refresh: function refresh() {
+	        get: function get(callback) {
+	            var self = this;
+	            storage.getItem('userName', function (e) {
+	                if (e.result == 'success') {
+	                    self.username = e.data;
+	                    storage.getItem('passWord', function (e) {
+	                        if (e.result == 'success') {
+	                            self.password = e.data;
+	                            callback();
+	                        }
+	                    });
+	                }
+	            });
+	        },
+	        refreshkaishi: function refreshkaishi() {
 	            var _this = this;
 
-	            this.getStarCount('banner/list.json', function (res) {
-	                _this.banner = res.data.data;
+	            var self = this;
+	            self.getStarCount('banner/list.json', function (res) {
+	                self.banner = res.data.data;
 	            });
 
-	            this.getStarCount('question/list.json?page=1&pageSize=10', function (res) {
-	                _this.indesurvey = res.data.data.list;
-	                for (var i = 0; i < _this.indesurvey.length; i++) {
-	                    if (_this.indesurvey[i].status === 1) {
-	                        _this.indesurvey[i].color = '#ffd05c';
+	            self.getStarCount('question/list.json?page=1&pageSize=10', function (res) {
+	                self.indesurvey = res.data.data.list;
+	                for (var i = 0; i < self.indesurvey.length; i++) {
+	                    if (self.indesurvey[i].status === 1) {
+	                        self.indesurvey[i].color = '#ffd05c';
 	                    } else {
-	                        _this.indesurvey[i].color = '#666';
+	                        self.indesurvey[i].color = '#666';
 	                    }
-	                    _this.indesurvey[i].updateTime = _this.times(_this.indesurvey[i].updateTime);
+	                    self.indesurvey[i].updateTime = self.times(self.indesurvey[i].updateTime);
+	                }
+	                self.pages1 = res.data.data.totalPage;
+	                if (self.npage1 == self.pages1) {
+	                    self.delloding = false;
 	                }
 	            });
 
-	            this.getStarCount('news/list.json?page=1&pageSize=10', function (res) {
-	                _this.indenews = res.data.data.list;
-	                for (var i = 0; i < _this.indenews.length; i++) {
+	            self.getStarCount('news/list.json?page=1&pageSize=10', function (res) {
+	                self.indenews = res.data.data.list;
+	                for (var i = 0; i < self.indenews.length; i++) {
 	                    if (i % 2) {
-	                        _this.indenews[i].color = '#f8f6f4';
+	                        self.indenews[i].color = '#f8f6f4';
 	                    } else {
-	                        _this.indenews[i].color = '#f3f3f3';
+	                        self.indenews[i].color = '#f3f3f3';
 	                    }
-	                    _this.indenews[i].updateTime = _this.times(_this.indenews[i].updateTime);
+	                    self.indenews[i].updateTime = self.times(_this.indenews[i].updateTime);
 	                };
+	                self.pages2 = res.data.data.totalPage;
+	            });
+	        },
+	        refresh: function refresh(npage1, npage2) {
+	            var self = this;
+	            self.getStarCount('banner/list.json', function (res) {
+	                self.banner = res.data.data;
+	            });
+
+	            self.getStarCount('question/list.json?page=' + npage1 + '&pageSize=10', function (res) {
+	                var data = res.data.data.list;
+	                for (var i = 0; i < data.length; i++) {
+	                    if (data[i].status === 1) {
+	                        data[i].color = '#ffd05c';
+	                    } else {
+	                        data[i].color = '#666';
+	                    }
+	                    data[i].updateTime = self.times(data[i].updateTime);
+	                    self.indesurvey.push(data[i]);
+	                }
+	                self.pages1 = res.data.data.totalPage;
+	            });
+
+	            self.getStarCount('news/list.json?page=' + npage2 + '&pageSize=10', function (res) {
+	                var data = res.data.data.list;
+	                for (var i = 0; i < data.length; i++) {
+
+	                    if (i % 2) {
+	                        data[i].color = '#f3f3f3';
+	                    } else {
+	                        data[i].color = '#f9f5f4';
+	                    }
+	                    data[i].updateTime = self.times(data[i].updateTime);
+	                    self.indenews.push(data[i]);
+	                };
+	                self.pages2 = res.data.data.totalPage;
 	            });
 	        },
 	        times: function times(value) {

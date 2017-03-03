@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(100)
-	var __weex_style__ = __webpack_require__(101)
-	var __weex_script__ = __webpack_require__(102)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(109)
+	var __weex_style__ = __webpack_require__(110)
+	var __weex_script__ = __webpack_require__(111)
 
 	__weex_define__('@weex-component/c5f1054cf6707251d7aac3f6b1864c75', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,19 +2299,26 @@
 
 
 /***/ },
-/* 94 */,
-/* 95 */,
-/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
-/* 100 */
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */
 /***/ function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
 	  "style": {
-	    "overflow": "hidden"
+	    "overflow": "hidden",
+	    "background": "#f3f3f3"
 	  },
 	  "children": [
 	    {
@@ -2393,7 +2404,8 @@
 	                          "type": "image",
 	                          "style": {
 	                            "height": 106,
-	                            "width": 140
+	                            "width": 140,
+	                            "borderRadius": 8
 	                          },
 	                          "classList": [
 	                            "newsimg"
@@ -2439,15 +2451,6 @@
 	                          ],
 	                          "children": [
 	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "newstime"
-	                              ],
-	                              "attr": {
-	                                "value": function () {return this.item.updateTime}
-	                              }
-	                            },
-	                            {
 	                              "type": "div",
 	                              "classList": [
 	                                "showtimes"
@@ -2463,7 +2466,7 @@
 	                                    "readimg"
 	                                  ],
 	                                  "attr": {
-	                                    "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                                    "src": "src/common/img/list_icon_browse.png"
 	                                  }
 	                                },
 	                                {
@@ -2476,6 +2479,15 @@
 	                                  }
 	                                }
 	                              ]
+	                            },
+	                            {
+	                              "type": "text",
+	                              "classList": [
+	                                "newstime"
+	                              ],
+	                              "attr": {
+	                                "value": function () {return this.item.updateTime}
+	                              }
 	                            }
 	                          ]
 	                        }
@@ -2492,6 +2504,7 @@
 	          "classList": [
 	            "refresh-view"
 	          ],
+	          "shown": function () {return this.delloding},
 	          "attr": {
 	            "display": function () {return this.loading_display}
 	          },
@@ -2505,7 +2518,7 @@
 	                "refresh-arrow"
 	              ],
 	              "attr": {
-	                "value": "加载更多"
+	                "value": function () {return this.mored}
 	              }
 	            },
 	            {
@@ -2519,7 +2532,7 @@
 	}
 
 /***/ },
-/* 101 */
+/* 110 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2540,10 +2553,10 @@
 	  "indenewsimg": {
 	    "height": 116,
 	    "width": 150,
-	    "border": "1px solid #e5e4e4",
-	    "borderRadius": 6,
+	    "border": "1px solid #e1e0de",
+	    "borderRadius": 8,
 	    "background": "#fff",
-	    "padding": 4
+	    "padding": 3
 	  },
 	  "newstitle": {
 	    "fontSize": 32,
@@ -2584,7 +2597,7 @@
 	}
 
 /***/ },
-/* 102 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2606,8 +2619,12 @@
 	        refresh_display: 'hide',
 	        loading_display: 'hide',
 	        indeshow: true,
+	        delloding: true,
 	        marginl: 300,
 	        itemleft: 24,
+	        npage3: 1,
+	        pages3: 1,
+	        mored: '加载更多',
 	        statuscolor: '#ffd05c',
 	        moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg'
 	    }},
@@ -2615,7 +2632,7 @@
 	        var self = this;
 	        var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
 	        this.baseURL = base;
-	        self.refresh();
+	        self.refreshkai();
 	        this.$getConfig(function (config) {
 	            self.widthview = config.env.deviceWidth;
 	            self.marginl = config.env.deviceWidth / 4 - 20;
@@ -2626,20 +2643,45 @@
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
-	            self.refresh();
+	            self.refreshkai();
 	            self.refresh_display = 'hide';
 	        },
 	        onloading: function onloading() {
 	            var self = this;
 	            self.loading_display = 'show';
+	            if (self.npage3 < self.pages3) {
+	                self.npage3++;
+	                self.delloding = true;
+	                self.refresh(self.npage3);
+	            } else {
+	                self.delloding = false;
+	                self.mored = '没有更多了';
+	            }
 	            self.loading_display = 'hide';
+	        },
+	        refreshkai: function refreshkai() {
+	            var self = this;
+	            self.getStarCount('news/list.json?page=1&pageSize=10', function (res) {
+	                self.indenews = res.data.data.list;
+	                for (var i = 0; i < self.indenews.length; i++) {
+	                    if (i % 2) {
+	                        self.indenews[i].color = '#f8f6f4';
+	                    } else {
+	                        self.indenews[i].color = '#f3f3f3';
+	                    }
+	                    self.indenews[i].updateTime = self.times(self.indenews[i].updateTime);
+	                };
+	                self.pages3 = res.data.data.totalPage;
+	                if (self.npage3 == self.pages3) {
+	                    self.delloding = false;
+	                }
+	            });
 	        },
 	        mainnewsdetail: function mainnewsdetail(e) {
 	            var self = this;
 	            var itemid = e.target.attr.itemid;
-	            var vm = this;
 	            var params = {
-	                'url': this.baseURL + 'modules/ndetail.js?id=' + itemid,
+	                'url': self.baseURL + 'modules/ndetail.js?id=' + itemid,
 	                'animated': 'true'
 	            };
 	            navigator.push(params, function (e) {});
@@ -2651,19 +2693,21 @@
 	                url: locurl + repo
 	            }, callback);
 	        },
-	        refresh: function refresh() {
-	            var _this = this;
+	        refresh: function refresh(npage3) {
+	            var self = this;
 
-	            this.getStarCount('news/list.json?page=1&pageSize=10', function (res) {
-	                _this.indenews = res.data.data.list;
-	                for (var i = 0; i < _this.indenews.length; i++) {
+	            self.getStarCount('news/list.json?page=' + npage3 + '&pageSize=10', function (res) {
+	                var data = res.data.data.list;
+	                for (var i = 0; i < data.length; i++) {
 	                    if (i % 2) {
-	                        _this.indenews[i].color = '#f8f6f4';
+	                        data[i].color = '#f3f3f3';
 	                    } else {
-	                        _this.indenews[i].color = '#f3f3f3';
+	                        data[i].color = '#f9f5f4';
 	                    }
-	                    _this.indenews[i].updateTime = _this.times(_this.indenews[i].updateTime);
+	                    data[i].updateTime = self.times(data[i].updateTime);
+	                    self.indenews.push(data[i]);
 	                };
+	                self.pages3 = res.data.data.totalPage;
 	            });
 	        },
 	        times: function times(value) {

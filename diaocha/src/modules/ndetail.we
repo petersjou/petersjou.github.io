@@ -9,7 +9,7 @@
     					<text class="detailtitle">{{dat.title}}</text>
     					<div class="detail-star">
     						<div class="star">
-    							<image style="height:22px;width:22px;" class="star-img" src="{{tubiao}}"></image>
+    							<image style="height:22px;width:22px;" class="star-img" src="src/common/img/icon_browse.png"></image>
     							<text class="star-text">{{dat.readCount}}</text>
     						</div>
     					</div>
@@ -46,6 +46,7 @@
 		font-size:22px;
 		line-height:22px;
 		color:#909090;
+		margin-left:10px;
 	}
 	.detailtext{
 		margin-top:30px;
@@ -113,7 +114,7 @@
         	onBackClick: function (e) {
                 var self = this;
                 var params = {
-                	url : this.baseURL + 'modules/newslist.js',
+                	url : self.baseURL + 'modules/newslist.js',
                     'animated': 'true'
                 };
                 navigator.pop(params, function (e) {

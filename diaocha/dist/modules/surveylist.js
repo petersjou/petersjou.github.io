@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(115)
-	var __weex_style__ = __webpack_require__(116)
-	var __weex_script__ = __webpack_require__(117)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(124)
+	var __weex_style__ = __webpack_require__(125)
+	var __weex_script__ = __webpack_require__(126)
 
 	__weex_define__('@weex-component/4d3789e1b372184640f9254c551df1aa', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,9 +2299,6 @@
 
 
 /***/ },
-/* 94 */,
-/* 95 */,
-/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
@@ -2316,7 +2317,16 @@
 /* 112 */,
 /* 113 */,
 /* 114 */,
-/* 115 */
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2520,7 +2530,7 @@
 	                                        "height": 22
 	                                      },
 	                                      "attr": {
-	                                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                                        "src": "src/common/img/list_icon_browse.png"
 	                                      }
 	                                    },
 	                                    {
@@ -2551,7 +2561,7 @@
 	                                        "height": 22
 	                                      },
 	                                      "attr": {
-	                                        "src": "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                                        "src": "src/common/img/list_icon_Collection.png"
 	                                      }
 	                                    },
 	                                    {
@@ -2582,6 +2592,7 @@
 	          "classList": [
 	            "refresh-view"
 	          ],
+	          "shown": function () {return this.delloding},
 	          "attr": {
 	            "display": function () {return this.loading_display}
 	          },
@@ -2595,7 +2606,7 @@
 	                "refresh-arrow"
 	              ],
 	              "attr": {
-	                "value": "加载更多"
+	                "value": function () {return this.mored}
 	              }
 	            },
 	            {
@@ -2609,7 +2620,7 @@
 	}
 
 /***/ },
-/* 116 */
+/* 125 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2633,7 +2644,8 @@
 	    "height": 428,
 	    "padding": 20,
 	    "borderRadius": 8,
-	    "background": "#fff"
+	    "background": "#fff",
+	    "border": "1px solid #e1dfe0"
 	  },
 	  "item-img": {
 	    "borderRadius": 8
@@ -2688,7 +2700,7 @@
 	}
 
 /***/ },
-/* 117 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2713,14 +2725,18 @@
 	        marginl: 300,
 	        statusarr: ['开放', '关闭'],
 	        itemleft: 24,
+	        npage4: 1,
+	        pages4: 1,
+	        mored: '加载更多',
+	        delloding: true,
 	        statuscolor: '#ffd05c',
 	        moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg'
 	    }},
 	    created: function created() {
 	        var self = this;
 	        var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
-	        this.baseURL = base;
-	        self.refresh();
+	        self.baseURL = base;
+	        self.refreshkais();
 	        this.$getConfig(function (config) {
 	            self.widthview = config.env.deviceWidth;
 	            self.marginl = config.env.deviceWidth / 4 - 20;
@@ -2731,12 +2747,20 @@
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
-	            self.refresh();
+	            self.refreshkais();
 	            self.refresh_display = 'hide';
 	        },
 	        onloading: function onloading() {
 	            var self = this;
 	            self.loading_display = 'show';
+	            if (self.npage4 < self.pages4) {
+	                self.npage4++;
+	                self.delloding = true;
+	                self.refresh(self.npage4);
+	            } else {
+	                self.delloding = false;
+	                self.mored = '没有更多了';
+	            }
 	            self.loading_display = 'hide';
 	        },
 	        maindetail: function maindetail(e) {
@@ -2759,19 +2783,39 @@
 	                url: locurl + repo
 	            }, callback);
 	        },
-	        refresh: function refresh() {
-	            var _this = this;
-
-	            this.getStarCount('question/list.json?page=1&pageSize=10', function (res) {
-	                _this.indesurvey = res.data.data.list;
-	                for (var i = 0; i < _this.indesurvey.length; i++) {
-	                    if (_this.indesurvey[i].status === 1) {
-	                        _this.indesurvey[i].color = '#ffd05c';
+	        refreshkais: function refreshkais() {
+	            var self = this;
+	            self.getStarCount('question/list.json?page=1&pageSize=10', function (res) {
+	                self.indesurvey = res.data.data.list;
+	                for (var i = 0; i < self.indesurvey.length; i++) {
+	                    if (self.indesurvey[i].status === 1) {
+	                        self.indesurvey[i].color = '#ffd05c';
 	                    } else {
-	                        _this.indesurvey[i].color = '#666';
+	                        self.indesurvey[i].color = '#666';
 	                    }
-	                    _this.indesurvey[i].updateTime = _this.times(_this.indesurvey[i].updateTime);
+	                    self.indesurvey[i].updateTime = self.times(self.indesurvey[i].updateTime);
 	                }
+	                self.pages4 = res.data.data.totalPage;
+	                if (self.npage4 == self.pages4) {
+	                    self.delloding = false;
+	                }
+	            });
+	        },
+	        refresh: function refresh(npage4) {
+	            var self = this;
+
+	            self.getStarCount('question/list.json?page=' + npage4 + '&pageSize=10', function (res) {
+	                var data = res.data.data.list;
+	                for (var i = 0; i < data.length; i++) {
+	                    if (data[i].status === 1) {
+	                        data[i].color = '#ffd05c';
+	                    } else {
+	                        data[i].color = '#666';
+	                    }
+	                    data[i].updateTime = self.times(data[i].updateTime);
+	                    self.indesurvey.push(data[i]);
+	                }
+	                self.pages4 = res.data.data.totalPage;
 	            });
 	        },
 	        times: function times(value) {

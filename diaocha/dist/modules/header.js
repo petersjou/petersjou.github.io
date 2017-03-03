@@ -44,9 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/6fb14b5e5ebe79043533412e2b621997', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2028,7 +2028,14 @@
 
 /***/ },
 /* 85 */,
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2053,11 +2060,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2092,7 +2100,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2103,7 +2111,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2138,7 +2146,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';

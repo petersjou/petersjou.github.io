@@ -8,13 +8,23 @@
     				<div class="detailval">
     					<text class="detailtitle">{{dat.title}}</text>
     					<div class="detail-star">
-    						<div class="star">
-    							<image style="height:22px;width:22px;" class="star-img" src="{{tubiao}}"></image>
-    							<text class="star-text">{{dat.readCount}}</text>
+    						<div class="starbox1">
+    							<div class="star">
+	    							<image style="height:22px;width:22px;" class="star-img" src="src/common/img/icon_browse.png"></image>
+	    							<text class="star-text">{{dat.readCount}}</text>
+	    						</div>
+	    						<div class="star" style="margin-left:20px;">
+	    							<image style="height:22px;width:22px;" class="star-img" src="src/common/img/list_icon_Collection.png"></image>
+	    							<text class="star-text">{{dat.answerCount}}</text>
+	    						</div>
     						</div>
-    						<div class="star">
-    							<image style="height:22px;width:22px;" class="star-img" src="{{tubiao}}"></image>
-    							<text class="star-text">{{dat.answerCount}}</text>
+    						<div class="starbox2" if="shoucang">
+    							<image onclick="onhome" style="margin-left:20px;height:60px;width:60px;" class="star-img" src="src/common/img/btn_Collection_nor.png"></image>
+    							
+    						</div>
+    						<div class="starbox2" if="!shoucang">
+    							<image onclick="onhome" style="margin-left:20px;height:60px;width:60px;" class="star-img" src="src/common/img/btn_Collection_pre.png"></image>
+    							<text class="wenzi">{{wenzi}}</text>
     						</div>
     					</div>
     					<text class="detailtext">{{dat.summary}}</text>
@@ -47,20 +57,32 @@
 		font-size:30px;
 		line-height:30px;
 		color:#323232;
-		margin-top:40px;
+		margin-top:20px;
 	}
 	.detail-star{
+		margin-top:40px;
 		flex-direction: row;
+		justify-content:space-between;
 		height:88px;
+		border-top:1px solid #e2e0e1;
+		border-bottom:1px solid #e2e0e1;
+	}
+	.starbox1{
+		flex-direction: row;
+	}
+	.starbox2{
+		margin-top:-30px;
+		width:100px;
 	}
 	.star{
 		flex-direction: row;
-		margin-top:38px;
+		margin-top:32px;
 	}
 	.star-text{
 		font-size:22px;
 		line-height:22px;
 		color:#909090;
+		margin-left:10px;
 	}
 	.detailtext{
 		margin-top:30px;
@@ -90,15 +112,21 @@
 		text-align:center;
 		border-radius:8px;
 	}
+	.wenzi{
+		text-align:center;
+		color:#666;
+		font-size:24px;
+		line-height:30px;
+	}
 </style>
 <script>
     require('weex-components');
     var modal = require('@weex-module/modal');
     var storage = require('@weex-module/storage');
-    var navigator = require('@weex-module/navigator');
     var stream = require('@weex-module/stream');
-    var apis = require('../common/api');
-    var locurl = apis.apiurl.resurl;
+    var apis = require('../common/api.js');
+    var navigator = require('@weex-module/navigator');
+    var locurl = apis.apiurl.resurl;require('weex-components');
     module.exports = {
     	data: {
             title: '', 
@@ -110,8 +138,12 @@
             login: false,
             widthvie: 750,
             nu: 2,
+            userid: '',
+            shoucang: true,
+            token: '',
             dat: [],
-            arr: ['运行中','关闭']
+            arr: ['运行中','关闭'],
+            wenzi: ''
         },
         created: function() {
         	var self = this;
@@ -130,26 +162,53 @@
 	        	self.getStarCount('user/isLogin.json?token='+ e.data,res => {
 	        		if(res.data.status == 1){
 	        			self.login = true;
+	        			
 	        		}
 	        	})
-	        })
+	        });
         },
         methods: {
         	onBackClick: function (e) {
                 var self = this;
                 var params = {
-                	url : this.baseURL + 'modules/newslist.js',
+                	url : self.baseURL + 'modules/newslist.js',
                     'animated': 'true'
                 };
                 navigator.pop(params, function (e) {
                     //callback
                 });
             },
+            onhome: function(){
+            	var self = this;
+            	
+            	self.getitem(function(){
+            		self.getStarCount('user/isLogin.json?token='+ self.token,res => {
+		                if(res.data.status != 1){
+		                    var params = {
+					                'url': self.baseURL + 'modules/login.js',
+					                'animated': 'true'
+					            };
+					            navigator.push(params, function (e) {
+					                //callback
+					            });
+		                } else {
+		                	self.getStarCount('question/collect.json?token='+ self.token +'&userId='+ self.userid +'&questionId='+ self.nu , res => {
+		                		var data = res.data;
+		                		if(data.status == 1){
+		                			self.wenzi = data.message;
+		                			self.shoucang = false;
+		                		}
+		                	});
+		                }
+		            })
+            	})
+            },
             datibtn: function(e){
             	var daturl = e.target.attr.daturl;
-            	if(!this.login){
+            	var self = this;
+            	if(!self.login){
             		var params = {
-		                'url': this.baseURL + 'modules/login.js',
+		                'url': self.baseURL + 'modules/login.js',
 		                'animated': 'true'
 		            };
 		            navigator.push(params, function (e) {
@@ -165,6 +224,28 @@
 		            });
             	}
             },
+            getitem: function(callback) {
+				var self = this;
+	            storage.getItem('userId',function (e) {
+	                if(e.result == 'success'){
+	                    self.userid = e.data;
+	                    storage.getItem('token',function (e) {
+	                        if(e.result == 'success'){
+	                            self.token = e.data;
+	                            callback();
+	                        } else {
+	                        	var params = {
+					                'url': self.baseURL + 'modules/login.js',
+					                'animated': 'true'
+					            };
+					            navigator.push(params, function (e) {
+					                //callback
+					            });
+	                        }
+	                    });
+	                }
+	            });
+			},
             getStarCount: function(repo,callback) {
 	            return stream.fetch({
 	              method: 'GET',

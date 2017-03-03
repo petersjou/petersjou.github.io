@@ -23,11 +23,11 @@
                                 </div>
                                 <div class="otr2" style="flex-direction: row;">
                                     <div class="chakan otr3" style="flex-direction: row;">
-                                        <image style="width:22px;height:22px;" src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                                        <image style="width:22px;height:22px;" src="src/common/img/list_icon_browse.png"></image>
                                         <text class="otrtt">{{item.readCount}}</text>
                                     </div>
                                     <div class="shoucang otr3" style="flex-direction: row;">
-                                        <image style="width:22px;height:22px;" src="http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"></image>
+                                        <image style="width:22px;height:22px;" src="src/common/img/list_icon_Collection.png"></image>
                                         <text class="otrtt">{{item.answerCount}}</text>
                                     </div>
                                 </div>
@@ -36,8 +36,8 @@
                     </div>
                 </div>
             </cell>
-            <loading class="refresh-view" display="{{loading_display}}" onloading="onloading">
-                <text class="refresh-arrow">加载更多</text>
+            <loading class="refresh-view" if="delloding" display="{{loading_display}}" onloading="onloading">
+                <text class="refresh-arrow">{{mored}}</text>
                 <loading-indicator></loading-indicator>
             </loading>
 	    </list>
@@ -68,6 +68,7 @@
         padding:20px;
         border-radius:8px;
         background:#fff;
+        border:1px solid #e1dfe0;
     }
     .item-img{
         border-radius:8px;
@@ -144,14 +145,18 @@
 		marginl: 300,
 		statusarr: ['开放','关闭'],
 		itemleft: 24,
+		npage4: 1,
+		pages4: 1,
+		mored: '加载更多',
+		delloding: true,
 		statuscolor: '#ffd05c',
 		moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg'
 	},
 	created: function() {
 		var self = this;
 		var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
-        this.baseURL = base;
-        self.refresh();
+        self.baseURL = base;
+        self.refreshkais();
         this.$getConfig(function (config) {
             self.widthview = config.env.deviceWidth;
             self.marginl = config.env.deviceWidth / 4 - 20;
@@ -162,12 +167,20 @@
 	    onrefresh: function(e) {
 	        var self = this;
             self.refresh_display = 'show';
-            self.refresh();
+            self.refreshkais();
             self.refresh_display = 'hide';
 	    },
         onloading :function() {
             var self = this;
             self.loading_display = 'show';
+            if(self.npage4 < self.pages4){
+                self.npage4 ++;
+                self.delloding = true;
+                self.refresh(self.npage4);
+            } else {
+                self.delloding = false;
+                self.mored = '没有更多了';
+            }
             self.loading_display = 'hide';
         },
 		maindetail: function(e) {
@@ -192,18 +205,42 @@
               url: locurl + repo
             }, callback)
         },
-		refresh :function() {
+		refreshkais :function() {
             // survey
-            this.getStarCount('question/list.json?page=1&pageSize=10', res => { 
-                this.indesurvey = res.data.data.list;
-                for(var i=0;i<this.indesurvey.length;i++) {
-                    if(this.indesurvey[i].status === 1){
-                        this.indesurvey[i].color = '#ffd05c';
+            var self = this;
+            self.getStarCount('question/list.json?page=1&pageSize=10', res => { 
+                self.indesurvey = res.data.data.list;
+                for(var i=0;i<self.indesurvey.length;i++) {
+                    if(self.indesurvey[i].status === 1){
+                        self.indesurvey[i].color = '#ffd05c';
                     } else {
-                        this.indesurvey[i].color = '#666';
+                        self.indesurvey[i].color = '#666';
                     }
-                    this.indesurvey[i].updateTime = this.times(this.indesurvey[i].updateTime);
+                    self.indesurvey[i].updateTime = self.times(self.indesurvey[i].updateTime);
                 }
+                self.pages4 = res.data.data.totalPage;
+                if(self.npage4 == self.pages4) {
+                    self.delloding = false;
+                }
+            });
+        },
+        refresh :function(npage4) {
+            // news
+            var self = this;
+             // news
+            self.getStarCount('question/list.json?page='+ npage4 +'&pageSize=10', res => {
+                var data = res.data.data.list;
+                for(var i=0;i<data.length;i++) {
+                    if(data[i].status === 1){
+                        data[i].color = '#ffd05c';
+                    } else {
+                        data[i].color = '#666';
+                    }
+                    data[i].updateTime = self.times(data[i].updateTime);
+                    self.indesurvey.push(data[i]);
+                }
+                self.pages4 = res.data.data.totalPage;
+                
             });
         },
         times: function (value) {

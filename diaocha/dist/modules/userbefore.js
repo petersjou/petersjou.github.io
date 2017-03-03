@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(118)
-	var __weex_style__ = __webpack_require__(119)
-	var __weex_script__ = __webpack_require__(120)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(127)
+	var __weex_style__ = __webpack_require__(128)
+	var __weex_script__ = __webpack_require__(129)
 
 	__weex_define__('@weex-component/ca3d8c32b2fa84ee1ce5ec713b285a38', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,9 +2299,6 @@
 
 
 /***/ },
-/* 94 */,
-/* 95 */,
-/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
@@ -2319,7 +2320,16 @@
 /* 115 */,
 /* 116 */,
 /* 117 */,
-/* 118 */
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2335,155 +2345,81 @@
 	      }
 	    },
 	    {
-	      "type": "scroller",
+	      "type": "div",
 	      "classList": [
-	        "scroller"
+	        "user-box"
 	      ],
 	      "children": [
 	        {
 	          "type": "div",
 	          "classList": [
-	            "user-box"
+	            "user-header"
 	          ],
 	          "children": [
 	            {
 	              "type": "div",
-	              "classList": [
-	                "user-header"
-	              ],
+	              "shown": function () {return !this.login},
 	              "children": [
 	                {
 	                  "type": "div",
-	                  "shown": function () {return !this.login},
+	                  "classList": [
+	                    "user-img"
+	                  ],
+	                  "style": {
+	                    "marginLeft": function () {return (this.userleft) + 'px'}
+	                  },
 	                  "children": [
 	                    {
-	                      "type": "div",
-	                      "classList": [
-	                        "user-img"
-	                      ],
+	                      "type": "image",
 	                      "style": {
-	                        "marginLeft": function () {return (this.userleft) + 'px'}
+	                        "width": 130,
+	                        "height": 130
 	                      },
-	                      "children": [
-	                        {
-	                          "type": "image",
-	                          "style": {
-	                            "width": 130,
-	                            "height": 130
-	                          },
-	                          "attr": {
-	                            "src": function () {return this.moniimg}
-	                          }
-	                        }
-	                      ]
-	                    },
-	                    {
-	                      "type": "div",
-	                      "classList": [
-	                        "user-btn"
-	                      ],
-	                      "events": {
-	                        "click": "toregister"
-	                      },
-	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "center"
-	                      },
-	                      "children": [
-	                        {
-	                          "type": "text",
-	                          "events": {
-	                            "click": "tologin"
-	                          },
-	                          "classList": [
-	                            "user-login",
-	                            "user-br"
-	                          ],
-	                          "style": {
-	                            "background": "#1b9cf7",
-	                            "marginRight": 40
-	                          },
-	                          "attr": {
-	                            "value": "登陆"
-	                          }
-	                        },
-	                        {
-	                          "type": "text",
-	                          "classList": [
-	                            "user-register",
-	                            "user-br"
-	                          ],
-	                          "attr": {
-	                            "value": "注册"
-	                          }
-	                        }
-	                      ]
+	                      "attr": {
+	                        "src": "src/common/img/img_log_not.png"
+	                      }
 	                    }
 	                  ]
 	                },
 	                {
 	                  "type": "div",
-	                  "shown": function () {return this.login},
+	                  "classList": [
+	                    "user-btn"
+	                  ],
+	                  "events": {
+	                    "click": "toregister"
+	                  },
 	                  "style": {
 	                    "flexDirection": "row",
-	                    "marginTop": 80,
 	                    "justifyContent": "center"
 	                  },
 	                  "children": [
 	                    {
-	                      "type": "div",
+	                      "type": "text",
+	                      "events": {
+	                        "click": "tologin"
+	                      },
 	                      "classList": [
-	                        "userdeimg"
+	                        "user-login",
+	                        "user-br"
 	                      ],
 	                      "style": {
-	                        "marginRight": 30
+	                        "background": "#1b9cf7",
+	                        "marginRight": 40
 	                      },
-	                      "children": [
-	                        {
-	                          "type": "image",
-	                          "style": {
-	                            "width": 130,
-	                            "height": 130
-	                          },
-	                          "attr": {
-	                            "src": function () {return this.moniimg}
-	                          }
-	                        }
-	                      ]
+	                      "attr": {
+	                        "value": "登陆"
+	                      }
 	                    },
 	                    {
-	                      "type": "div",
+	                      "type": "text",
 	                      "classList": [
-	                        "usernm"
+	                        "user-register",
+	                        "user-br"
 	                      ],
-	                      "style": {
-	                        "flexDirection": "row",
-	                        "marginLeft": 30,
-	                        "marginTop": 30
-	                      },
-	                      "children": [
-	                        {
-	                          "type": "image",
-	                          "style": {
-	                            "width": 32,
-	                            "height": 32
-	                          },
-	                          "attr": {
-	                            "src": function () {return this.tubiao}
-	                          }
-	                        },
-	                        {
-	                          "type": "text",
-	                          "style": {
-	                            "fontSize": 32,
-	                            "lineHeight": 32,
-	                            "color": "#ffffff"
-	                          },
-	                          "attr": {
-	                            "value": function () {return this.userdename}
-	                          }
-	                        }
-	                      ]
+	                      "attr": {
+	                        "value": "注册"
+	                      }
 	                    }
 	                  ]
 	                }
@@ -2491,273 +2427,346 @@
 	            },
 	            {
 	              "type": "div",
+	              "shown": function () {return this.login},
+	              "style": {
+	                "flexDirection": "row",
+	                "marginTop": 80,
+	                "justifyContent": "center"
+	              },
+	              "children": [
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "userdeimg"
+	                  ],
+	                  "style": {
+	                    "marginRight": 30
+	                  },
+	                  "children": [
+	                    {
+	                      "type": "image",
+	                      "style": {
+	                        "width": 130,
+	                        "height": 130
+	                      },
+	                      "attr": {
+	                        "src": "src/common/img/img_log.png"
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "usernm"
+	                  ],
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "marginLeft": 30,
+	                    "marginTop": 30
+	                  },
+	                  "children": [
+	                    {
+	                      "type": "image",
+	                      "style": {
+	                        "width": 32,
+	                        "height": 32
+	                      },
+	                      "attr": {
+	                        "src": "src/common/img/icon_sex_male.png"
+	                      }
+	                    },
+	                    {
+	                      "type": "text",
+	                      "style": {
+	                        "fontSize": 32,
+	                        "marginLeft": 10,
+	                        "lineHeight": 32,
+	                        "color": "#ffffff"
+	                      },
+	                      "attr": {
+	                        "value": function () {return this.username}
+	                      }
+	                    }
+	                  ]
+	                }
+	              ]
+	            }
+	          ]
+	        },
+	        {
+	          "type": "div",
+	          "classList": [
+	            "user-cont"
+	          ],
+	          "children": [
+	            {
+	              "type": "div",
 	              "classList": [
-	                "user-cont"
+	                "user-val",
+	                "userinit"
 	              ],
 	              "children": [
 	                {
 	                  "type": "div",
 	                  "classList": [
-	                    "user-val",
-	                    "userinit"
+	                    "myinit"
 	                  ],
+	                  "events": {
+	                    "click": "touserinfo"
+	                  },
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
 	                  "children": [
 	                    {
 	                      "type": "div",
 	                      "classList": [
-	                        "myinit"
+	                        "muleft"
 	                      ],
-	                      "events": {
-	                        "click": "touserinfo"
-	                      },
 	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
+	                        "flexDirection": "row"
 	                      },
 	                      "children": [
 	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "个人信息"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
 	                          "type": "image",
 	                          "classList": [
-	                            "use-img"
+	                            "use-img2"
 	                          ],
 	                          "attr": {
-	                            "src": function () {return this.tubiao}
+	                            "src": "src/common/img/icon_information.png"
+	                          }
+	                        },
+	                        {
+	                          "type": "text",
+	                          "classList": [
+	                            "use-text"
+	                          ],
+	                          "attr": {
+	                            "value": "个人信息"
 	                          }
 	                        }
 	                      ]
 	                    },
 	                    {
+	                      "type": "image",
+	                      "classList": [
+	                        "use-img"
+	                      ],
+	                      "attr": {
+	                        "src": function () {return this.tubiao}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "events": {
+	                    "click": "tochangepas"
+	                  },
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
 	                      "type": "div",
 	                      "classList": [
-	                        "myinit"
+	                        "muleft"
 	                      ],
 	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
+	                        "flexDirection": "row"
 	                      },
 	                      "children": [
 	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "修改密码"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
 	                          "type": "image",
 	                          "classList": [
-	                            "use-img"
+	                            "use-img2"
 	                          ],
 	                          "attr": {
-	                            "src": function () {return this.tubiao}
+	                            "src": "src/common/img/icon_password.png"
+	                          }
+	                        },
+	                        {
+	                          "type": "text",
+	                          "classList": [
+	                            "use-text"
+	                          ],
+	                          "attr": {
+	                            "value": "修改密码"
 	                          }
 	                        }
 	                      ]
 	                    },
 	                    {
+	                      "type": "image",
+	                      "classList": [
+	                        "use-img"
+	                      ],
+	                      "attr": {
+	                        "src": function () {return this.tubiao}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "style": {
+	                    "marginTop": 40,
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
 	                      "type": "div",
 	                      "classList": [
-	                        "myinit"
+	                        "muleft"
 	                      ],
 	                      "style": {
-	                        "marginTop": 40,
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
+	                        "flexDirection": "row"
 	                      },
 	                      "children": [
 	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "浏览记录"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
 	                          "type": "image",
 	                          "classList": [
-	                            "use-img"
+	                            "use-img2"
 	                          ],
 	                          "attr": {
-	                            "src": function () {return this.tubiao}
+	                            "src": "src/common/img/icon_browse.png"
+	                          }
+	                        },
+	                        {
+	                          "type": "text",
+	                          "classList": [
+	                            "use-text"
+	                          ],
+	                          "attr": {
+	                            "value": "答题记录"
 	                          }
 	                        }
 	                      ]
 	                    },
 	                    {
+	                      "type": "image",
+	                      "classList": [
+	                        "use-img"
+	                      ],
+	                      "attr": {
+	                        "src": function () {return this.tubiao}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "events": {
+	                    "click": "tohomelist"
+	                  },
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
 	                      "type": "div",
 	                      "classList": [
-	                        "myinit"
+	                        "muleft"
 	                      ],
 	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
+	                        "flexDirection": "row"
 	                      },
 	                      "children": [
 	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "attr": {
-	                                "value": "问卷收藏"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
 	                          "type": "image",
 	                          "classList": [
-	                            "use-img"
+	                            "use-img2"
 	                          ],
 	                          "attr": {
-	                            "src": function () {return this.tubiao}
+	                            "src": "src/common/img/icon_Collection.png"
+	                          }
+	                        },
+	                        {
+	                          "type": "text",
+	                          "classList": [
+	                            "use-text"
+	                          ],
+	                          "attr": {
+	                            "value": "问卷收藏"
 	                          }
 	                        }
 	                      ]
 	                    },
 	                    {
+	                      "type": "image",
+	                      "classList": [
+	                        "use-img"
+	                      ],
+	                      "attr": {
+	                        "src": function () {return this.tubiao}
+	                      }
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "classList": [
+	                    "myinit"
+	                  ],
+	                  "events": {
+	                    "click": "toset"
+	                  },
+	                  "style": {
+	                    "flexDirection": "row",
+	                    "justifyContent": "space-between"
+	                  },
+	                  "children": [
+	                    {
 	                      "type": "div",
 	                      "classList": [
-	                        "myinit"
+	                        "muleft"
 	                      ],
 	                      "style": {
-	                        "flexDirection": "row",
-	                        "justifyContent": "space-between"
+	                        "flexDirection": "row"
 	                      },
 	                      "children": [
 	                        {
-	                          "type": "div",
-	                          "classList": [
-	                            "muleft"
-	                          ],
-	                          "style": {
-	                            "flexDirection": "row"
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "image",
-	                              "classList": [
-	                                "use-img"
-	                              ],
-	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "use-text"
-	                              ],
-	                              "events": {
-	                                "click": "toset"
-	                              },
-	                              "attr": {
-	                                "value": "设置"
-	                              }
-	                            }
-	                          ]
-	                        },
-	                        {
 	                          "type": "image",
 	                          "classList": [
-	                            "use-img"
+	                            "use-img2"
 	                          ],
 	                          "attr": {
-	                            "src": function () {return this.tubiao}
+	                            "src": "src/common/img/icon_set.png"
+	                          }
+	                        },
+	                        {
+	                          "type": "text",
+	                          "classList": [
+	                            "use-text"
+	                          ],
+	                          "attr": {
+	                            "value": "设置"
 	                          }
 	                        }
 	                      ]
+	                    },
+	                    {
+	                      "type": "image",
+	                      "classList": [
+	                        "use-img"
+	                      ],
+	                      "attr": {
+	                        "src": function () {return this.tubiao}
+	                      }
 	                    }
 	                  ]
 	                }
@@ -2771,7 +2780,7 @@
 	}
 
 /***/ },
-/* 119 */
+/* 128 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2780,7 +2789,7 @@
 	  },
 	  "user-header": {
 	    "height": 310,
-	    "background": "url(http://47.93.112.226:9001//assets/wechat/img/slider2.jpg) 0 0 no-repeat",
+	    "background": "url(src/common/img/userbg.png) 0 0 no-repeat",
 	    "backgroundSize": "cover"
 	  },
 	  "user-img": {
@@ -2812,6 +2821,11 @@
 	  },
 	  "use-img": {
 	    "marginTop": 25,
+	    "width": 20,
+	    "height": 38
+	  },
+	  "use-img2": {
+	    "marginTop": 25,
 	    "width": 38,
 	    "height": 38
 	  },
@@ -2824,7 +2838,7 @@
 	}
 
 /***/ },
-/* 120 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2839,23 +2853,34 @@
 	module.exports = {
 		data: function () {return {
 			baseURL: '',
-			moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg',
+			moniimg: 'src/common/img/userbg.png',
 			userleft: 300,
 			login: false,
-			userdename: 'asdas',
+			userdename: '',
 			username: '',
-			tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png'
+			tubiao: 'src/common/img/icon_arrow.png'
 		}},
 		created: function created() {
 			var self = this;
 			var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
-			this.baseURL = base;
-			this.$getConfig(function (config) {
+			self.baseURL = base;
+			self.$getConfig(function (config) {
 				self.userleft = config.env.deviceWidth / 2 - 65;
 			}.bind(this));
+
 			storage.getItem('token', function (e) {
 				self.getStarCount('user/isLogin.json?token=' + e.data, function (res) {
-					if (res.data.status == 1) {
+					if (res.data.status != 1) {
+						self.get(function () {
+							if (self.username == '') {} else {
+								self.getStarCount('user/login.json?userName=' + self.username + '&password=' + self.password, function (res) {
+									storage.setItem('token', res.data.token, function (e) {});
+									self.login = true;
+								});
+							}
+						});
+					} else {
+						self.get(function () {});
 						self.login = true;
 					}
 				});
@@ -2864,25 +2889,47 @@
 		methods: {
 			tologin: function tologin(e) {
 				var self = this;
-				var vm = this;
 				var params = {
-					'url': this.baseURL + 'modules/login.js',
+					'url': self.baseURL + 'modules/login.js',
 					'animated': 'true'
 				};
 				navigator.push(params, function (e) {});
 			},
 			toregister: function toregister(e) {
 				var self = this;
-				var vm = this;
+				var params = {
+					'url': self.baseURL + 'modules/register.js',
+					'animated': 'true'
+				};
+				navigator.push(params, function (e) {});
+			},
+			tochangepas: function tochangepas(e) {
+				var self = this;
 				if (self.login) {
 					var params = {
-						'url': this.baseURL + 'modules/register.js',
+						'url': self.baseURL + 'modules/changepas.js',
 						'animated': 'true'
 					};
 					navigator.push(params, function (e) {});
 				} else {
 					var params = {
-						'url': this.baseURL + 'modules/login.js',
+						'url': self.baseURL + 'modules/login.js',
+						'animated': 'true'
+					};
+					navigator.push(params, function (e) {});
+				}
+			},
+			tohomelist: function tohomelist() {
+				var self = this;
+				if (self.login) {
+					var params = {
+						'url': self.baseURL + 'modules/homelist.js',
+						'animated': 'true'
+					};
+					navigator.push(params, function (e) {});
+				} else {
+					var params = {
+						'url': self.baseURL + 'modules/login.js',
 						'animated': 'true'
 					};
 					navigator.push(params, function (e) {});
@@ -2890,16 +2937,15 @@
 			},
 			toset: function toset() {
 				var self = this;
-				var vm = this;
 				if (self.login) {
 					var params = {
-						'url': this.baseURL + 'modules/set.js',
+						'url': self.baseURL + 'modules/set.js',
 						'animated': 'true'
 					};
 					navigator.push(params, function (e) {});
 				} else {
 					var params = {
-						'url': this.baseURL + 'modules/login.js',
+						'url': self.baseURL + 'modules/login.js',
 						'animated': 'true'
 					};
 					navigator.push(params, function (e) {});
@@ -2907,24 +2953,34 @@
 			},
 			touserinfo: function touserinfo() {
 				var self = this;
-				var vm = this;
 				if (self.login) {
 					var params = {
-						'url': this.baseURL + 'modules/userinfo.js',
+						'url': self.baseURL + 'modules/userinfo.js',
 						'animated': 'true'
 					};
 					navigator.push(params, function (e) {});
 				} else {
 					var params = {
-						'url': this.baseURL + 'modules/login.js',
+						'url': self.baseURL + 'modules/login.js',
 						'animated': 'true'
 					};
 					navigator.push(params, function (e) {});
 				}
 			},
-			get: function get() {
-				storage.getItem('userName', function (e) {});
-				storage.getItem('passWord', function (e) {});
+			get: function get(callback) {
+				var self = this;
+				storage.getItem('userName', function (e) {
+					if (e.result == 'success') {
+						self.username = e.data;
+						self.userdename = e.data;
+						storage.getItem('passWord', function (e) {
+							if (e.result == 'success') {
+								self.password = e.data;
+								callback();
+							}
+						});
+					}
+				});
 			},
 			getStarCount: function getStarCount(repo, callback) {
 				return stream.fetch({
@@ -2932,7 +2988,9 @@
 					type: 'json',
 					url: locurl + repo
 				}, callback);
-			}
+			},
+			handleTouchstart: function handleTouchstart(eventProperties) {}
+
 		}
 	};}
 	/* generated by weex-loader */

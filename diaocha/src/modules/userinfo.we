@@ -1,50 +1,34 @@
  <template>
     <div style="background:#f3f3f3;">
-       <header title="设置" showback="{{showback}}"></header>
-       <scroller class="scroller">
+       <header title="个人信息" showback="{{showback}}"></header>
 	       <div class="user-box">
 	       		<div class="user-cont" style="margin-top:40px;">
 	       			<div class="user-val userinit">
-	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
-	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" src="{{tubiao}}"></image>
-	       						<text class="use-text">昵称</text>
-	       					</div>
-	       					<image class="use-img" src="{{tubiao}}"></image>
+	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">				
+	       					<text class="use-text">用户名</text>
+	       					<text>{{userval}}</text>
 	       				</div>
 	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
-	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" src="{{tubiao}}"></image>
-	       						<text class="use-text">性别</text>
-	       					</div>
-	       					<image class="use-img" src="{{tubiao}}"></image>
+	       					<text class="use-text">性别</text>
+	       					<text>{{sexval}}</text>
 	       				</div>
 	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
-	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" src="{{tubiao}}"></image>
-	       						<text class="use-text">地址</text>
-	       					</div>
-	       					<image class="use-img" src="{{tubiao}}"></image>
+	       					<text class="use-text">地区</text>
+	       					<text>{{addressval}}</text>
 	       				</div>
 	       				
-	       				<div class="myinit" style="flex-direction: row;margin-top:40px;justify-content: space-between;">
-	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" style="" src="{{tubiao}}"></image>
-	       						<text class="use-text">手机</text>
-	       					</div>
-	       					<image class="use-img" src="{{tubiao}}"></image>
+	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
+	       					<text class="use-text">手机</text>
+	       					<text>{{phoneval}}</text>
 	       				</div>
 	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
-	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" src="{{tubiao}}"></image>
-	       						<text class="use-text">邮箱</text>
-	       					</div>
-	       					<image class="use-img" src="{{tubiao}}"></image>
+	       					<text class="use-text">邮箱</text>
+	       					<text>{{emailval}}</text>
 	       				</div>
+	       				<text class="bianji" onclick="tochangeinfo">编辑个人信息</text>
 	       			</div>
 	       		</div>
 	       </div>
-       </scroller>
     </div>
 </template> 
 
@@ -72,6 +56,19 @@
     	font-size:30px;
     	margin-left:10px;
     }
+    .bianji{
+    	margin-top:40px;
+    	font-size:32px;
+    	line-height:88px;
+    	height:88px;
+    	color:#fff;
+    	background:#1b9cf7;
+    	text-align:center;
+    	margin-left:24px;
+    	margin-right:24px;
+    	border-radius:10px;
+    	
+    }
 </style>
 
 <script>
@@ -81,7 +78,7 @@
     var stream = require('@weex-module/stream');
     var apis = require('../common/api.js');
     var navigator = require('@weex-module/navigator');
-    var locurl = apis.apiurl.resurl;require('weex-components');
+    var locurl = apis.apiurl.resurl;
     module.exports = {
         data: {
         	baseURL: '',
@@ -91,6 +88,13 @@
         	showback: true,
         	userdename: 'asdas',
         	username: '',
+        	userval: '...',
+        	sexval: '...',
+        	addressval: '...',
+        	phoneval: '...',
+        	emailval: '...',
+        	userid: '',
+            token: '',
         	tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png'
         },
         created: function() {
@@ -106,7 +110,19 @@
 	        			self.login = true;
 	        		}
 	        	})
-	        })
+	        });
+	        self.getitem (function() {
+	        	self.getStarCount('user/info.json?token='+ self.token +'&userId='+ self.userid, res => {
+	               var data = res.data;
+	               if(data.status == 1){
+	               	 	self.userval = data.data.userName;
+	               	 	self.sexval = data.data.nickname;
+	               	 	self.addressval = data.data.email;
+	               	 	self.phoneval = data.data.phone;
+	               	 	self.emailval = data.data.email;
+	                }
+	            });
+	        });
         },
         methods: {
         	tologin: function(e) {
@@ -143,10 +159,33 @@
 	                //callback
 	            });
 			},
+			tochangeinfo: function() {
+				var params = {
+	                'url': this.baseURL + 'modules/changeinfo.js',
+	                'animated': 'true'
+	            };
+	            navigator.push(params, function (e) {
+	                //callback
+	            });
+			},
 			get: function(){
 		    	storage.getItem('userName',function (e) {});
 		    	storage.getItem('passWord',function (e) {});
 		    },
+		    getitem: function(callback) {
+				var self = this;
+	            storage.getItem('userId',function (e) {
+	                if(e.result == 'success'){
+	                    self.userid = e.data;
+	                    storage.getItem('token',function (e) {
+	                        if(e.result == 'success'){
+	                            self.token = e.data;
+	                            callback();
+	                        }
+	                    });
+	                }
+	            });
+			},
 		    getStarCount: function(repo,callback) {
 	            return stream.fetch({
 	              method: 'GET',

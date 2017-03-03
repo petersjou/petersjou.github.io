@@ -1,0 +1,195 @@
+<template>
+    <div class="loginbox" style="background:#f3f3f3;">
+    		<div>
+    			<div class="regheader" >
+    				<image class="backbtn" src="src/common/img/nav_back.png" onclick="onBackClick"></image>
+    				<text class="head-title">修改个人信息</text>
+    				<text class="head-next" onclick="tochangepas">完成</text>
+    			</div>
+    			<div class="login-box">
+	    			<label class="label1" style="">
+	    				<text style="line-height:88px;" >昵称</text>
+	    				<input id="pput1" class="inpuval" value="{{val1}}" onchange="oncahnge1" oninput="oninput1" type="text" style="width:{{marginleft-100}}px;" placeholder="请输入修改的昵称">
+	    			</label>
+	    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+	    				<text style="line-height:88px;" >性别</text>
+	    				<input id="pput2" class="inpuval" value="{{val2}}" onchange="oncahnge2" oninput="oninput1" type="text" style="width:{{marginleft-100}}px;" placeholder="请重新输入性别">
+	    			</label>
+	    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+	    				<text style="line-height:88px;" >地区</text>
+	    				<input id="pput3" class="inpuval" value="{{val3}}" onchange="oncahnge3" oninput="oninput1" type="text" style="width:{{marginleft-100}}px;" placeholder="请重新输入地区">
+	    			</label>
+	    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+	    				<text style="line-height:88px;" >手机</text>
+	    				<input id="pput4" class="inpuval" value="{{val4}}" onchange="oncahnge4" oninput="oninput1" type="text" style="width:{{marginleft-100}}px;" placeholder="请重新输入手机号">
+	    			</label>
+	    			<label class="label1" style="border-top:1px solid #d6d7dc;">
+	    				<text style="line-height:88px;" >邮箱</text>
+	    				<input id="pput5" class="inpuval" value="{{val5}}" onchange="oncahnge5" oninput="oninput1" type="text" style="width:{{marginleft-100}}px;" placeholder="请重新输入邮箱">
+	    			</label>
+	    		</div>
+	    		<text class="baocuo">{{baocuo}}</text>
+	    		<text class="regidterbtn" onclick="tochangepas">完成</text>
+    		</div>
+    </div>
+</template>
+<style>
+	.login-box{
+		margin-top:40px;
+		border-top:1px solid #d6d7dc;
+		border-bottom:1px solid #d6d7dc;
+		background:#fff;
+		padding-left:24px;
+	}
+	.label1{
+		padding-right:24px;
+		height:88px;
+		line-height:88px;
+		flex-direction: row;
+	}
+	.inpuval{
+		padding-left:20px;
+		outline: none;
+		border:none;
+		font-size:26px;
+		color:#323232;
+	}
+	.regheader{
+		flex-direction: row;
+		justify-content:space-between;
+		height:88px;
+		background:#1b9cf7;
+		color:#fff;
+		line-height:88px;
+	}
+	.backbtn{
+		width:74px;
+		height:44px;
+		margin-left:24px;
+		margin-top:22px;
+	}
+	.head-title{
+		font-size:32px;
+	}
+	.head-next{
+		font-size:22px;
+		margin-right:24px;
+	}
+	.regidterbtn{
+		margin-left:24px;
+		margin-right:24px;
+		line-height:88px;
+		height:88px;
+		font-size:32px;
+		color:#fff;
+		background:#1b9cf7;
+		text-align:center;
+		border-radius:10px;
+		margin-top:40px;
+	}
+	.baocuo{
+		text-align:center;
+		font-size:28px;
+		line-height:28px;
+		margin-top:20px;
+		margin-bottom:10px;
+		color:red;
+	}
+</style>
+<script>
+    require('weex-components');
+    var modal = require('@weex-module/modal');
+    var stream = require('@weex-module/stream');
+    var storage = require('@weex-module/storage');
+    var navigator = require('@weex-module/navigator');
+    var apis = require('../common/api');
+    var md5 = require('../common/md5');
+    var locurl = apis.apiurl.resurl;
+    module.exports = {
+    	data: {
+            title: '', 
+            readingList: [], 
+            tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+            baseURL: '',
+            marginleft: 300,
+            val1: '',
+            val2: '',
+            val3: '',
+            val4: '',
+            val5: '',
+            baocuo: '',
+            userid: '',
+            token: ''
+        },
+        created: function(){
+        	var self = this;
+			var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+	        self.baseURL = base;
+        	self.$getConfig(function (config) {
+	            self.marginleft = config.env.deviceWidth;
+	        }.bind(this));
+	        self.getitem (function() {
+	        	self.getStarCount('user/info.json?token='+ self.token +'&userId='+ self.userid, res => {
+	               var data = res.data;
+	               if(data.status == 1){
+	               	 	self.val1 = data.data.userName;
+	               	 	self.val2 = data.data.nickname;
+	               	 	self.val3 = data.data.email;
+	               	 	self.val4 = data.data.phone;
+	               	 	self.val5 = data.data.email;
+	                }
+	            });
+	        });
+        },
+        methods: {
+        	onBackClick: function (e) {
+                var self = this;
+                var params = {
+                    'animated': 'true'
+                };
+                navigator.pop(params, function (e) {
+                    //callback
+                });
+            },
+			oncahnge1: function(event) {
+				this.val1 = event.value;
+			},
+			oncahnge2: function(event) {
+				this.val2 = event.value;
+			},
+			oncahnge3: function(event) {
+				this.val3 = event.value;
+			},
+			oncahnge4: function(event) {
+				this.val4 = event.value;
+			},
+			oncahnge5: function(event) {
+				this.val15 = event.value;
+			},
+			oninput1: function(event) {
+				this.baocuo = '';
+			},
+			getitem: function(callback) {
+				var self = this;
+	            storage.getItem('userId',function (e) {
+	                if(e.result == 'success'){
+	                    self.userid = e.data;
+	                    storage.getItem('token',function (e) {
+	                        if(e.result == 'success'){
+	                            self.token = e.data;
+	                            callback();
+	                        }
+	                    });
+	                }
+	            });
+			},
+			getStarCount: function(repo,callback) {
+	            return stream.fetch({
+	              method: 'GET',
+	              type: 'json',
+	              url: locurl + repo
+	            }, callback)
+	        }
+        }
+    }
+</script>

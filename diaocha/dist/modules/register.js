@@ -44,9 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(103)
-	var __weex_style__ = __webpack_require__(104)
-	var __weex_script__ = __webpack_require__(105)
+	var __weex_template__ = __webpack_require__(112)
+	var __weex_style__ = __webpack_require__(113)
+	var __weex_script__ = __webpack_require__(114)
 
 	__weex_define__('@weex-component/2ff9257003bd1fc99b23c724b32a0132', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2130,7 +2130,292 @@
 /* 86 */,
 /* 87 */,
 /* 88 */,
-/* 89 */,
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/*
+	 * JavaScript MD5
+	 * https://github.com/blueimp/JavaScript-MD5
+	 *
+	 * Copyright 2011, Sebastian Tschan
+	 * https://blueimp.net
+	 *
+	 * Licensed under the MIT license:
+	 * https://opensource.org/licenses/MIT
+	 *
+	 * Based on
+	 * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
+	 * Digest Algorithm, as defined in RFC 1321.
+	 * Version 2.2 Copyright (C) Paul Johnston 1999 - 2009
+	 * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+	 * Distributed under the BSD License
+	 * See http://pajhome.org.uk/crypt/md5 for more info.
+	 */
+
+	/* global define */
+
+	;(function ($) {
+	  'use strict'
+
+	  /*
+	  * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+	  * to work around bugs in some JS interpreters.
+	  */
+	  function safeAdd (x, y) {
+	    var lsw = (x & 0xFFFF) + (y & 0xFFFF)
+	    var msw = (x >> 16) + (y >> 16) + (lsw >> 16)
+	    return (msw << 16) | (lsw & 0xFFFF)
+	  }
+
+	  /*
+	  * Bitwise rotate a 32-bit number to the left.
+	  */
+	  function bitRotateLeft (num, cnt) {
+	    return (num << cnt) | (num >>> (32 - cnt))
+	  }
+
+	  /*
+	  * These functions implement the four basic operations the algorithm uses.
+	  */
+	  function md5cmn (q, a, b, x, s, t) {
+	    return safeAdd(bitRotateLeft(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b)
+	  }
+	  function md5ff (a, b, c, d, x, s, t) {
+	    return md5cmn((b & c) | ((~b) & d), a, b, x, s, t)
+	  }
+	  function md5gg (a, b, c, d, x, s, t) {
+	    return md5cmn((b & d) | (c & (~d)), a, b, x, s, t)
+	  }
+	  function md5hh (a, b, c, d, x, s, t) {
+	    return md5cmn(b ^ c ^ d, a, b, x, s, t)
+	  }
+	  function md5ii (a, b, c, d, x, s, t) {
+	    return md5cmn(c ^ (b | (~d)), a, b, x, s, t)
+	  }
+
+	  /*
+	  * Calculate the MD5 of an array of little-endian words, and a bit length.
+	  */
+	  function binlMD5 (x, len) {
+	    /* append padding */
+	    x[len >> 5] |= 0x80 << (len % 32)
+	    x[(((len + 64) >>> 9) << 4) + 14] = len
+
+	    var i
+	    var olda
+	    var oldb
+	    var oldc
+	    var oldd
+	    var a = 1732584193
+	    var b = -271733879
+	    var c = -1732584194
+	    var d = 271733878
+
+	    for (i = 0; i < x.length; i += 16) {
+	      olda = a
+	      oldb = b
+	      oldc = c
+	      oldd = d
+
+	      a = md5ff(a, b, c, d, x[i], 7, -680876936)
+	      d = md5ff(d, a, b, c, x[i + 1], 12, -389564586)
+	      c = md5ff(c, d, a, b, x[i + 2], 17, 606105819)
+	      b = md5ff(b, c, d, a, x[i + 3], 22, -1044525330)
+	      a = md5ff(a, b, c, d, x[i + 4], 7, -176418897)
+	      d = md5ff(d, a, b, c, x[i + 5], 12, 1200080426)
+	      c = md5ff(c, d, a, b, x[i + 6], 17, -1473231341)
+	      b = md5ff(b, c, d, a, x[i + 7], 22, -45705983)
+	      a = md5ff(a, b, c, d, x[i + 8], 7, 1770035416)
+	      d = md5ff(d, a, b, c, x[i + 9], 12, -1958414417)
+	      c = md5ff(c, d, a, b, x[i + 10], 17, -42063)
+	      b = md5ff(b, c, d, a, x[i + 11], 22, -1990404162)
+	      a = md5ff(a, b, c, d, x[i + 12], 7, 1804603682)
+	      d = md5ff(d, a, b, c, x[i + 13], 12, -40341101)
+	      c = md5ff(c, d, a, b, x[i + 14], 17, -1502002290)
+	      b = md5ff(b, c, d, a, x[i + 15], 22, 1236535329)
+
+	      a = md5gg(a, b, c, d, x[i + 1], 5, -165796510)
+	      d = md5gg(d, a, b, c, x[i + 6], 9, -1069501632)
+	      c = md5gg(c, d, a, b, x[i + 11], 14, 643717713)
+	      b = md5gg(b, c, d, a, x[i], 20, -373897302)
+	      a = md5gg(a, b, c, d, x[i + 5], 5, -701558691)
+	      d = md5gg(d, a, b, c, x[i + 10], 9, 38016083)
+	      c = md5gg(c, d, a, b, x[i + 15], 14, -660478335)
+	      b = md5gg(b, c, d, a, x[i + 4], 20, -405537848)
+	      a = md5gg(a, b, c, d, x[i + 9], 5, 568446438)
+	      d = md5gg(d, a, b, c, x[i + 14], 9, -1019803690)
+	      c = md5gg(c, d, a, b, x[i + 3], 14, -187363961)
+	      b = md5gg(b, c, d, a, x[i + 8], 20, 1163531501)
+	      a = md5gg(a, b, c, d, x[i + 13], 5, -1444681467)
+	      d = md5gg(d, a, b, c, x[i + 2], 9, -51403784)
+	      c = md5gg(c, d, a, b, x[i + 7], 14, 1735328473)
+	      b = md5gg(b, c, d, a, x[i + 12], 20, -1926607734)
+
+	      a = md5hh(a, b, c, d, x[i + 5], 4, -378558)
+	      d = md5hh(d, a, b, c, x[i + 8], 11, -2022574463)
+	      c = md5hh(c, d, a, b, x[i + 11], 16, 1839030562)
+	      b = md5hh(b, c, d, a, x[i + 14], 23, -35309556)
+	      a = md5hh(a, b, c, d, x[i + 1], 4, -1530992060)
+	      d = md5hh(d, a, b, c, x[i + 4], 11, 1272893353)
+	      c = md5hh(c, d, a, b, x[i + 7], 16, -155497632)
+	      b = md5hh(b, c, d, a, x[i + 10], 23, -1094730640)
+	      a = md5hh(a, b, c, d, x[i + 13], 4, 681279174)
+	      d = md5hh(d, a, b, c, x[i], 11, -358537222)
+	      c = md5hh(c, d, a, b, x[i + 3], 16, -722521979)
+	      b = md5hh(b, c, d, a, x[i + 6], 23, 76029189)
+	      a = md5hh(a, b, c, d, x[i + 9], 4, -640364487)
+	      d = md5hh(d, a, b, c, x[i + 12], 11, -421815835)
+	      c = md5hh(c, d, a, b, x[i + 15], 16, 530742520)
+	      b = md5hh(b, c, d, a, x[i + 2], 23, -995338651)
+
+	      a = md5ii(a, b, c, d, x[i], 6, -198630844)
+	      d = md5ii(d, a, b, c, x[i + 7], 10, 1126891415)
+	      c = md5ii(c, d, a, b, x[i + 14], 15, -1416354905)
+	      b = md5ii(b, c, d, a, x[i + 5], 21, -57434055)
+	      a = md5ii(a, b, c, d, x[i + 12], 6, 1700485571)
+	      d = md5ii(d, a, b, c, x[i + 3], 10, -1894986606)
+	      c = md5ii(c, d, a, b, x[i + 10], 15, -1051523)
+	      b = md5ii(b, c, d, a, x[i + 1], 21, -2054922799)
+	      a = md5ii(a, b, c, d, x[i + 8], 6, 1873313359)
+	      d = md5ii(d, a, b, c, x[i + 15], 10, -30611744)
+	      c = md5ii(c, d, a, b, x[i + 6], 15, -1560198380)
+	      b = md5ii(b, c, d, a, x[i + 13], 21, 1309151649)
+	      a = md5ii(a, b, c, d, x[i + 4], 6, -145523070)
+	      d = md5ii(d, a, b, c, x[i + 11], 10, -1120210379)
+	      c = md5ii(c, d, a, b, x[i + 2], 15, 718787259)
+	      b = md5ii(b, c, d, a, x[i + 9], 21, -343485551)
+
+	      a = safeAdd(a, olda)
+	      b = safeAdd(b, oldb)
+	      c = safeAdd(c, oldc)
+	      d = safeAdd(d, oldd)
+	    }
+	    return [a, b, c, d]
+	  }
+
+	  /*
+	  * Convert an array of little-endian words to a string
+	  */
+	  function binl2rstr (input) {
+	    var i
+	    var output = ''
+	    var length32 = input.length * 32
+	    for (i = 0; i < length32; i += 8) {
+	      output += String.fromCharCode((input[i >> 5] >>> (i % 32)) & 0xFF)
+	    }
+	    return output
+	  }
+
+	  /*
+	  * Convert a raw string to an array of little-endian words
+	  * Characters >255 have their high-byte silently ignored.
+	  */
+	  function rstr2binl (input) {
+	    var i
+	    var output = []
+	    output[(input.length >> 2) - 1] = undefined
+	    for (i = 0; i < output.length; i += 1) {
+	      output[i] = 0
+	    }
+	    var length8 = input.length * 8
+	    for (i = 0; i < length8; i += 8) {
+	      output[i >> 5] |= (input.charCodeAt(i / 8) & 0xFF) << (i % 32)
+	    }
+	    return output
+	  }
+
+	  /*
+	  * Calculate the MD5 of a raw string
+	  */
+	  function rstrMD5 (s) {
+	    return binl2rstr(binlMD5(rstr2binl(s), s.length * 8))
+	  }
+
+	  /*
+	  * Calculate the HMAC-MD5, of a key and some data (raw strings)
+	  */
+	  function rstrHMACMD5 (key, data) {
+	    var i
+	    var bkey = rstr2binl(key)
+	    var ipad = []
+	    var opad = []
+	    var hash
+	    ipad[15] = opad[15] = undefined
+	    if (bkey.length > 16) {
+	      bkey = binlMD5(bkey, key.length * 8)
+	    }
+	    for (i = 0; i < 16; i += 1) {
+	      ipad[i] = bkey[i] ^ 0x36363636
+	      opad[i] = bkey[i] ^ 0x5C5C5C5C
+	    }
+	    hash = binlMD5(ipad.concat(rstr2binl(data)), 512 + data.length * 8)
+	    return binl2rstr(binlMD5(opad.concat(hash), 512 + 128))
+	  }
+
+	  /*
+	  * Convert a raw string to a hex string
+	  */
+	  function rstr2hex (input) {
+	    var hexTab = '0123456789abcdef'
+	    var output = ''
+	    var x
+	    var i
+	    for (i = 0; i < input.length; i += 1) {
+	      x = input.charCodeAt(i)
+	      output += hexTab.charAt((x >>> 4) & 0x0F) +
+	      hexTab.charAt(x & 0x0F)
+	    }
+	    return output
+	  }
+
+	  /*
+	  * Encode a string as utf-8
+	  */
+	  function str2rstrUTF8 (input) {
+	    return unescape(encodeURIComponent(input))
+	  }
+
+	  /*
+	  * Take string arguments and return either raw or hex encoded strings
+	  */
+	  function rawMD5 (s) {
+	    return rstrMD5(str2rstrUTF8(s))
+	  }
+	  function hexMD5 (s) {
+	    return rstr2hex(rawMD5(s))
+	  }
+	  function rawHMACMD5 (k, d) {
+	    return rstrHMACMD5(str2rstrUTF8(k), str2rstrUTF8(d))
+	  }
+	  function hexHMACMD5 (k, d) {
+	    return rstr2hex(rawHMACMD5(k, d))
+	  }
+
+	  function md5 (string, key, raw) {
+	    if (!key) {
+	      if (!raw) {
+	        return hexMD5(string)
+	      }
+	      return rawMD5(string)
+	    }
+	    if (!raw) {
+	      return hexHMACMD5(key, string)
+	    }
+	    return rawHMACMD5(key, string)
+	  }
+
+	  if (true) {
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	      return md5
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
+	  } else if (typeof module === 'object' && module.exports) {
+	    module.exports = md5
+	  } else {
+	    $.md5 = md5
+	  }
+	}(this))
+
+/***/ },
 /* 90 */,
 /* 91 */,
 /* 92 */,
@@ -2144,7 +2429,16 @@
 /* 100 */,
 /* 101 */,
 /* 102 */,
-/* 103 */
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2157,193 +2451,191 @@
 	  },
 	  "children": [
 	    {
-	      "type": "scroller",
-	      "classList": [
-	        "scroller"
-	      ],
+	      "type": "div",
 	      "children": [
 	        {
 	          "type": "div",
+	          "classList": [
+	            "regheader"
+	          ],
 	          "children": [
 	            {
-	              "type": "div",
+	              "type": "image",
 	              "classList": [
-	                "regheader"
+	                "backbtn"
+	              ],
+	              "attr": {
+	                "src": "src/common/img/nav_back.png"
+	              },
+	              "events": {
+	                "click": "onBackClick"
+	              }
+	            },
+	            {
+	              "type": "text",
+	              "classList": [
+	                "head-title"
+	              ],
+	              "attr": {
+	                "value": "注册"
+	              }
+	            },
+	            {
+	              "type": "text",
+	              "classList": [
+	                "head-next"
+	              ],
+	              "events": {
+	                "click": "toregister"
+	              },
+	              "attr": {
+	                "value": "完成"
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "div",
+	          "classList": [
+	            "login-box"
+	          ],
+	          "children": [
+	            {
+	              "type": "label",
+	              "classList": [
+	                "label1"
 	              ],
 	              "children": [
 	                {
-	                  "type": "image",
-	                  "classList": [
-	                    "backbtn"
-	                  ],
-	                  "attr": {
-	                    "src": function () {return this.tubiao}
+	                  "type": "text",
+	                  "style": {
+	                    "lineHeight": 88
 	                  },
-	                  "events": {
-	                    "click": "onBackClick"
+	                  "attr": {
+	                    "value": "用户名"
 	                  }
 	                },
 	                {
-	                  "type": "text",
+	                  "type": "input",
+	                  "id": "uput",
 	                  "classList": [
-	                    "head-title"
+	                    "inpuval"
 	                  ],
 	                  "attr": {
-	                    "value": "注册"
-	                  }
-	                },
-	                {
-	                  "type": "text",
-	                  "classList": [
-	                    "head-next"
-	                  ],
-	                  "events": {
-	                    "click": "registeragain"
+	                    "value": "",
+	                    "type": "password",
+	                    "placeholder": "请输入2-9位的密码"
 	                  },
-	                  "attr": {
-	                    "value": "下一步"
+	                  "events": {
+	                    "change": "oncahnge1",
+	                    "input": "oninput1"
+	                  },
+	                  "style": {
+	                    "width": function () {return (this.marginleft-100) + 'px'}
 	                  }
 	                }
 	              ]
 	            },
 	            {
-	              "type": "div",
+	              "type": "label",
 	              "classList": [
-	                "login-box"
+	                "label1"
 	              ],
+	              "style": {
+	                "borderTop": "1px solid #d6d7dc"
+	              },
 	              "children": [
 	                {
-	                  "type": "label",
-	                  "classList": [
-	                    "label1"
-	                  ],
-	                  "children": [
-	                    {
-	                      "type": "text",
-	                      "style": {
-	                        "lineHeight": 88
-	                      },
-	                      "attr": {
-	                        "value": "手机"
-	                      }
-	                    },
-	                    {
-	                      "type": "input",
-	                      "classList": [
-	                        "inpuval"
-	                      ],
-	                      "attr": {
-	                        "type": "text",
-	                        "placeholder": "请您输入常用手机号码"
-	                      },
-	                      "style": {
-	                        "width": function () {return (this.marginleft-100) + 'px'}
-	                      }
-	                    }
-	                  ]
+	                  "type": "text",
+	                  "style": {
+	                    "lineHeight": 88
+	                  },
+	                  "attr": {
+	                    "value": "密码"
+	                  }
 	                },
 	                {
-	                  "type": "label",
+	                  "type": "input",
+	                  "id": "pput",
 	                  "classList": [
-	                    "label1"
+	                    "inpuval"
 	                  ],
-	                  "style": {
-	                    "borderTop": "1px solid #d6d7dc"
+	                  "attr": {
+	                    "value": "",
+	                    "type": "password",
+	                    "placeholder": "请输入2-9位的密码"
 	                  },
-	                  "children": [
-	                    {
-	                      "type": "text",
-	                      "style": {
-	                        "lineHeight": 88
-	                      },
-	                      "attr": {
-	                        "value": "邮箱"
-	                      }
-	                    },
-	                    {
-	                      "type": "input",
-	                      "classList": [
-	                        "inpuval"
-	                      ],
-	                      "attr": {
-	                        "type": "text",
-	                        "placeholder": "请输入常用电子邮箱"
-	                      },
-	                      "style": {
-	                        "width": function () {return (this.marginleft-100) + 'px'}
-	                      }
-	                    }
-	                  ]
+	                  "events": {
+	                    "change": "oncahnge2",
+	                    "input": "oninput1"
+	                  },
+	                  "style": {
+	                    "width": function () {return (this.marginleft-100) + 'px'}
+	                  }
+	                }
+	              ]
+	            },
+	            {
+	              "type": "label",
+	              "classList": [
+	                "label1"
+	              ],
+	              "style": {
+	                "borderTop": "1px solid #d6d7dc"
+	              },
+	              "children": [
+	                {
+	                  "type": "text",
+	                  "style": {
+	                    "lineHeight": 88
+	                  },
+	                  "attr": {
+	                    "value": "确认密码"
+	                  }
 	                },
 	                {
-	                  "type": "label",
+	                  "type": "input",
+	                  "id": "pput2",
 	                  "classList": [
-	                    "label1"
+	                    "inpuval"
 	                  ],
-	                  "style": {
-	                    "borderTop": "1px solid #d6d7dc"
+	                  "attr": {
+	                    "value": "",
+	                    "type": "password",
+	                    "placeholder": "请再次输入密码"
 	                  },
-	                  "children": [
-	                    {
-	                      "type": "text",
-	                      "style": {
-	                        "lineHeight": 88
-	                      },
-	                      "attr": {
-	                        "value": "密码"
-	                      }
-	                    },
-	                    {
-	                      "type": "input",
-	                      "classList": [
-	                        "inpuval"
-	                      ],
-	                      "attr": {
-	                        "type": "password",
-	                        "placeholder": "请输入2-9位的密码"
-	                      },
-	                      "style": {
-	                        "width": function () {return (this.marginleft-100) + 'px'}
-	                      }
-	                    }
-	                  ]
-	                },
-	                {
-	                  "type": "label",
-	                  "classList": [
-	                    "label1"
-	                  ],
-	                  "style": {
-	                    "borderTop": "1px solid #d6d7dc"
+	                  "events": {
+	                    "change": "oncahnge3",
+	                    "input": "oninput1"
 	                  },
-	                  "children": [
-	                    {
-	                      "type": "text",
-	                      "style": {
-	                        "lineHeight": 88
-	                      },
-	                      "attr": {
-	                        "value": "确认密码"
-	                      }
-	                    },
-	                    {
-	                      "type": "input",
-	                      "classList": [
-	                        "inpuval"
-	                      ],
-	                      "attr": {
-	                        "type": "password",
-	                        "placeholder": "请再次输入密码"
-	                      },
-	                      "style": {
-	                        "width": function () {return (this.marginleft-100) + 'px'}
-	                      }
-	                    }
-	                  ]
+	                  "style": {
+	                    "width": function () {return (this.marginleft-100) + 'px'}
+	                  }
 	                }
 	              ]
 	            }
 	          ]
+	        },
+	        {
+	          "type": "text",
+	          "classList": [
+	            "baocuo"
+	          ],
+	          "attr": {
+	            "value": function () {return this.baocuo}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": [
+	            "regidterbtn"
+	          ],
+	          "events": {
+	            "click": "toregister"
+	          },
+	          "attr": {
+	            "value": "注册"
+	          }
 	        }
 	      ]
 	    }
@@ -2351,7 +2643,7 @@
 	}
 
 /***/ },
-/* 104 */
+/* 113 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2385,9 +2677,9 @@
 	  },
 	  "backbtn": {
 	    "width": 74,
-	    "height": 28,
+	    "height": 44,
 	    "marginLeft": 24,
-	    "marginTop": 30
+	    "marginTop": 22
 	  },
 	  "head-title": {
 	    "fontSize": 32
@@ -2395,11 +2687,31 @@
 	  "head-next": {
 	    "fontSize": 22,
 	    "marginRight": 24
+	  },
+	  "regidterbtn": {
+	    "marginLeft": 24,
+	    "marginRight": 24,
+	    "lineHeight": 88,
+	    "height": 88,
+	    "fontSize": 32,
+	    "color": "#ffffff",
+	    "background": "#1b9cf7",
+	    "textAlign": "center",
+	    "borderRadius": 10,
+	    "marginTop": 40
+	  },
+	  "baocuo": {
+	    "textAlign": "center",
+	    "fontSize": 28,
+	    "lineHeight": 28,
+	    "marginTop": 20,
+	    "marginBottom": 10,
+	    "color": "#FF0000"
 	  }
 	}
 
 /***/ },
-/* 105 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2407,46 +2719,100 @@
 	__webpack_require__(3);
 	var modal = __weex_require__('@weex-module/modal');
 	var stream = __weex_require__('@weex-module/stream');
+	var storage = __weex_require__('@weex-module/storage');
 	var navigator = __weex_require__('@weex-module/navigator');
 	var apis = __webpack_require__(85);
+	var md5 = __webpack_require__(89);
+	var locurl = apis.apiurl.resurl;
 	module.exports = {
-	    data: function () {return {
-	        title: '',
-	        readingList: [],
-	        tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
-	        baseURL: '',
-	        marginleft: 300
-	    }},
-	    created: function created() {
-	        var self = this;
-	        var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
-	        this.baseURL = base;
-	        this.$getConfig(function (config) {
-	            self.marginleft = config.env.deviceWidth;
-	        }.bind(this));
-	    },
-	    methods: {
-	        onBackClick: function onBackClick(e) {
-	            var self = this;
-	            var params = {
-	                'animated': 'true'
-	            };
-	            navigator.pop(params, function (e) {});
-	        },
-	        registeragain: function registeragain(e) {
-	            var self = this;
-	            if (e.target.attr.status === 2) {
-	                return;
-	            };
-	            var itemid = e.target.attr.itemid;
-	            var vm = this;
-	            var params = {
-	                'url': this.baseURL + 'modules/registeragain.js',
-	                'animated': 'true'
-	            };
-	            navigator.push(params, function (e) {});
-	        }
-	    }
+		data: function () {return {
+			title: '',
+			readingList: [],
+			tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+			baseURL: '',
+			marginleft: 300,
+			userval: '',
+			pasval1: '',
+			pasval2: '',
+			baocuo: ''
+		}},
+		created: function created() {
+			var self = this;
+			var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+			this.baseURL = base;
+			this.$getConfig(function (config) {
+				self.marginleft = config.env.deviceWidth;
+			}.bind(this));
+		},
+		methods: {
+			onBackClick: function onBackClick(e) {
+				var self = this;
+				var params = {
+					'animated': 'true'
+				};
+				navigator.pop(params, function (e) {});
+			},
+			registeragain: function registeragain(e) {
+				var self = this;
+				if (e.target.attr.status === 2) {
+					return;
+				};
+				var itemid = e.target.attr.itemid;
+				var vm = this;
+				var params = {
+					'url': this.baseURL + 'modules/registeragain.js',
+					'animated': 'true'
+				};
+				navigator.push(params, function (e) {});
+			},
+			toregister: function toregister() {
+				var self = this;
+				var username = self.$el('uput').attr.value;
+				var password = self.$el('pput').attr.value;
+				var password2 = self.$el('pput2').attr.value;
+				if (username == '' || password == '' || password2 == '') {
+					self.baocuo = '用户名或密码不能为空';
+					return;
+				} else if (password != password2) {
+					self.baocuo = '两次输入密码不同';
+				} else {
+					self.getStarCount('user/register.json?userName=' + username + '&password=' + password, function (res) {
+						var data = res.data;
+						if (data.status == 1) {
+							storage.setItem('userName', username, function (e) {});
+							storage.setItem('passWord', password, function (e) {});
+							var urld = self.baseURL.split('?')[0];
+							var params = {
+								url: urld,
+								'animated': 'true'
+							};
+							navigator.push(params, function (e) {});
+						} else {
+							self.baocuo = data.message;
+						}
+					});
+				}
+			},
+			oncahnge1: function oncahnge1(event) {
+				this.userval = event.value;
+			},
+			oncahnge2: function oncahnge2(event) {
+				this.pasval1 = event.value;
+			},
+			oncahnge3: function oncahnge3(event) {
+				this.pasval2 = event.value;
+			},
+			oninput1: function oninput1(event) {
+				this.baocuo = '';
+			},
+			getStarCount: function getStarCount(repo, callback) {
+				return stream.fetch({
+					method: 'GET',
+					type: 'json',
+					url: locurl + repo
+				}, callback);
+			}
+		}
 	};}
 	/* generated by weex-loader */
 

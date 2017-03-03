@@ -44,9 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(89)
-	var __weex_style__ = __webpack_require__(90)
-	var __weex_script__ = __webpack_require__(91)
+	var __weex_template__ = __webpack_require__(100)
+	var __weex_style__ = __webpack_require__(101)
+	var __weex_script__ = __webpack_require__(102)
 
 	__weex_define__('@weex-component/5c17d8a3c1cf7e3965288eb1e52b6630', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2131,465 +2131,6 @@
 /* 87 */,
 /* 88 */,
 /* 89 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	  "type": "div",
-	  "classList": [
-	    "loginbox"
-	  ],
-	  "style": {
-	    "background": "#f3f3f3"
-	  },
-	  "children": [
-	    {
-	      "type": "scroller",
-	      "classList": [
-	        "scroller"
-	      ],
-	      "children": [
-	        {
-	          "type": "image",
-	          "style": {
-	            "width": 30,
-	            "height": 30
-	          },
-	          "classList": [
-	            "closeimg"
-	          ],
-	          "attr": {
-	            "src": function () {return this.tubiao}
-	          },
-	          "events": {
-	            "click": "onBackClick"
-	          }
-	        },
-	        {
-	          "type": "image",
-	          "classList": [
-	            "gerenimg"
-	          ],
-	          "style": {
-	            "width": 130,
-	            "height": 130,
-	            "marginLeft": function () {return ((this.marginleft-130)/2) + 'px'}
-	          },
-	          "attr": {
-	            "src": function () {return this.tubiao}
-	          }
-	        },
-	        {
-	          "type": "div",
-	          "classList": [
-	            "login-box"
-	          ],
-	          "children": [
-	            {
-	              "type": "label",
-	              "classList": [
-	                "label1"
-	              ],
-	              "children": [
-	                {
-	                  "type": "image",
-	                  "style": {
-	                    "marginTop": 22,
-	                    "width": 40,
-	                    "height": 40
-	                  },
-	                  "attr": {
-	                    "src": function () {return this.tubiao}
-	                  }
-	                },
-	                {
-	                  "type": "input",
-	                  "id": "uput",
-	                  "events": {
-	                    "change": "onchange1",
-	                    "input": "oninput1"
-	                  },
-	                  "classList": [
-	                    "inpuval"
-	                  ],
-	                  "attr": {
-	                    "type": "text",
-	                    "value": "",
-	                    "placeholder": "请输入登陆名"
-	                  },
-	                  "style": {
-	                    "width": function () {return (this.marginleft-88) + 'px'}
-	                  }
-	                }
-	              ]
-	            },
-	            {
-	              "type": "label",
-	              "classList": [
-	                "label1"
-	              ],
-	              "style": {
-	                "borderTop": "1px solid #d6d7dc"
-	              },
-	              "children": [
-	                {
-	                  "type": "image",
-	                  "style": {
-	                    "marginTop": 22,
-	                    "width": 40,
-	                    "height": 40
-	                  },
-	                  "attr": {
-	                    "src": function () {return this.tubiao}
-	                  }
-	                },
-	                {
-	                  "type": "input",
-	                  "id": "pput",
-	                  "classList": [
-	                    "inpuval"
-	                  ],
-	                  "events": {
-	                    "change": "onchange2",
-	                    "input": "oninput2"
-	                  },
-	                  "attr": {
-	                    "type": "password",
-	                    "value": "",
-	                    "placeholder": "请输入密码"
-	                  },
-	                  "style": {
-	                    "width": function () {return (this.marginleft-88) + 'px'}
-	                  }
-	                }
-	              ]
-	            }
-	          ]
-	        },
-	        {
-	          "type": "text",
-	          "classList": [
-	            "baocuo"
-	          ],
-	          "shown": function () {return this.baocuo!=''},
-	          "attr": {
-	            "value": function () {return this.baocuo}
-	          }
-	        },
-	        {
-	          "type": "text",
-	          "classList": [
-	            "resert"
-	          ],
-	          "attr": {
-	            "value": "忘记密码？"
-	          }
-	        },
-	        {
-	          "type": "text",
-	          "classList": [
-	            "login-btn"
-	          ],
-	          "events": {
-	            "click": "onlogin"
-	          },
-	          "attr": {
-	            "value": "登陆"
-	          }
-	        },
-	        {
-	          "type": "text",
-	          "classList": [
-	            "register-btn"
-	          ],
-	          "attr": {
-	            "value": "注册"
-	          }
-	        },
-	        {
-	          "type": "text",
-	          "classList": [
-	            "huo"
-	          ],
-	          "events": {
-	            "click": "get"
-	          },
-	          "attr": {
-	            "value": "或"
-	          }
-	        },
-	        {
-	          "type": "div",
-	          "classList": [
-	            "threelogin"
-	          ],
-	          "children": [
-	            {
-	              "type": "div",
-	              "classList": [
-	                "otrlogin"
-	              ],
-	              "style": {
-	                "marginRight": 40
-	              },
-	              "children": [
-	                {
-	                  "type": "image",
-	                  "style": {
-	                    "width": 88,
-	                    "height": 88,
-	                    "marginLeft": 12
-	                  },
-	                  "attr": {
-	                    "src": function () {return this.tubiao}
-	                  }
-	                },
-	                {
-	                  "type": "text",
-	                  "classList": [
-	                    "otrtext"
-	                  ],
-	                  "attr": {
-	                    "value": "微信登陆"
-	                  }
-	                }
-	              ]
-	            },
-	            {
-	              "type": "div",
-	              "classList": [
-	                "otrlogin"
-	              ],
-	              "style": {
-	                "marginLeft": 40
-	              },
-	              "children": [
-	                {
-	                  "type": "image",
-	                  "style": {
-	                    "width": 88,
-	                    "height": 88,
-	                    "marginLeft": 8
-	                  },
-	                  "attr": {
-	                    "src": function () {return this.tubiao}
-	                  }
-	                },
-	                {
-	                  "type": "text",
-	                  "classList": [
-	                    "otrtext"
-	                  ],
-	                  "attr": {
-	                    "value": "QQ登陆"
-	                  }
-	                }
-	              ]
-	            }
-	          ]
-	        }
-	      ]
-	    }
-	  ]
-	}
-
-/***/ },
-/* 90 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	  "loginbox": {
-	    "position": "absolute",
-	    "left": 0,
-	    "top": 0,
-	    "right": 0,
-	    "bottom": 0
-	  },
-	  "closeimg": {
-	    "marginTop": 70,
-	    "marginLeft": 30,
-	    "padding": 10
-	  },
-	  "gerenimg": {
-	    "marginTop": 80
-	  },
-	  "login-box": {
-	    "marginTop": 40,
-	    "borderTop": "1px solid #d6d7dc",
-	    "borderBottom": "1px solid #d6d7dc",
-	    "background": "#fff",
-	    "paddingLeft": 24
-	  },
-	  "label1": {
-	    "paddingRight": 24,
-	    "height": 88,
-	    "lineHeight": 88,
-	    "flexDirection": "row"
-	  },
-	  "inpuval": {
-	    "paddingLeft": 20,
-	    "outline": "none",
-	    "border": "none",
-	    "fontSize": 26,
-	    "color": "#323232"
-	  },
-	  "resert": {
-	    "textAlign": "right",
-	    "paddingRight": 24,
-	    "marginTop": 22,
-	    "color": "#333333",
-	    "fontSize": 22,
-	    "lineHeight": 22
-	  },
-	  "login-btn": {
-	    "height": 88,
-	    "borderRadius": 8,
-	    "lineHeight": 88,
-	    "textAlign": "center",
-	    "color": "#ffffff",
-	    "fontSize": 32,
-	    "background": "#1b9cf7",
-	    "marginTop": 40,
-	    "marginLeft": 24,
-	    "marginRight": 24
-	  },
-	  "register-btn": {
-	    "textAlign": "center",
-	    "marginTop": 40,
-	    "fontSize": 32,
-	    "lineHeight": 32,
-	    "color": "#323232"
-	  },
-	  "huo": {
-	    "textAlign": "center",
-	    "marginTop": 48,
-	    "fontSize": 32,
-	    "lineHeight": 32,
-	    "color": "#323232"
-	  },
-	  "threelogin": {
-	    "flexDirection": "row",
-	    "justifyContent": "center",
-	    "marginTop": 40
-	  },
-	  "otrlogin": {
-	    "textAlign": "center"
-	  },
-	  "otrtext": {
-	    "textAlign": "center",
-	    "marginTop": 12,
-	    "color": "#323232",
-	    "lineHeight": 28,
-	    "fontSize": 28
-	  },
-	  "baocuo": {
-	    "textAlign": "center",
-	    "fontSize": 28,
-	    "lineHeight": 28,
-	    "marginTop": 20,
-	    "marginBottom": 10,
-	    "color": "#FF0000"
-	  }
-	}
-
-/***/ },
-/* 91 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function(module, exports, __weex_require__){'use strict';
-
-	__webpack_require__(3);
-	var storage = __weex_require__('@weex-module/storage');
-	var modal = __weex_require__('@weex-module/modal');
-	var stream = __weex_require__('@weex-module/stream');
-	var navigator = __weex_require__('@weex-module/navigator');
-	var apis = __webpack_require__(85);
-	var md5 = __webpack_require__(92);
-	var locurl = apis.apiurl.resurl;
-	module.exports = {
-	    data: function () {return {
-	        title: '',
-	        readingList: [],
-	        tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
-	        baseURL: '',
-	        marginleft: 300,
-	        userChange: '',
-	        pasChange: '',
-	        baocuo: ''
-	    }},
-	    created: function created() {
-	        var self = this;
-	        var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
-	        this.baseURL = base;
-	        this.$getConfig(function (config) {
-	            self.marginleft = config.env.deviceWidth;
-	        }.bind(this));
-	    },
-	    methods: {
-	        onBackClick: function onBackClick(e) {
-	            var self = this;
-	            var params = {
-	                'url': this.baseURL.split('?')[0],
-	                'animated': 'true'
-	            };
-	            navigator.pop(params, function (e) {});
-	        },
-	        onlogin: function onlogin(e) {
-	            var _this = this;
-
-	            var self = this;
-	            var username = self.$el('uput').attr.value;
-	            var password = md5(self.$el('pput').attr.value);
-	            if (username == '' || self.$el('pput').attr.value == '') {
-	                this.baocuo = '用户名或者密码不能为空';
-	            } else {
-	                this.getStarCount('user/login.json?userName=' + username + '&password=' + password, function (res) {
-	                    var data = res.data;
-	                    if (data.status == 1) {
-	                        storage.setItem('userName', username, function (e) {});
-	                        storage.setItem('passWord', password, function (e) {});
-	                        storage.setItem('token', data.data.token, function (e) {});
-	                        var urld = _this.baseURL.split('?')[0];
-	                        var params = {
-	                            url: urld,
-	                            'animated': 'true'
-	                        };
-	                        navigator.push(params, function (e) {});
-	                    } else {
-	                        self.baocuo = data.message;
-	                    }
-	                });
-	            }
-	        },
-	        getStarCount: function getStarCount(repo, callback) {
-	            return stream.fetch({
-	                method: 'GET',
-	                type: 'json',
-	                url: locurl + repo
-	            }, callback);
-	        },
-	        onchange1: function onchange1(event) {
-	            this.userChange = event.value;
-	        },
-	        onchange2: function onchange2(event) {
-	            this.pasChange = event.value;
-	        },
-	        oninput1: function oninput1(event) {
-	            this.baocuo = '';
-	        },
-	        oninput2: function oninput2(event) {
-	            this.baocuo = '';
-	        },
-	        get: function get() {
-	            storage.getItem('userName', function (e) {});
-	            storage.getItem('passWord', function (e) {});
-	        }
-	    }
-	};}
-	/* generated by weex-loader */
-
-
-/***/ },
-/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -2873,6 +2414,486 @@
 	    $.md5 = md5
 	  }
 	}(this))
+
+/***/ },
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  "type": "div",
+	  "classList": [
+	    "loginbox"
+	  ],
+	  "style": {
+	    "background": "#f3f3f3"
+	  },
+	  "children": [
+	    {
+	      "type": "scroller",
+	      "classList": [
+	        "scroller"
+	      ],
+	      "children": [
+	        {
+	          "type": "image",
+	          "style": {
+	            "width": 40,
+	            "height": 40
+	          },
+	          "classList": [
+	            "closeimg"
+	          ],
+	          "attr": {
+	            "src": "src/common/img/login_btn_Close.png"
+	          },
+	          "events": {
+	            "click": "onBackClick"
+	          }
+	        },
+	        {
+	          "type": "image",
+	          "classList": [
+	            "gerenimg"
+	          ],
+	          "style": {
+	            "width": 130,
+	            "height": 130,
+	            "marginLeft": function () {return ((this.marginleft-130)/2) + 'px'}
+	          },
+	          "attr": {
+	            "src": "src/common/img/img_log_not.png"
+	          }
+	        },
+	        {
+	          "type": "div",
+	          "classList": [
+	            "login-box"
+	          ],
+	          "children": [
+	            {
+	              "type": "label",
+	              "classList": [
+	                "label1"
+	              ],
+	              "children": [
+	                {
+	                  "type": "image",
+	                  "style": {
+	                    "marginTop": 22,
+	                    "width": 40,
+	                    "height": 40
+	                  },
+	                  "attr": {
+	                    "src": "src/common/img/login_ican_log.png"
+	                  }
+	                },
+	                {
+	                  "type": "input",
+	                  "id": "uput",
+	                  "events": {
+	                    "change": "onchange1",
+	                    "input": "oninput1"
+	                  },
+	                  "classList": [
+	                    "inpuval"
+	                  ],
+	                  "attr": {
+	                    "type": "text",
+	                    "value": "",
+	                    "placeholder": "请输入登陆名"
+	                  },
+	                  "style": {
+	                    "width": function () {return (this.marginleft-88) + 'px'}
+	                  }
+	                }
+	              ]
+	            },
+	            {
+	              "type": "label",
+	              "classList": [
+	                "label1"
+	              ],
+	              "style": {
+	                "borderTop": "1px solid #d6d7dc"
+	              },
+	              "children": [
+	                {
+	                  "type": "image",
+	                  "style": {
+	                    "marginTop": 22,
+	                    "width": 40,
+	                    "height": 40
+	                  },
+	                  "attr": {
+	                    "src": "src/common/img/login_ican_password.png"
+	                  }
+	                },
+	                {
+	                  "type": "input",
+	                  "id": "pput",
+	                  "classList": [
+	                    "inpuval"
+	                  ],
+	                  "events": {
+	                    "change": "onchange2",
+	                    "input": "oninput2"
+	                  },
+	                  "attr": {
+	                    "type": "password",
+	                    "value": "",
+	                    "placeholder": "请输入密码"
+	                  },
+	                  "style": {
+	                    "width": function () {return (this.marginleft-88) + 'px'}
+	                  }
+	                }
+	              ]
+	            }
+	          ]
+	        },
+	        {
+	          "type": "text",
+	          "classList": [
+	            "baocuo"
+	          ],
+	          "shown": function () {return this.baocuo!=''},
+	          "attr": {
+	            "value": function () {return this.baocuo}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": [
+	            "resert"
+	          ],
+	          "attr": {
+	            "value": "忘记密码？"
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": [
+	            "login-btn"
+	          ],
+	          "events": {
+	            "click": "onlogin"
+	          },
+	          "attr": {
+	            "value": "登陆"
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": [
+	            "register-btn"
+	          ],
+	          "events": {
+	            "click": "toregister"
+	          },
+	          "attr": {
+	            "value": "注册"
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": [
+	            "huo"
+	          ],
+	          "events": {
+	            "click": "get"
+	          },
+	          "attr": {
+	            "value": "或"
+	          }
+	        },
+	        {
+	          "type": "div",
+	          "classList": [
+	            "threelogin"
+	          ],
+	          "children": [
+	            {
+	              "type": "div",
+	              "classList": [
+	                "otrlogin"
+	              ],
+	              "style": {
+	                "marginRight": 40
+	              },
+	              "children": [
+	                {
+	                  "type": "image",
+	                  "style": {
+	                    "width": 88,
+	                    "height": 88,
+	                    "marginLeft": 12
+	                  },
+	                  "attr": {
+	                    "src": "src/common/img/login_btn_weixin.png"
+	                  }
+	                },
+	                {
+	                  "type": "text",
+	                  "classList": [
+	                    "otrtext"
+	                  ],
+	                  "attr": {
+	                    "value": "微信登陆"
+	                  }
+	                }
+	              ]
+	            },
+	            {
+	              "type": "div",
+	              "classList": [
+	                "otrlogin"
+	              ],
+	              "style": {
+	                "marginLeft": 40
+	              },
+	              "children": [
+	                {
+	                  "type": "image",
+	                  "style": {
+	                    "width": 88,
+	                    "height": 88,
+	                    "marginLeft": 8
+	                  },
+	                  "attr": {
+	                    "src": "src/common/img/login_btn_qq.png"
+	                  }
+	                },
+	                {
+	                  "type": "text",
+	                  "classList": [
+	                    "otrtext"
+	                  ],
+	                  "attr": {
+	                    "value": "QQ登陆"
+	                  }
+	                }
+	              ]
+	            }
+	          ]
+	        }
+	      ]
+	    }
+	  ]
+	}
+
+/***/ },
+/* 101 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  "loginbox": {
+	    "position": "absolute",
+	    "left": 0,
+	    "top": 0,
+	    "right": 0,
+	    "bottom": 0
+	  },
+	  "closeimg": {
+	    "marginTop": 70,
+	    "marginLeft": 30,
+	    "padding": 10
+	  },
+	  "gerenimg": {
+	    "marginTop": 80
+	  },
+	  "login-box": {
+	    "marginTop": 40,
+	    "borderTop": "1px solid #d6d7dc",
+	    "borderBottom": "1px solid #d6d7dc",
+	    "background": "#fff",
+	    "paddingLeft": 24
+	  },
+	  "label1": {
+	    "paddingRight": 24,
+	    "height": 88,
+	    "lineHeight": 88,
+	    "flexDirection": "row"
+	  },
+	  "inpuval": {
+	    "paddingLeft": 20,
+	    "outline": "none",
+	    "border": "none",
+	    "fontSize": 26,
+	    "color": "#323232"
+	  },
+	  "resert": {
+	    "textAlign": "right",
+	    "paddingRight": 24,
+	    "marginTop": 22,
+	    "color": "#333333",
+	    "fontSize": 22,
+	    "lineHeight": 22
+	  },
+	  "login-btn": {
+	    "height": 88,
+	    "borderRadius": 8,
+	    "lineHeight": 88,
+	    "textAlign": "center",
+	    "color": "#ffffff",
+	    "fontSize": 32,
+	    "background": "#1b9cf7",
+	    "marginTop": 40,
+	    "marginLeft": 24,
+	    "marginRight": 24
+	  },
+	  "register-btn": {
+	    "textAlign": "center",
+	    "marginTop": 40,
+	    "fontSize": 32,
+	    "lineHeight": 32,
+	    "color": "#323232"
+	  },
+	  "huo": {
+	    "textAlign": "center",
+	    "marginTop": 48,
+	    "fontSize": 32,
+	    "lineHeight": 32,
+	    "color": "#323232"
+	  },
+	  "threelogin": {
+	    "flexDirection": "row",
+	    "justifyContent": "center",
+	    "marginTop": 40
+	  },
+	  "otrlogin": {
+	    "textAlign": "center"
+	  },
+	  "otrtext": {
+	    "textAlign": "center",
+	    "marginTop": 12,
+	    "color": "#323232",
+	    "lineHeight": 28,
+	    "fontSize": 28
+	  },
+	  "baocuo": {
+	    "textAlign": "center",
+	    "fontSize": 28,
+	    "lineHeight": 28,
+	    "marginTop": 20,
+	    "marginBottom": 10,
+	    "color": "#FF0000"
+	  }
+	}
+
+/***/ },
+/* 102 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(module, exports, __weex_require__){'use strict';
+
+	__webpack_require__(3);
+	var storage = __weex_require__('@weex-module/storage');
+	var modal = __weex_require__('@weex-module/modal');
+	var stream = __weex_require__('@weex-module/stream');
+	var navigator = __weex_require__('@weex-module/navigator');
+	var apis = __webpack_require__(85);
+	var md5 = __webpack_require__(89);
+	var locurl = apis.apiurl.resurl;
+	module.exports = {
+	    data: function () {return {
+	        title: '',
+	        readingList: [],
+	        tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	        baseURL: '',
+	        marginleft: 300,
+	        userChange: '',
+	        pasChange: '',
+	        baocuo: ''
+	    }},
+	    created: function created() {
+	        var self = this;
+	        var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+	        this.baseURL = base;
+	        this.$getConfig(function (config) {
+	            self.marginleft = config.env.deviceWidth;
+	        }.bind(this));
+	    },
+	    methods: {
+	        onBackClick: function onBackClick(e) {
+	            var self = this;
+	            var params = {
+	                'url': this.baseURL.split('?')[0],
+	                'animated': 'true'
+	            };
+	            navigator.pop(params, function (e) {});
+	        },
+	        onlogin: function onlogin(e) {
+	            var self = this;
+	            var username = self.$el('uput').attr.value;
+	            var password = md5(self.$el('pput').attr.value);
+	            if (username == '' || self.$el('pput').attr.value == '') {
+	                self.baocuo = '用户名或者密码不能为空';
+	            } else {
+	                self.getStarCount('user/login.json?userName=' + username + '&password=' + password, function (res) {
+	                    var data = res.data;
+	                    if (data.status == 1) {
+	                        storage.setItem('userName', username, function (e) {});
+	                        storage.setItem('passWord', self.$el('pput').attr.value, function (e) {});
+	                        storage.setItem('token', data.data.token, function (e) {});
+	                        storage.setItem('userId', data.data.user.id, function (e) {});
+	                        var urld = self.baseURL.split('?')[0];
+	                        var params = {
+	                            url: urld,
+	                            'animated': 'true'
+	                        };
+	                        navigator.push(params, function (e) {});
+	                    } else {
+	                        self.baocuo = data.message;
+	                    }
+	                });
+	            }
+	        },
+	        toregister: function toregister() {
+	            var self = this;
+	            var vm = this;
+	            var params = {
+	                'url': self.baseURL + 'modules/register.js',
+	                'animated': 'true'
+	            };
+	            navigator.push(params, function (e) {});
+	        },
+	        getStarCount: function getStarCount(repo, callback) {
+	            return stream.fetch({
+	                method: 'GET',
+	                type: 'json',
+	                url: locurl + repo
+	            }, callback);
+	        },
+	        onchange1: function onchange1(event) {
+	            this.userChange = event.value;
+	        },
+	        onchange2: function onchange2(event) {
+	            this.pasChange = event.value;
+	        },
+	        oninput1: function oninput1(event) {
+	            this.baocuo = '';
+	        },
+	        oninput2: function oninput2(event) {
+	            this.baocuo = '';
+	        },
+	        get: function get() {
+	            storage.getItem('userName', function (e) {});
+	            storage.getItem('passWord', function (e) {});
+	        }
+	    }
+	};}
+	/* generated by weex-loader */
+
 
 /***/ }
 /******/ ]);

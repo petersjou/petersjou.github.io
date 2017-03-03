@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(112)
-	var __weex_style__ = __webpack_require__(113)
-	var __weex_script__ = __webpack_require__(114)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(121)
+	var __weex_style__ = __webpack_require__(122)
+	var __weex_script__ = __webpack_require__(123)
 
 	__weex_define__('@weex-component/d882a7da9e095520f3e706939a6464ea', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,9 +2299,6 @@
 
 
 /***/ },
-/* 94 */,
-/* 95 */,
-/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
@@ -2313,7 +2314,16 @@
 /* 109 */,
 /* 110 */,
 /* 111 */,
-/* 112 */
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2379,10 +2389,10 @@
 	                            {
 	                              "type": "image",
 	                              "classList": [
-	                                "use-img"
+	                                "use-img2"
 	                              ],
 	                              "attr": {
-	                                "src": function () {return this.tubiao}
+	                                "src": "src/common/img/icon_updated.png"
 	                              }
 	                            },
 	                            {
@@ -2391,7 +2401,7 @@
 	                                "use-text"
 	                              ],
 	                              "attr": {
-	                                "value": "个人信息"
+	                                "value": "检查更新"
 	                              }
 	                            }
 	                          ]
@@ -2402,7 +2412,7 @@
 	                            "use-img"
 	                          ],
 	                          "attr": {
-	                            "src": function () {return this.tubiao}
+	                            "src": "src/common/img/icon_arrow.png"
 	                          }
 	                        }
 	                      ]
@@ -2416,6 +2426,7 @@
 	                        "click": "lostlogin"
 	                      },
 	                      "style": {
+	                        "marginTop": 40,
 	                        "flexDirection": "row",
 	                        "background": "#1b9cf7",
 	                        "justifyContent": "space-between"
@@ -2433,10 +2444,10 @@
 	                            {
 	                              "type": "image",
 	                              "classList": [
-	                                "use-img"
+	                                "use-img2"
 	                              ],
 	                              "attr": {
-	                                "src": function () {return this.tubiao}
+	                                "src": "src/common/img/icon_Close.png"
 	                              }
 	                            },
 	                            {
@@ -2444,11 +2455,24 @@
 	                              "classList": [
 	                                "use-text"
 	                              ],
+	                              "style": {
+	                                "paddingLeft": 10,
+	                                "color": "#ffffff"
+	                              },
 	                              "attr": {
 	                                "value": "退出登录"
 	                              }
 	                            }
 	                          ]
+	                        },
+	                        {
+	                          "type": "image",
+	                          "classList": [
+	                            "use-img"
+	                          ],
+	                          "attr": {
+	                            "src": "src/common/img/icon_arrow.png"
+	                          }
 	                        }
 	                      ]
 	                    }
@@ -2464,7 +2488,7 @@
 	}
 
 /***/ },
-/* 113 */
+/* 122 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2481,6 +2505,11 @@
 	  },
 	  "use-img": {
 	    "marginTop": 25,
+	    "width": 20,
+	    "height": 38
+	  },
+	  "use-img2": {
+	    "marginTop": 25,
 	    "width": 38,
 	    "height": 38
 	  },
@@ -2493,7 +2522,7 @@
 	}
 
 /***/ },
-/* 114 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2506,72 +2535,77 @@
 	var navigator = __weex_require__('@weex-module/navigator');
 	var locurl = apis.apiurl.resurl;__webpack_require__(3);
 	module.exports = {
-					data: function () {return {
-									baseURL: '',
-									moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg',
-									userleft: 300,
-									login: false,
-									showback: true,
-									userdename: 'asdas',
-									username: '',
-									tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png'
-					}},
-					created: function created() {
-									var self = this;
-									var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
-									this.baseURL = base;
-									this.$getConfig(function (config) {
-													self.userleft = config.env.deviceWidth / 2 - 65;
-									}.bind(this));
-									storage.getItem('token', function (e) {
-													self.getStarCount('user/isLogin.json?token=' + e.data, function (res) {
-																	if (res.data.status == 1) {
-																					self.login = true;
-																	}
-													});
-									});
-					},
-					methods: {
-									tologin: function tologin(e) {
-													var self = this;
-													var vm = this;
-													var params = {
-																	'url': this.baseURL + 'modules/login.js',
-																	'animated': 'true'
-													};
-													navigator.push(params, function (e) {});
-									},
-									toregister: function toregister(e) {
-													var self = this;
-													var vm = this;
-													var params = {
-																	'url': this.baseURL + 'modules/register.js',
-																	'animated': 'true'
-													};
-													navigator.push(params, function (e) {});
-									},
-									lostlogin: function lostlogin() {
-													storage.removeItem('userName', function (e) {});
-													storage.removeItem('passWord', function (e) {});
-													storage.removeItem('token', function (e) {});
-													var params = {
-																	'url': this.baseURL.split('?')[0],
-																	'animated': 'true'
-													};
-													navigator.push(params, function (e) {});
-									},
-									get: function get() {
-													storage.getItem('userName', function (e) {});
-													storage.getItem('passWord', function (e) {});
-									},
-									getStarCount: function getStarCount(repo, callback) {
-													return stream.fetch({
-																	method: 'GET',
-																	type: 'json',
-																	url: locurl + repo
-													}, callback);
-									}
+		data: function () {return {
+			baseURL: '',
+			moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg',
+			userleft: 300,
+			login: false,
+			showback: true,
+			userdename: 'asdas',
+			token: '',
+			username: '',
+			tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png'
+		}},
+		created: function created() {
+			var self = this;
+			var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
+			self.baseURL = base;
+			self.$getConfig(function (config) {
+				self.userleft = config.env.deviceWidth / 2 - 65;
+			}.bind(this));
+			storage.getItem('token', function (e) {
+				self.getStarCount('user/isLogin.json?token=' + e.data, function (res) {
+					if (res.data.status == 1) {
+						self.login = true;
 					}
+				});
+				self.token = e.data;
+			});
+		},
+		methods: {
+			tologin: function tologin(e) {
+				var self = this;
+				var params = {
+					'url': self.baseURL + 'modules/login.js',
+					'animated': 'true'
+				};
+				navigator.push(params, function (e) {});
+			},
+			toregister: function toregister(e) {
+				var self = this;
+				var params = {
+					'url': self.baseURL + 'modules/register.js',
+					'animated': 'true'
+				};
+				navigator.push(params, function (e) {});
+			},
+			lostlogin: function lostlogin(e) {
+				var self = this;
+				self.getStarCount('user/logout.json?token=' + this.token, function (res) {
+					if (res.data.status == 1) {
+						storage.removeItem('userName', function (e) {});
+						storage.removeItem('passWord', function (e) {});
+						storage.removeItem('token', function (e) {});
+						var params = {
+							'url': self.baseURL.split('?')[0],
+							'animated': 'true'
+						};
+						navigator.push(params, function (e) {});
+					}
+				});
+			},
+			get: function get() {
+				storage.getItem('userName', function (e) {});
+				storage.getItem('passWord', function (e) {});
+			},
+			getStarCount: function getStarCount(repo, callback) {
+				return stream.fetch({
+					method: 'GET',
+					type: 'json',
+					url: locurl + repo
+				}, callback);
+			}
+		}
 	};}
 	/* generated by weex-loader */
 

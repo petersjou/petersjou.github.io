@@ -1,12 +1,11 @@
  <template>
     <div style="background:#f3f3f3;">
        <header title="我的..."></header>
-       <scroller class="scroller">
 	       <div class="user-box">
 	       		<div class="user-header">
 	       			<div if="!login">
 	       				<div class="user-img" style="margin-left:{{userleft}}px;">
-		       				<image style="width:130px;height:130px;" src="{{moniimg}}"></image>
+		       				<image style="width:130px;height:130px;" src="src/common/img/img_log_not.png"></image>
 		       			</div>
 		       			<div class="user-btn" onclick="toregister" style="flex-direction: row;justify-content: center;">
 		       				<text onclick="tologin" class="user-login user-br" style="background:#1b9cf7;margin-right:40px;">登陆</text>
@@ -15,11 +14,11 @@
 	       			</div>
 	       			<div if="login" style="flex-direction: row;margin-top:80px;justify-content: center;">
 	       				<div class="userdeimg" style="margin-right:30px;">
-		       				<image style="width:130px;height:130px;" src="{{moniimg}}"></image>
+		       				<image style="width:130px;height:130px;" src="src/common/img/img_log.png"></image>
 		       			</div>
 		       			<div class="usernm" style="flex-direction: row;margin-left:30px;margin-top:30px;">
-		       				<image style="width:32px;height:32px;" src="{{tubiao}}"></image>
-		       				<text style="font-size:32px;line-height:32px;color:#fff;">{{userdename}}</text>
+		       				<image style="width:32px;height:32px;" src="src/common/img/icon_sex_male.png"></image>
+		       				<text style="font-size:32px;margin-left:10px;line-height:32px;color:#fff;">{{username}}</text>
 		       			</div>
 	       			</div>
 	       		</div>
@@ -27,43 +26,42 @@
 	       			<div class="user-val userinit">
 	       				<div class="myinit" onclick="touserinfo" style="flex-direction: row;justify-content: space-between;">
 	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" src="{{tubiao}}"></image>
+	       						<image class="use-img2" src="src/common/img/icon_information.png"></image>
 	       						<text class="use-text" >个人信息</text>
 	       					</div>
 	       					<image class="use-img" src="{{tubiao}}"></image>
 	       				</div>
-	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
-	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" style="" src="{{tubiao}}"></image>
-	       						<text class="use-text">修改密码</text>
+	       				<div class="myinit" onclick="tochangepas" style="flex-direction: row;justify-content: space-between;">
+	       					<div class="muleft" style="flex-direction: row;" >
+	       						<image class="use-img2" style="" src="src/common/img/icon_password.png"></image>
+	       						<text class="use-text" >修改密码</text>
 	       					</div>
 	       					<image class="use-img" src="{{tubiao}}"></image>
 	       				</div>
 	       				<div class="myinit" style="margin-top:40px;flex-direction: row;justify-content: space-between;">
 	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" style="" src="{{tubiao}}"></image>
-	       						<text class="use-text">浏览记录</text>
+	       						<image class="use-img2" style="" src="src/common/img/icon_browse.png"></image>
+	       						<text class="use-text">答题记录</text>
 	       					</div>
 	       					<image class="use-img" src="{{tubiao}}"></image>
 	       				</div>
-	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
+	       				<div class="myinit" onclick="tohomelist" style="flex-direction: row;justify-content: space-between;">
 	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" style="" src="{{tubiao}}"></image>
+	       						<image class="use-img2" style="" src="src/common/img/icon_Collection.png"></image>
 	       						<text class="use-text">问卷收藏</text>
 	       					</div>
 	       					<image class="use-img" src="{{tubiao}}"></image>
 	       				</div>
-	       				<div class="myinit" style="flex-direction: row;justify-content: space-between;">
+	       				<div class="myinit" onclick="toset" style="flex-direction: row;justify-content: space-between;">
 	       					<div class="muleft" style="flex-direction: row;">
-	       						<image class="use-img" style="" src="{{tubiao}}"></image>
-	       						<text class="use-text" onclick="toset">设置</text>
+	       						<image class="use-img2" style="" src="src/common/img/icon_set.png"></image>
+	       						<text class="use-text" >设置</text>
 	       					</div>
 	       					<image class="use-img" src="{{tubiao}}"></image>
 	       				</div>
 	       			</div>
 	       		</div>
 	       </div>
-       </scroller>
     </div>
 </template> 
 
@@ -74,7 +72,7 @@
     .user-header{
     	width: 100%;
     	height: 310px;
-    	background: url(http://47.93.112.226:9001//assets/wechat/img/slider2.jpg) 0 0 no-repeat;
+    	background: url(src/common/img/userbg.png) 0 0 no-repeat;
     	background-size:cover;
     }
     .user-img{
@@ -107,6 +105,11 @@
     }
     .use-img{
     	margin-top:25px;
+    	width:20px;
+    	height:38px;
+    }
+    .use-img2{
+    	margin-top:25px;
     	width:38px;
     	height:38px;
     }
@@ -129,34 +132,45 @@
     module.exports = {
         data: {
         	baseURL: '',
-        	moniimg: 'http://47.93.112.226:9001//assets/wechat/img/slider2.jpg',
+        	moniimg: 'src/common/img/userbg.png',
         	userleft: 300,
         	login: false,
-        	userdename: 'asdas',
+        	userdename: '',
         	username: '',
-        	tubiao: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png'
+        	tubiao: 'src/common/img/icon_arrow.png'
         },
         created: function() {
         	var self = this;
 			var base = apis.getBaseUrl(self.$getConfig().bundleUrl, true);
-        	this.baseURL = base;
-        	this.$getConfig(function (config) {
+        	self.baseURL = base;
+        	self.$getConfig(function (config) {
 	            self.userleft = config.env.deviceWidth / 2 - 65;
 	        }.bind(this));
+	        
 	        storage.getItem('token',function (e) {
-	        	self.getStarCount('user/isLogin.json?token='+ e.data,res => {
-	        		if(res.data.status == 1){
-	        			self.login = true;
-	        		}
-	        	})
-	        })
+	            self.getStarCount('user/isLogin.json?token='+ e.data,res => {
+	                if(res.data.status != 1){
+	                    self.get(function() {
+	                        if(self.username == ''){
+	                        } else {
+	                            self.getStarCount('user/login.json?userName='+ self.username +'&password='+ self.password , res => {
+	                                storage.setItem('token',res.data.token,function(e){});
+	                                self.login = true;
+	                            });
+	                        }
+	                    });
+	                } else {
+	                	self.get(function(){});
+	                	self.login = true;
+	                }
+	            })
+	        });
         },
         methods: {
         	tologin: function(e) {
 				var self = this;
-	            var vm = this;
 	            var params = {
-	                'url': this.baseURL + 'modules/login.js',
+	                'url': self.baseURL + 'modules/login.js',
 	                'animated': 'true'
 	            };
 	            navigator.push(params, function (e) {
@@ -165,10 +179,19 @@
 			},
 			toregister: function(e) {
 				var self = this;
-	            var vm = this;
+            	 var params = {
+	                'url': self.baseURL + 'modules/register.js',
+	                'animated': 'true'
+	            };
+	            navigator.push(params, function (e) {
+	                //callback
+	            });
+			},
+			tochangepas: function(e) {
+				var self = this;
 	            if(self.login){
-	            	 var params = {
-		                'url': this.baseURL + 'modules/register.js',
+	            	var params = {
+		                'url': self.baseURL + 'modules/changepas.js',
 		                'animated': 'true'
 		            };
 		            navigator.push(params, function (e) {
@@ -176,21 +199,19 @@
 		            });
 	            }else{
 	            	var params = {
-		                'url': this.baseURL + 'modules/login.js',
+		                'url': self.baseURL + 'modules/login.js',
 		                'animated': 'true'
 		            };
 		            navigator.push(params, function (e) {
 		                //callback
 		            });
 	            }
-	           
 			},
-			toset: function(){
+			tohomelist: function() {
 				var self = this;
-	            var vm = this;
 	            if(self.login){
 	            	var params = {
-		                'url': this.baseURL + 'modules/set.js',
+		                'url': self.baseURL + 'modules/homelist.js',
 		                'animated': 'true'
 		            };
 		            navigator.push(params, function (e) {
@@ -198,7 +219,27 @@
 		            });
 	            }else{
 	            	var params = {
-		                'url': this.baseURL + 'modules/login.js',
+		                'url': self.baseURL + 'modules/login.js',
+		                'animated': 'true'
+		            };
+		            navigator.push(params, function (e) {
+		                //callback
+		            });
+	            }
+			},
+			toset: function(){
+				var self = this;
+	            if(self.login){
+	            	var params = {
+		                'url': self.baseURL + 'modules/set.js',
+		                'animated': 'true'
+		            };
+		            navigator.push(params, function (e) {
+		                //callback
+		            });
+	            }else{
+	            	var params = {
+		                'url': self.baseURL + 'modules/login.js',
 		                'animated': 'true'
 		            };
 		            navigator.push(params, function (e) {
@@ -209,10 +250,9 @@
 			},
 			touserinfo: function(){
 				var self = this;
-	            var vm = this;
 	            if(self.login){
 	            	var params = {
-		                'url': this.baseURL + 'modules/userinfo.js',
+		                'url': self.baseURL + 'modules/userinfo.js',
 		                'animated': 'true'
 		            };
 		            navigator.push(params, function (e) {
@@ -220,7 +260,7 @@
 		            });
 	            }else{
 	            	var params = {
-		                'url': this.baseURL + 'modules/login.js',
+		                'url': self.baseURL + 'modules/login.js',
 		                'animated': 'true'
 		            };
 		            navigator.push(params, function (e) {
@@ -228,17 +268,32 @@
 		            });
 	            }
 			},
-			get: function(){
-		    	storage.getItem('userName',function (e) {});
-		    	storage.getItem('passWord',function (e) {});
-		    },
+			get: function(callback){
+	            var self = this;
+	            storage.getItem('userName',function (e) {
+	                if(e.result == 'success'){
+	                    self.username = e.data;
+	                    self.userdename = e.data;
+	                    storage.getItem('passWord',function (e) {
+	                        if(e.result == 'success'){
+	                            self.password = e.data;
+	                            callback();
+	                        }
+	                    });
+	                }
+	            });  
+	        },
 		    getStarCount: function(repo,callback) {
 	            return stream.fetch({
 	              method: 'GET',
 	              type: 'json',
 	              url: locurl + repo
 	            }, callback)
+	        },
+	        handleTouchstart: function(eventProperties){
+	        	// alert(eventProperties);
 	        }
+	        
         }
     }
 </script>

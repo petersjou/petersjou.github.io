@@ -2,15 +2,15 @@
     <div>
         <div class="nav_bar">
             <div  class="navleft" >
-                <image onclick="goback" if="{{showback}}" style="width:88px;height:88px;" 
-                       src="https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"></image>
+                <image onclick="goback" if="{{showback}}" style="width:76px;height:44px;margin-top:22px;" 
+                       src="src/common/img/nav_back.png"></image>
             </div>
             <div class="navtitle">
             	<text>{{title}}</text>
             </div>
             <div class="navright">
             	<image style="width:44px;height:44px;" class="navrightimg"
-                src="http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"></image>
+                src="src/common/img/nav_information.png"></image>
             </div>
         </div>
     </div>

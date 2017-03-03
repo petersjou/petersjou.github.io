@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(109)
-	var __weex_style__ = __webpack_require__(110)
-	var __weex_script__ = __webpack_require__(111)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(118)
+	var __weex_style__ = __webpack_require__(119)
+	var __weex_script__ = __webpack_require__(120)
 
 	__weex_define__('@weex-component/ab7e47a357216bf36023f31eda96f383', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,9 +2299,6 @@
 
 
 /***/ },
-/* 94 */,
-/* 95 */,
-/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
@@ -2310,7 +2311,16 @@
 /* 106 */,
 /* 107 */,
 /* 108 */,
-/* 109 */
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2384,29 +2394,96 @@
 	                        {
 	                          "type": "div",
 	                          "classList": [
-	                            "star"
+	                            "starbox1"
 	                          ],
 	                          "children": [
 	                            {
-	                              "type": "image",
+	                              "type": "div",
+	                              "classList": [
+	                                "star"
+	                              ],
+	                              "children": [
+	                                {
+	                                  "type": "image",
+	                                  "style": {
+	                                    "height": 22,
+	                                    "width": 22
+	                                  },
+	                                  "classList": [
+	                                    "star-img"
+	                                  ],
+	                                  "attr": {
+	                                    "src": "src/common/img/icon_browse.png"
+	                                  }
+	                                },
+	                                {
+	                                  "type": "text",
+	                                  "classList": [
+	                                    "star-text"
+	                                  ],
+	                                  "attr": {
+	                                    "value": function () {return this.dat.readCount}
+	                                  }
+	                                }
+	                              ]
+	                            },
+	                            {
+	                              "type": "div",
+	                              "classList": [
+	                                "star"
+	                              ],
 	                              "style": {
-	                                "height": 22,
-	                                "width": 22
+	                                "marginLeft": 20
+	                              },
+	                              "children": [
+	                                {
+	                                  "type": "image",
+	                                  "style": {
+	                                    "height": 22,
+	                                    "width": 22
+	                                  },
+	                                  "classList": [
+	                                    "star-img"
+	                                  ],
+	                                  "attr": {
+	                                    "src": "src/common/img/list_icon_Collection.png"
+	                                  }
+	                                },
+	                                {
+	                                  "type": "text",
+	                                  "classList": [
+	                                    "star-text"
+	                                  ],
+	                                  "attr": {
+	                                    "value": function () {return this.dat.answerCount}
+	                                  }
+	                                }
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "classList": [
+	                            "starbox2"
+	                          ],
+	                          "shown": function () {return this.shoucang},
+	                          "children": [
+	                            {
+	                              "type": "image",
+	                              "events": {
+	                                "click": "onhome"
+	                              },
+	                              "style": {
+	                                "marginLeft": 20,
+	                                "height": 60,
+	                                "width": 60
 	                              },
 	                              "classList": [
 	                                "star-img"
 	                              ],
 	                              "attr": {
-	                                "src": function () {return this.tubiao}
-	                              }
-	                            },
-	                            {
-	                              "type": "text",
-	                              "classList": [
-	                                "star-text"
-	                              ],
-	                              "attr": {
-	                                "value": function () {return this.dat.readCount}
+	                                "src": "src/common/img/btn_Collection_nor.png"
 	                              }
 	                            }
 	                          ]
@@ -2414,29 +2491,34 @@
 	                        {
 	                          "type": "div",
 	                          "classList": [
-	                            "star"
+	                            "starbox2"
 	                          ],
+	                          "shown": function () {return !this.shoucang},
 	                          "children": [
 	                            {
 	                              "type": "image",
+	                              "events": {
+	                                "click": "onhome"
+	                              },
 	                              "style": {
-	                                "height": 22,
-	                                "width": 22
+	                                "marginLeft": 20,
+	                                "height": 60,
+	                                "width": 60
 	                              },
 	                              "classList": [
 	                                "star-img"
 	                              ],
 	                              "attr": {
-	                                "src": function () {return this.tubiao}
+	                                "src": "src/common/img/btn_Collection_pre.png"
 	                              }
 	                            },
 	                            {
 	                              "type": "text",
 	                              "classList": [
-	                                "star-text"
+	                                "wenzi"
 	                              ],
 	                              "attr": {
-	                                "value": function () {return this.dat.answerCount}
+	                                "value": function () {return this.wenzi}
 	                              }
 	                            }
 	                          ]
@@ -2554,7 +2636,7 @@
 	}
 
 /***/ },
-/* 110 */
+/* 119 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2569,20 +2651,32 @@
 	    "fontSize": 30,
 	    "lineHeight": 30,
 	    "color": "#323232",
-	    "marginTop": 40
+	    "marginTop": 20
 	  },
 	  "detail-star": {
+	    "marginTop": 40,
 	    "flexDirection": "row",
-	    "height": 88
+	    "justifyContent": "space-between",
+	    "height": 88,
+	    "borderTop": "1px solid #e2e0e1",
+	    "borderBottom": "1px solid #e2e0e1"
+	  },
+	  "starbox1": {
+	    "flexDirection": "row"
+	  },
+	  "starbox2": {
+	    "marginTop": -30,
+	    "width": 100
 	  },
 	  "star": {
 	    "flexDirection": "row",
-	    "marginTop": 38
+	    "marginTop": 32
 	  },
 	  "star-text": {
 	    "fontSize": 22,
 	    "lineHeight": 22,
-	    "color": "#909090"
+	    "color": "#909090",
+	    "marginLeft": 10
 	  },
 	  "detailtext": {
 	    "marginTop": 30,
@@ -2611,11 +2705,17 @@
 	    "color": "#ffffff",
 	    "textAlign": "center",
 	    "borderRadius": 8
+	  },
+	  "wenzi": {
+	    "textAlign": "center",
+	    "color": "#666666",
+	    "fontSize": 24,
+	    "lineHeight": 30
 	  }
 	}
 
 /***/ },
-/* 111 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2623,10 +2723,10 @@
 	__webpack_require__(3);
 	var modal = __weex_require__('@weex-module/modal');
 	var storage = __weex_require__('@weex-module/storage');
-	var navigator = __weex_require__('@weex-module/navigator');
 	var stream = __weex_require__('@weex-module/stream');
 	var apis = __webpack_require__(85);
-	var locurl = apis.apiurl.resurl;
+	var navigator = __weex_require__('@weex-module/navigator');
+	var locurl = apis.apiurl.resurl;__webpack_require__(3);
 	module.exports = {
 	    data: function () {return {
 	        title: '',
@@ -2638,8 +2738,12 @@
 	        login: false,
 	        widthvie: 750,
 	        nu: 2,
+	        userid: '',
+	        shoucang: true,
+	        token: '',
 	        dat: [],
-	        arr: ['运行中', '关闭']
+	        arr: ['运行中', '关闭'],
+	        wenzi: ''
 	    }},
 	    created: function created() {
 	        var self = this;
@@ -2666,16 +2770,40 @@
 	        onBackClick: function onBackClick(e) {
 	            var self = this;
 	            var params = {
-	                url: this.baseURL + 'modules/newslist.js',
+	                url: self.baseURL + 'modules/newslist.js',
 	                'animated': 'true'
 	            };
 	            navigator.pop(params, function (e) {});
 	        },
+	        onhome: function onhome() {
+	            var self = this;
+
+	            self.getitem(function () {
+	                self.getStarCount('user/isLogin.json?token=' + self.token, function (res) {
+	                    if (res.data.status != 1) {
+	                        var params = {
+	                            'url': self.baseURL + 'modules/login.js',
+	                            'animated': 'true'
+	                        };
+	                        navigator.push(params, function (e) {});
+	                    } else {
+	                        self.getStarCount('question/collect.json?token=' + self.token + '&userId=' + self.userid + '&questionId=' + self.nu, function (res) {
+	                            var data = res.data;
+	                            if (data.status == 1) {
+	                                self.wenzi = data.message;
+	                                self.shoucang = false;
+	                            }
+	                        });
+	                    }
+	                });
+	            });
+	        },
 	        datibtn: function datibtn(e) {
 	            var daturl = e.target.attr.daturl;
-	            if (!this.login) {
+	            var self = this;
+	            if (!self.login) {
 	                var params = {
-	                    'url': this.baseURL + 'modules/login.js',
+	                    'url': self.baseURL + 'modules/login.js',
 	                    'animated': 'true'
 	                };
 	                navigator.push(params, function (e) {});
@@ -2686,6 +2814,26 @@
 	                };
 	                navigator.push(params, function (e) {});
 	            }
+	        },
+	        getitem: function getitem(callback) {
+	            var self = this;
+	            storage.getItem('userId', function (e) {
+	                if (e.result == 'success') {
+	                    self.userid = e.data;
+	                    storage.getItem('token', function (e) {
+	                        if (e.result == 'success') {
+	                            self.token = e.data;
+	                            callback();
+	                        } else {
+	                            var params = {
+	                                'url': self.baseURL + 'modules/login.js',
+	                                'animated': 'true'
+	                            };
+	                            navigator.push(params, function (e) {});
+	                        }
+	                    });
+	                }
+	            });
 	        },
 	        getStarCount: function getStarCount(repo, callback) {
 	            return stream.fetch({

@@ -89,6 +89,7 @@
 
 	__webpack_require__(3);
 	var apis = __webpack_require__(85);
+
 	module.exports = {
 	    data: function () {return {
 	        tabItems: [{
@@ -96,8 +97,8 @@
 	            title: "首页",
 	            titleColor: 0x0,
 	            icon: "",
-	            image: "http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png",
-	            selectedImage: "http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png",
+	            image: "src/common/img/tab_homepage_nor.png",
+	            selectedImage: "src/common/img/tab_homepage_pre.png",
 	            src: "modules/main.js",
 	            visibility: "visible"
 	        }, {
@@ -105,8 +106,8 @@
 	            title: "问卷",
 	            titleColor: 0x0,
 	            icon: "",
-	            image: "http://gtms03.alicdn.com/tps/i3/TB1LEn9MpXXXXaUXpXX9t7RGVXX-46-46.png",
-	            selectedImage: "http://gtms02.alicdn.com/tps/i2/TB1qysbMpXXXXcnXXXX9t7RGVXX-46-46.png",
+	            image: "src/common/img/tab_questionnairetab_nor.png",
+	            selectedImage: "src/common/img/tab_questionnairetab_pre.png",
 	            src: "modules/surveylist.js",
 	            visibility: "hidden"
 	        }, {
@@ -114,8 +115,8 @@
 	            title: "新闻",
 	            titleColor: 0x0,
 	            icon: "",
-	            image: "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png",
-	            selectedImage: "http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png",
+	            image: "src/common/img/tab_Journalismtab_nor.png",
+	            selectedImage: "src/common/img/tab_Journalismtab_pre.png",
 	            src: "modules/newslist.js",
 	            visibility: "hidden"
 	        }, {
@@ -123,8 +124,8 @@
 	            title: "我的",
 	            titleColor: 0x0,
 	            icon: "",
-	            image: "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png",
-	            selectedImage: "http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png",
+	            image: "src/common/img/tab_my_nor.png",
+	            selectedImage: "src/common/img/tab_my_pre.png",
 	            src: "modules/userbefore.js",
 	            visibility: "hidden"
 	        }]
@@ -132,11 +133,11 @@
 	    created: function created() {
 	        var bundleUrl = this.$getConfig().bundleUrl;
 	        var base = apis.getBaseUrl(bundleUrl);
-
+	        var self = this;
 	        for (var i = 0; i < this.tabItems.length; i++) {
 	            var tabItem = this.tabItems[i];
 	            tabItem.src = base + tabItem.src;
-	        }
+	        };
 	    },
 	    methods: {}
 	};}

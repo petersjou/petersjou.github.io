@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93)
-	var __weex_template__ = __webpack_require__(97)
-	var __weex_style__ = __webpack_require__(98)
-	var __weex_script__ = __webpack_require__(99)
+	__webpack_require__(96)
+	var __weex_template__ = __webpack_require__(106)
+	var __weex_style__ = __webpack_require__(107)
+	var __weex_script__ = __webpack_require__(108)
 
 	__weex_define__('@weex-component/30596736236ef248995e0e565639f520', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2128,7 +2128,14 @@
 	};
 
 /***/ },
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2153,11 +2160,12 @@
 	              },
 	              "shown": function () {return this.showback},
 	              "style": {
-	                "width": 88,
-	                "height": 88
+	                "width": 76,
+	                "height": 44,
+	                "marginTop": 22
 	              },
 	              "attr": {
-	                "src": "https://github.com/dodola/WeexOne/raw/master/imgs/return_image.png"
+	                "src": "src/common/img/nav_back.png"
 	              }
 	            }
 	          ]
@@ -2192,7 +2200,7 @@
 	                "navrightimg"
 	              ],
 	              "attr": {
-	                "src": "http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png"
+	                "src": "src/common/img/nav_information.png"
 	              }
 	            }
 	          ]
@@ -2203,7 +2211,7 @@
 	}
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2238,7 +2246,7 @@
 	}
 
 /***/ },
-/* 88 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2269,16 +2277,12 @@
 
 
 /***/ },
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(86)
-	var __weex_style__ = __webpack_require__(87)
-	var __weex_script__ = __webpack_require__(88)
+	var __weex_template__ = __webpack_require__(93)
+	var __weex_style__ = __webpack_require__(94)
+	var __weex_script__ = __webpack_require__(95)
 
 	__weex_define__('@weex-component/header', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2295,10 +2299,16 @@
 
 
 /***/ },
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2385,7 +2395,7 @@
 	                                "star-img"
 	                              ],
 	                              "attr": {
-	                                "src": function () {return this.tubiao}
+	                                "src": "src/common/img/icon_browse.png"
 	                              }
 	                            },
 	                            {
@@ -2422,7 +2432,7 @@
 	}
 
 /***/ },
-/* 98 */
+/* 107 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2450,7 +2460,8 @@
 	  "star-text": {
 	    "fontSize": 22,
 	    "lineHeight": 22,
-	    "color": "#909090"
+	    "color": "#909090",
+	    "marginLeft": 10
 	  },
 	  "detailtext": {
 	    "marginTop": 30,
@@ -2483,7 +2494,7 @@
 	}
 
 /***/ },
-/* 99 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2524,7 +2535,7 @@
 	        onBackClick: function onBackClick(e) {
 	            var self = this;
 	            var params = {
-	                url: this.baseURL + 'modules/newslist.js',
+	                url: self.baseURL + 'modules/newslist.js',
 	                'animated': 'true'
 	            };
 	            navigator.pop(params, function (e) {});
