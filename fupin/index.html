@@ -43,15 +43,15 @@
 <div class="module4">
 </div>
 <script src="js/jquery-3.1.1.js"></script>
-<script src="https://echarts.baidu.com/build/dist/echarts.js"></script>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
 <script src="js/index.js"></script>
 <script>
 
     require.config({
         paths: {
-            echarts: 'https://echarts.baidu.com/build/dist'
+            echarts: 'http://echarts.baidu.com/build/dist'
         }
-    })
+    });
     require(['echarts', 'echarts/chart/map'], function(ch) {
         // 基于准备好的dom，初始化echarts图表
         var myChart = ch.init(document.getElementById('china'));
