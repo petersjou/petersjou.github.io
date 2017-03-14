@@ -4,15 +4,258 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <base target="_blank">
 <title>国育</title>
-<style>
-*{margin:0;padding:0}
 
-</style>
 </head>
-
-<body style="100%;">
-<div class="xin" style="width:100%;">
-	<img src="img/fupin.jpg" style="width:100%;">
+<body>
+<div class="module1">
+    <div class="logo"></div>
+    <ul class="tab">
+        <Li class="active">首页</Li>
+        <Li>扶贫动态</Li>
+        <Li>扶贫案例</Li>
+        <Li>扶贫地图</Li>
+        <Li>政策文件</Li>
+    </ul>
+    <ul class="banner">
+        <li style="display: block">
+            <img src="image/banner1.jpg">
+        </li>
+        <li>
+            <img src="image/banner2.jpg">
+        </li>
+    </ul>
+    <div class="banner-btn">
+        <div class="prev"></div>
+        <div class="next"></div>
+    </div>
 </div>
+
+<div class="module2">
+</div>
+
+<div class="module3">
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div class="title-img"></div>
+    <div id="china"></div>
+</div>
+
+<div class="module4">
+</div>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script src="js/index.js"></script>
+<script>
+
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    })
+    require(['echarts', 'echarts/chart/map'], function(ch) {
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = ch.init(document.getElementById('china'));
+        option = {
+
+            tooltip: {
+                trigger: 'item',
+                //设置弹层所显示的东西
+                formatter: '{b}'
+            },
+            //                dataRange: { //柱子的设置
+            //                    min: 0,
+            //                    max: 100,
+            //                    x: 'left',
+            //                    y: '10%',
+            //                    text: ['高', '低'], // 文本，默认为数值文本
+            //                    textStyle: {
+            //                        color: 'white'
+            //                    },
+            //                    color: ['#00d970', 'rgba(0,0,0,0.3)', 'rgba(0,0,0,0.3)'],
+            //                    //calculable: true,
+            //                    inRange: {
+            //                        color: ['#00d970', 'rgba(0,0,0,0.3)', 'rgba(0,0,0,0.3)'],
+            //                    }
+            //                }
+            series: [{
+                name: '中国',
+                type: 'map',
+                mapType: 'china', //可以是world,省份中文名
+                selectedMode: 'single', //multiple多选
+                mapLocation: {
+                    x: "10%",
+                    y: "center"
+                },
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            textStyle: {
+                                color: "#231816"
+                            }
+                        },
+                        areaStyle: {
+                            color: '#dddddd'
+                        },
+                        color: 'rgba(0,0,0,0.3)',
+                        //borderColor: '#dadfde' //区块的边框颜色
+                        borderColor: '#00adea',
+                    },
+                    emphasis: { //鼠标hover样式
+                        label: {
+                            show: true,
+                            textStyle: {
+                                color: '#fa4f04'
+                            }
+                        },
+                        areaStyle: {
+                            color: '#dddddd'
+                        }
+                    }
+                },
+                data: [{
+                    name: '北京',
+                    value: 0
+                }, {
+                    name: '天津',
+                    value: 0
+                }, {
+                    name: '上海',
+                    value: 0
+                }, {
+                    name: '重庆',
+                    value: 0
+                }, {
+                    name: '河北',
+                    value: 0
+                }, {
+                    name: '河南',
+                    value: 0
+                }, {
+                    name: '云南',
+                    value: 0
+                }, {
+                    name: '辽宁',
+                    value: 0
+                }, {
+                    name: '黑龙江',
+                    value: 0
+                }, {
+                    name: '湖南',
+                    value: 0
+                }, {
+                    name: '安徽',
+                    value: 0
+                }, {
+                    name: '山东',
+                    value: 0
+                }, {
+                    name: '新疆',
+                    value: 0
+                }, {
+                    name: '江苏',
+                    value: 0
+                }, {
+                    name: '浙江',
+                    value: 0
+                }, {
+                    name: '江西',
+                    value: 0
+                }, {
+                    name: '湖北',
+                    value: 0
+                }, {
+                    name: '广西',
+                    value: 0
+                }, {
+                    name: '甘肃',
+                    value: 0
+                }, {
+                    name: '山西',
+                    value: 0
+                }, {
+                    name: '内蒙古',
+                    value: 0
+                }, {
+                    name: '陕西',
+                    value: 0
+                }, {
+                    name: '吉林',
+                    value: 0
+                }, {
+                    name: '福建',
+                    value: 0
+                }, {
+                    name: '贵州',
+                    value: 0
+                }, {
+                    name: '广东',
+                    value: 0
+                }, {
+                    name: '青海',
+                    value: 0
+                }, {
+                    name: '西藏',
+                    value: 0
+                }, {
+                    name: '四川',
+                    value: 0
+                }, {
+                    name: '宁夏',
+                    value: 0
+                }, {
+                    name: '海南',
+                    value: 0
+                }, {
+                    name: '台湾',
+                    value: 0
+                }, {
+                    name: '香港',
+                    value: 0
+                }, {
+                    name: '澳门',
+                    value: 0
+                }]
+            }]
+        };
+
+        //这里是方法一跳转要去的链接
+        var ecConfig = require('echarts/config');
+        //var ecConfig = echarts.config;
+        myChart.on(ecConfig.EVENT.MAP_SELECTED, function (param) {
+            //param[target].style.backgroundColor = 'red';
+
+            var selected = param.selected;
+            //                selected.onclick = function(){
+            //                    this.style.backgroundColor = 'red';
+            //				}
+            var selectedProvince;
+            var name;
+            for (var i = 0, l = option.series[0].data.length; i < l; i++) {
+                name = option.series[0].data[i].name;
+                option.series[0].data[i].selected = selected[name];
+                if (selected[name]) {
+                    selectedProvince = name;//这里的selectedProvince为中文，传到浏览器链接的时候可能会乱码，处理方法可以去百度
+
+                }
+            }
+            if (typeof selectedProvince == 'undefined') {
+                option.series.splice(1);
+                option.legend = null;
+                option.dataRange = null;
+                myChart.setOption(option, true);
+                return;
+            }
+
+        });
+
+        // 为echarts对象加载数据
+        myChart.setOption(option);
+
+    });
+
+    //  });
+
+</script>
 </body>
+
 </html>

@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    height:100%;
+    width:100%;
+}
+li{
+    list-style: none;
+}
+.module1{
+    position: relative;
+    width:100%;
+    height: 620px;
+    /*background: url('../image/img__03.jpg') no-repeat;*/
+}
+.logo{
+    width:310px;
+    height: 48px;
+    background: url('../image/logo.png') no-repeat;
+    position: absolute;
+    top:30px;
+    left:200px;
+    z-index: 5;
+}
+.tab{
+    width:710px;
+    height:50px;
+    overflow: hidden;
+    position: absolute;
+    top:28px;
+    left: 700px;
+    z-index: 5;
+}
+.tab li{
+    width:120px;
+    height:48px;
+    float: left;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+    line-height: 48px;
+    text-align: center;
+}
+.active{
+    border: 1px solid #ddd;
+    background:rgba(250,250,250,0.3);
+    border-radius: 5px;
+}
+.banner{
+    height: 620px;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+}
+.banner li{
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+    width:100%;
+}
+.prev,.next{
+    width:60px;
+    height:60px;
+    z-index: 5;
+    position: absolute;
+    top:50%;
+    margin-top: -30px;
+}
+.prev{
+    left:120px;
+    background: url('../image/prev.png') no-repeat;
+}
+.next{
+    right:120px;
+    background: url('../image/next.png') no-repeat;
+}
+.module1 img{
+    width:100%;
+}
+.module2{
+    width:100%;
+    height:663px;
+    background: url('../image/img__02.jpg') no-repeat;
+    background-size: 100%;
+    margin:20px 0;
+}
+.module3{
+    width:100%;
+    background: url('../image/img__03.jpg') no-repeat;
+    background-size: 100%;
+    height:910px;
+    position: relative;
+}
+.title-img{
+    position: absolute;
+    background: url('../image/map-titleq.png');
+    height:64px;
+    width:1000px;
+    top:40px;
+    left:50%;
+    margin-left: -500px;
+}
+#china{
+    height:1000px;
+    width:1000px;
+    margin:0 auto;
+}
+.module4{
+    width:100%;
+    height:1263px;
+    background: url('../image/img__04.jpg') no-repeat;
+    background-size: 100%;
+}
