@@ -43,18 +43,18 @@
 <div class="module4">
 </div>
 <script src="js/jquery-3.1.1.js"></script>
-<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script src="js/echarts.js"></script>
 <script src="js/index.js"></script>
 <script>
 
-    require.config({
-        paths: {
-            echarts: 'http://echarts.baidu.com/build/dist'
-        }
-    });
-    require(['echarts', 'echarts/chart/map'], function(ch) {
+//    require.config({
+//        paths: {
+//            echarts: 'js/echarts.js'
+//        }
+//    });
+//    require(['echarts', 'echarts/chart/map'], function(ch) {
         // 基于准备好的dom，初始化echarts图表
-        var myChart = ch.init(document.getElementById('china'));
+        var myChart = echarts.init(document.getElementById('china'));
         option = {
 
             tooltip: {
@@ -220,39 +220,39 @@
         };
 
         //这里是方法一跳转要去的链接
-        var ecConfig = require('echarts/config');
-        //var ecConfig = echarts.config;
-        myChart.on(ecConfig.EVENT.MAP_SELECTED, function (param) {
-            //param[target].style.backgroundColor = 'red';
-
-            var selected = param.selected;
-            //                selected.onclick = function(){
-            //                    this.style.backgroundColor = 'red';
-            //				}
-            var selectedProvince;
-            var name;
-            for (var i = 0, l = option.series[0].data.length; i < l; i++) {
-                name = option.series[0].data[i].name;
-                option.series[0].data[i].selected = selected[name];
-                if (selected[name]) {
-                    selectedProvince = name;//这里的selectedProvince为中文，传到浏览器链接的时候可能会乱码，处理方法可以去百度
-
-                }
-            }
-            if (typeof selectedProvince == 'undefined') {
-                option.series.splice(1);
-                option.legend = null;
-                option.dataRange = null;
-                myChart.setOption(option, true);
-                return;
-            }
-
-        });
+//        var ecConfig = require('echarts/config');
+//        //var ecConfig = echarts.config;
+//        myChart.on(ecConfig.EVENT.MAP_SELECTED, function (param) {
+//            //param[target].style.backgroundColor = 'red';
+//
+//            var selected = param.selected;
+//            //                selected.onclick = function(){
+//            //                    this.style.backgroundColor = 'red';
+//            //				}
+//            var selectedProvince;
+//            var name;
+//            for (var i = 0, l = option.series[0].data.length; i < l; i++) {
+//                name = option.series[0].data[i].name;
+//                option.series[0].data[i].selected = selected[name];
+//                if (selected[name]) {
+//                    selectedProvince = name;//这里的selectedProvince为中文，传到浏览器链接的时候可能会乱码，处理方法可以去百度
+//
+//                }
+//            }
+//            if (typeof selectedProvince == 'undefined') {
+//                option.series.splice(1);
+//                option.legend = null;
+//                option.dataRange = null;
+//                myChart.setOption(option, true);
+//                return;
+//            }
+//
+//        });
 
         // 为echarts对象加载数据
         myChart.setOption(option);
 
-    });
+//    });
 
     //  });
 
