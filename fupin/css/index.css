@@ -14,6 +14,8 @@ li{
     width:100%;
     height: 620px;
     /*background: url('../image/img__03.jpg') no-repeat;*/
+    min-width: 1200px;
+    overflow: hidden;
 }
 .logo{
     width:310px;
@@ -80,6 +82,10 @@ li{
 }
 .module1 img{
     width:100%;
+    min-width:1200px;
+    overflow: hidden;
+    display: block;
+    height: 620px;
 }
 .module2{
     width:100%;
@@ -87,6 +93,8 @@ li{
     background: url('../image/img__02.jpg') no-repeat;
     background-size: cover;
     margin:20px 0;
+    min-width:1200px;
+    overflow: hidden;
 }
 .module3{
     width:100%;
@@ -94,6 +102,8 @@ li{
     background-size: cover;
     height:910px;
     position: relative;
+    min-width:1200px;
+    overflow: hidden;
 }
 .title-img{
     position: absolute;
@@ -114,6 +124,8 @@ li{
     height:1263px;
     background: url('../image/img__04.jpg') no-repeat;
     background-size: cover;
+    min-width:1200px;
+    overflow: hidden;
 }
 .under,.local,.zhijiao{
     height:150px;

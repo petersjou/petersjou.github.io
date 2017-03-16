@@ -2,6 +2,10 @@
  * Created by yuhaisong on 2017/3/14.
  */
 $(document).ready(function(){
+    //页面宽度设置
+    if($(window).width()<1200){
+        $(window).width('1200px');
+    }
     //顶部鼠标划入事件
     $('.tab li').mouseover(function(){
         $(this).addClass('active').siblings().removeClass('active');
