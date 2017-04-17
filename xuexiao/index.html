@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>后台管理</title>
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</head>
+	<body>
+		<p style="text-align:center;margin-top:30px;line-height:50px;font-size:30px;font-weight: bold;">注册账号列表</p>
+		<a href="login.html" style="position:fixed;left:400px;top:0;line-height:40px;font-size:30px;font-weight: bold;;">前台页面</a>
+		<div class="wrap clear">
+			<div class="left fl">
+				<p class="title">后台管理</p>
+				<ul class="left-list">
+					<li class="li1">
+						<a href="index.html" calss="a1">账号管理</a>
+						<ol>
+							<li>
+								<a href="index.html">注册账号</a>
+							</li>
+							<li>
+								<a href="zhuanjia.html">评审专家账号</a>
+							</li>
+						</ol>
+					</li>
+					<li class="li1">
+						<a href="list.html" calss="a1">项目列表</a>
+					</li>
+					<li class="li1">
+						<a href="ziyuan.html" calss="a1">专家资源</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right fr">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>账号</th>
+							<th>单位名称</th>
+							<th>部门名称</th>
+							<th>联系电话</th>
+							<th>邮箱</th>
+							<th>操作</th>
+						</tr>
+					<tbody>
+						<tr class="success" data-toggle="modal" data-target="#myModal">
+						    <td>张三</td>
+						    <td>aaron</td>
+						    <td>北京交通大学</td>
+						    <td>机械学院</td>
+						    <td>15966666666</td>
+						    <td>45555@163.com</td>
+						    <td><span>修改密码</span>&nbsp;&nbsp;<span>解绑用户</span></td>
+						</tr>
+						<tr class="success" data-toggle="modal" data-target="#myModal">
+						    <td>张三</td>
+						    <td>aaron</td>
+						    <td>北京交通大学</td>
+						    <td>机械学院</td>
+						    <td>15966666666</td>
+						    <td>45555@163.com</td>
+						    <td><span>修改密码</span>&nbsp;&nbsp;<span>解绑用户</span></td>
+						</tr>
+						<tr class="success" data-toggle="modal" data-target="#myModal">
+						    <td>张三</td>
+						    <td>aaron</td>
+						    <td>北京交通大学</td>
+						    <td>机械学院</td>
+						    <td>15966666666</td>
+						    <td>45555@163.com</td>
+						    <td><span>修改密码</span>&nbsp;&nbsp;<span>解绑用户</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+				<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					注册账号详细信息
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form class="bs-example bs-example-form" role="form">
+					<div class="input-group">
+						<span class="input-group-addon">姓名</span>
+						<input type="text" class="form-control" placeholder="姓名">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">账号名</span>
+						<input type="text" class="form-control" placeholder="账号名">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">单位名称</span>
+						<input type="text" class="form-control" placeholder="单位名称">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">部门名称</span>
+						<input type="text" class="form-control" placeholder="部门名称">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">联系电话</span>
+						<input type="text" class="form-control" placeholder="联系电话">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">邮箱</span>
+						<input type="text" class="form-control" placeholder="邮箱">
+					</div>
+					<br>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary">
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+	</body>
+</html>

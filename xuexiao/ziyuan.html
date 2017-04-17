@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>后台 管理</title>
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</head>
+	<body>
+		<p style="text-align:center;margin-top:30px;line-height:50px;font-size:30px;font-weight: bold;">专家资源</p>
+		<a href="login.html" style="position:fixed;left:400px;top:0;line-height:40px;font-size:30px;font-weight: bold;;">前台页面</a>
+		<div class="wrap clear">
+			<div class="left fl">
+				<p class="title">后台管理</p>
+				<ul class="left-list">
+					<li class="li1">
+						<a href="index.html" calss="a1">账号管理</a>
+						<ol>
+							<li>
+								<a href="index.html">注册账号</a>
+							</li>
+							<li>
+								<a href="zhuanjia.html">评审专家账号</a>
+							</li>
+						</ol>
+					</li>
+					<li class="li1">
+						<a href="list.html" calss="a1">项目列表</a>
+					</li>
+					<li class="li1">
+						<a href="ziyuan.html" calss="a1">专家资源</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right fr">
+				<button class="btn btn-large  btn-primary" type="button">根据学校搜索（输入框）</button>
+				<button class="btn btn-large  btn-primary" type="button">根据姓名（输入框）</button>
+				<button class="btn btn-large  btn-primary" type="button">根据学科（输入框）</button>
+				<button class="btn btn-large  btn-primary" type="button">根据职称（输入框）</button>
+				<button class="btn btn-large  btn-primary" type="button">根据单位来源（输入框）</button>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>邮箱</th>
+							<th>学科</th>
+							<th>地区（下拉菜单）</th>
+							<th>职称</th>
+							<th>人才类别</th>
+							<th>单位来源</th>
+							<th>操作</th>
+						</tr>
+					<tbody>
+						<tr class="success">
+						    <td>张三</td>
+						    <td>男</td>
+						    <td>111@qq.com</td>
+						    <td>化学</td>
+						    <td>北京</td>
+						    <td>教授</td>
+						    <td>院士</td>
+						    <td>高校</td>
+						    <td>删除</td>
+						</tr>
+						<tr class="success" >
+						    <td>张三</td>
+						    <td>男</td>
+						    <td>111@qq.com</td>
+						    <td>化学</td>
+						    <td>北京</td>
+						    <td>教授</td>
+						    <td>院士</td>
+						    <td>高校</td>
+						    <td>删除</td>
+						</tr>
+						<tr class="success" >
+						    <td>张三</td>
+						    <td>男</td>
+						    <td>111@qq.com</td>
+						    <td>化学</td>
+						    <td>北京</td>
+						    <td>教授</td>
+						    <td>院士</td>
+						    <td>高校</td>
+						    <td>删除</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+				
+</div>
+<script>
+	$('.success').on('click',function(){
+		window.location.href='zdetail.html';
+	})
+</script>
+	</body>
+</html>
